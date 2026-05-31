@@ -1,0 +1,44 @@
+---
+type: company
+ticker: TSM
+layer: 3
+layer_name: Foundry / Manufacturing
+segment: Foundry
+country: Taiwan
+---
+
+# TSMC  (TSM)
+
+> **Foundry / Manufacturing** · Foundry · Taiwan
+
+**Role in the AI chain:** Makes the vast majority of AI accelerators.
+
+**Key products:** Leading-edge wafers, CoWoS packaging.
+
+## Supplies / sells to (downstream)
+- manufactures chips for [[NVIDIA]] — Primary foundry
+- manufactures chips for [[AMD]]
+- manufactures chips for [[Broadcom]]
+- manufactures chips for [[Marvell]]
+- manufactures chips for [[Alphabet (Google)]] — TPU
+- manufactures chips for [[Amazon]] — Trainium
+- manufactures chips for [[Microsoft]] — Maia
+- provides CoWoS packaging to [[NVIDIA]] — Packaging bottleneck
+- provides CoWoS packaging to [[AMD]]
+
+## Supplied / served by (upstream)
+- [[ASML]] supplies EUV lithography to this company — EUV monopoly
+- [[Applied Materials]] supplies fab equipment to this company
+- [[Lam Research]] supplies etch/deposition to this company
+- [[KLA Corporation]] supplies inspection tools to this company
+- [[Intel]] competes with this company — Foundry ambitions
+
+## Benefits from (demand drivers)
+- [[AI Training Capex]]
+- [[CoWoS Advanced Packaging]]
+
+## Notes
+- _Your analysis here._
+
+## Sources
+- _Add links to filings / articles in `sources/`._

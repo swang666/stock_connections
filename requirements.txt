@@ -1,0 +1,3 @@
+# Python dependencies for the analysis engines and graph regenerator.
+#   pip install -r requirements.txt
+openpyxl>=3.1

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Supply Chain — Knowledge Graph</title>
+<style>
+  :root{ --bg:#0b1020; --panel:#121a2e; --ink:#e8eefc; --muted:#93a4c8; --line:#26324d; --accent:#60a5fa; }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  #wrap{display:flex;height:100vh;width:100vw;overflow:hidden}
+  #stage{position:relative;flex:1;min-width:0}
+  canvas{display:block;width:100%;height:100%}
+  #side{width:330px;background:var(--panel);border-left:1px solid var(--line);
+    display:flex;flex-direction:column;overflow:hidden}
+  header{padding:14px 16px;border-bottom:1px solid var(--line)}
+  header h1{font-size:15px;margin:0 0 2px}
+  header p{font-size:11px;color:var(--muted);margin:0;line-height:1.4}
+  .controls{padding:12px 16px;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:8px}
+  #search{width:100%;padding:8px 10px;border-radius:8px;border:1px solid var(--line);
+    background:#0d1426;color:var(--ink);font-size:13px}
+  .toggles{display:flex;gap:8px;flex-wrap:wrap}
+  .btn{font-size:11px;padding:5px 9px;border-radius:7px;border:1px solid var(--line);
+    background:#0d1426;color:var(--muted);cursor:pointer;user-select:none}
+  .btn.on{color:var(--ink);border-color:var(--accent);background:#13233f}
+  .catbox{padding:11px 16px;border-bottom:1px solid var(--line);font-size:12px;
+    display:flex;flex-direction:column;gap:7px;background:#0e1730}
+  .catbox .head{display:flex;align-items:center;font-weight:600;color:var(--ink)}
+  .catrow{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+  .catlbl{color:var(--muted);width:42px;font-size:11px}
+  .catseed{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  #catSeed{color:#fde047}
+  .btn.seg.on{color:#fff;border-color:var(--accent);background:#13233f}
+  .btn.run{background:#16305a;border-color:var(--accent);color:#fff;font-weight:600}
+  #detail{flex:1;overflow:auto;padding:14px 16px;font-size:13px;line-height:1.5}
+  #detail h2{font-size:15px;margin:0 0 2px}
+  #detail .tag{display:inline-block;font-size:10px;padding:2px 7px;border-radius:20px;
+    background:#1b2742;color:var(--muted);margin:0 4px 4px 0}
+  #detail .role{color:var(--muted);font-size:12px;margin:6px 0 12px}
+  #detail h3{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);
+    margin:14px 0 5px;border-bottom:1px solid var(--line);padding-bottom:3px}
+  #detail ul{margin:0;padding-left:16px}
+  #detail li{margin:3px 0}
+  #detail .rel{color:var(--muted)}
+  #legend{padding:10px 16px;border-top:1px solid var(--line);max-height:30%;overflow:auto}
+  #legend .row{display:flex;align-items:center;gap:8px;font-size:11px;padding:2px 0;cursor:pointer;color:var(--muted)}
+  #legend .row.off{opacity:.35}
+  #legend .dot{width:10px;height:10px;border-radius:50%;flex:none}
+  #legend .dot.theme{border-radius:2px;transform:rotate(45deg)}
+  #tip{position:absolute;pointer-events:none;background:#0d1426ee;border:1px solid var(--line);
+    padding:6px 9px;border-radius:8px;font-size:12px;max-width:240px;display:none;z-index:5}
+  #tip b{color:#fff}
+  #tip .t2{color:var(--muted);font-size:11px}
+  #hint{position:absolute;left:12px;bottom:12px;font-size:11px;color:var(--muted);
+    background:#0d142699;padding:6px 10px;border-radius:8px;border:1px solid var(--line)}
+</style>
+</head>
+<body>
+<div id="wrap">
+  <div id="stage">
+    <canvas id="cv"></canvas>
+    <div id="tip"></div>
+    <div id="hint">Drag nodes · hover to trace links · click to inspect · scroll to zoom</div>
+  </div>
+  <div id="side">
+    <header>
+      <h1>AI Supply-Chain Knowledge Graph</h1>
+      <p>Upstream → downstream, left → right. Diamonds are demand drivers. Click any node to inspect it; use Catalyst mode to trace chain effects.</p>
+    </header>
+    <div class="controls">
+      <input id="search" placeholder="Search company or ticker…" autocomplete="off">
+      <div class="toggles">
+        <span class="btn on" id="tLabels">Labels</span>
+        <span class="btn on" id="tThemes">Theme links</span>
+        <span class="btn" id="tBottle">⛔ Bottlenecks</span>
+        <span class="btn" id="tReset">Reset view</span>
+      </div>
+    </div>
+    <div class="catbox">
+      <div class="head">⚡ Catalyst mode <span class="btn" id="catClear" style="margin-left:auto">Clear</span></div>
+      <div class="catseed">Seed:&nbsp;<span id="catSeed">—</span> <span class="btn" id="catSet">Set = selected</span></div>
+      <div class="catrow"><span class="catlbl">Event</span>
+        <span class="btn seg on" data-pol="1">Positive</span>
+        <span class="btn seg" data-pol="-1">Negative</span></div>
+      <div class="catrow"><span class="catlbl">Type</span>
+        <span class="btn seg on" data-kind="demand">Demand</span>
+        <span class="btn seg" data-kind="supply">Supply</span>
+        <span class="btn seg" data-kind="macro">Macro</span></div>
+      <div class="catrow"><span class="btn run" id="catRun">Run catalyst &#9656;</span></div>
+    </div>
+    <div id="detail"></div>
+    <div id="legend"></div>
+  </div>
+</div>
+<script>
+var NODES = [{"id": "SNPS", "name": "Synopsys", "type": "Company", "ticker": "SNPS", "layer": 1, "layer_name": "EDA & IP", "segment": "EDA & IP", "role": "Chips can't be designed without EDA tools", "bscore": 25.4, "breach": 17, "balts": 2, "bconstr": 0.0, "bwhy": "", "bemerging": false}, {"id": "CDNS", "name": "Cadence", "type": "Company", "ticker": "CDNS", "layer": 1, "layer_name": "EDA & IP", "segment": "EDA & IP", "role": "Co-leader in chip design software", "bscore": 24.6, "breach": 16, "balts": 2, "bconstr": 0.0, "bwhy": "", "bemerging": false}, {"id": "ARM", "name": "Arm Holdings", "type": "Company", "ticker": "ARM", "layer": 1, "layer_name": "EDA & IP", "segment": "CPU IP", "role": "IP licensed into most AI CPUs", "bscore": 22.9, "breach": 14, "balts": 2, "bconstr": 0.0, "bwhy": "", "bemerging": false}, {"id": "ASML", "name": "ASML", "type": "Company", "ticker": "ASML", "layer": 2, "layer_name": "Semiconductor Equipment", "segment": "Lithography", "role": "Monopoly on EUV; gatekeeper of leading-edge nodes", "bscore": 39.1, "breach": 21, "balts": 4, "bconstr": 1.0, "bwhy": "monopoly", "bemerging": false}, {"id": "AMAT", "name": "Applied Materials", "type": "Company", "ticker": "AMAT", "layer": 2, "layer_name": "Semiconductor Equipment", "segment": "Fab equipment", "role": "Broadest fab-equipment portfolio", "bscore": 24.8, "breach": 20, "balts": 3, "bconstr": 0.0, "bwhy": "", "bemerging": false}, {"id": "LRCX", "name": "Lam Research", "type": "Company", "ticker": "LRCX", "layer": 2, "layer_name": "Semiconductor Equipment", "segment": "Etch/Deposition", "role": "Critical for memory & logic", "bscore": 25.4, "breach": 21, "balts": 3, "bconstr": 0.0, "bwhy": "", "bemerging": false}, {"id": "KLAC", "name": "KLA Corporation", "type": "Company", "ticker": "KLAC", "layer": 2, "layer_name": "Semiconductor Equipment", "segment": "Process control", "role": "Yield management leader", "bscore": 24.1, "breach": 19, "balts": 3, "bconstr": 0.0, "bwhy": "", "bemerging": false}, {"id": "TSM", "name": "TSMC", "type": "Company", "ticker": "TSM", "layer": 3, "layer_name": "Foundry / Manufacturing", "segment": "Foundry", "role": "Makes the vast majority of AI accelerators", "bscore": 47.8, "breach": 18, "balts": 2, "bconstr": 1.0, "bwhy": "bottleneck", "bemerging": false}, {"id": "INTC", "name": "Intel", "type": "Company", "ticker": "INTC", "layer": 3, "layer_name": "Foundry / Manufacturing", "segment": "IDM / Foundry", "role": "Building foundry to challenge TSMC", "bscore": 0.0, "breach": 0, "balts": 1, "bconstr": 0.0, "bwhy": "", "bemerging": false}, {"id": "SAMSUNG", "name": "Samsung Electronics", "type": "Company", "ticker": "005930.KS", "layer": 3, "layer_name": "Foundry / Manufacturing", "segment": "Foundry + Memory", "role": "Foundry + memory dual play", "bscore": 32.5, "breach": 14, "balts": 2, "bconstr": 0.5, "bwhy": "asp", "bemerging": false}, {"id": "NVDA", "name": "NVIDIA", "type": "Company", "ticker": "NVDA", "layer": 4, "layer_name": "Chip Designers (Accelerators/Networking)", "segment": "AI accelerators", "role": "The center of gravity of the AI buildout", "bscore": 26.3, "breach": 13, "balts": 5, "bconstr": 0.5, "bwhy": "cowos", "bemerging": false}, {"id": "AMD", "name": "AMD", "type": "Company", "ticker": "AMD", "layer": 4, "layer_name": "Chip Designers (Accelerators/Networking)", "segment": "AI accelerators/CPU", "role": "Main GPU challenger to NVIDIA", "bscore": 11.2, "breach": 4, "balts": 3, "bconstr": 0.0, "bwhy": "", "bemerging": false}, {"id": "AVGO", "name": "Broadcom", "type": "Company", "ticker": "AVGO", "layer": 4, "layer_name": "Chip Designers (Accelerators/Networking)", "segment": "Custom silicon/Networking", "role": "Co-designs hyperscaler accelerators + networking", "bscore": 15.4, "breach": 6, "balts": 2, "bconstr": 0.0, "bwhy": "", "bemerging": false}, {"id": "MRVL", "name": "Marvell", "type": "Company", "ticker": "MRVL", "layer": 4, "layer_name": "Chip Designers (Accelerators/Networking)", "segment": "Custom silicon/Networking", "role": "#2 custom-silicon & optical interconnect", "bscore": 11.2, "breach": 4, "balts": 3, "bconstr": 0.0, "bwhy": "", "bemerging": false}, {"id": "MU", "name": "Micron", "type": "Company", "ticker": "MU", "layer": 5, "layer_name": "Memory (HBM/DRAM)", "segment": "Memory", "role": "US HBM supplier ramping fast", "bscore": 33.6, "breach": 15, "balts": 2, "bconstr": 0.5, "bwhy": "lta", "bemerging": false}, {"id": "SKHYNIX", "name": "SK Hynix", "type": "Company", "ticker": "000660.KS", "layer": 5, "layer_name": "Memory (HBM/DRAM)", "segment": "Memory", "role": "Lead HBM supplier to NVIDIA", "bscore": 27.8, "breach": 14, "balts": 2, "bconstr": 0.25, "bwhy": "hbm", "bemerging": false}, {"id": "AMKR", "name": "Amkor Technology", "type": "Company", "ticker": "AMKR", "layer": 6, "layer_name": "Advanced Packaging / OSAT", "segment": "OSAT", "role": "Advanced packaging beyond TSMC", "bscore": 28.4, "breach": 15, "balts": 1, "bconstr": 0.0, "bwhy": "", "bemerging": false}, {"id": "COHR", "name": "Coherent", "type": "Company", "ticker": "COHR", "layer": 7, "layer_name": "Optical & Interconnect", "segment": "Optical", "role": "Optics for AI cluster interconnect", "bscore": 24.3, "breach": 15, "balts": 1, "bconstr": 0.0, "bwhy": "", "bemerging": false}, {"id": "LITE", "name": "Lumentum", "type": "Company", "ticker": "LITE", "layer": 7, "layer_name": "Optical & Interconnect", "segment": "Optical", "role": "Photonics for datacenter networking", "bscore": 15.3, "breach": 4, "balts": 0, "bconstr": 0.0, "bwhy": "", "bemerging": true}, {"id": "FN", "name": "Fabrinet", "type": "Company", "ticker": "FN", "layer": 7, "layer_name": "Optical & Interconnect", "segment": "Optical manufacturing", "role": "Contract manufacturer for optics", "bscore": 20.7, "breach": 16, "balts": 1, "bconstr": 0.0, "bwhy": "", "bemerging": true}, {"id": "ANET", "name": "Arista Networks", "type": "Company", "ticker": "ANET", "layer": 8, "layer_name": "Networking Systems", "segment": "Networking", "role": "Backbone of hyperscaler AI fabrics", "bscore": 18.8, "breach": 3, "balts": 0, "bconstr": 0.0, "bwhy": "", "bemerging": false}, {"id": "CSCO", "name": "Cisco", "type": "Company", "ticker": "CSCO", "layer": 8, "layer_name": "Networking Systems", "segment": "Networking", "role": "Incumbent networking, AI fabric push", "bscore": 10.8, "breach": 1, "balts": 0, "bconstr": 0.0, "bwhy": "", "bemerging": false}, {"id": "SMCI", "name": "Supermicro", "type": "Company", "ticker": "SMCI", "layer": 9, "layer_name": "Servers & ODM/OEM", "segment": "AI servers", "role": "Fast-moving AI server builder", "bscore": 15.4, "breach": 2, "balts": 0, "bconstr": 0.0, "bwhy": "", "bemerging": false}, {"id": "DELL", "name": "Dell Technologies", "type": "Company", "ticker": "DELL", "layer": 9, "layer_name": "Servers & ODM/OEM", "segment": "AI servers", "role": "Enterprise + cloud AI servers", "bscore": 10.4, "breach": 2, "balts": 1, "bconstr": 0.0, "bwhy": "", "bemerging": false}, {"id": "HPE", "name": "Hewlett Packard Enterprise", "type": "Company", "ticker": "HPE", "layer": 9, "layer_name": "Servers & ODM/OEM", "segment": "AI servers", "role": "HPC & AI server systems", "bscore": 0.0, "breach": 0, "balts": 0, "bconstr": 0.0, "bwhy": "", "bemerging": false}, {"id": "FOXCONN", "name": "Foxconn (Hon Hai)", "type": "Company", "ticker": "2317.TW", "layer": 9, "layer_name": "Servers & ODM/OEM", "segment": "ODM assembly", "role": "Assembles NVIDIA GB200 racks at scale", "bscore": 27.3, "breach": 14, "balts": 1, "bconstr": 0.0, "bwhy": "", "bemerging": false}, {"id": "MSFT", "name": "Microsoft", "type": "Company", "ticker": "MSFT", "layer": 10, "layer_name": "Hyperscalers / Cloud", "segment": "Hyperscaler", "role": "Largest AI capex; OpenAI's compute", "bscore": 10.8, "breach": 1, "balts": 0, "bconstr": 0.0, "bwhy": "", "bemerging": false}, {"id": "AMZN", "name": "Amazon", "type": "Company", "ticker": "AMZN", "layer": 10, "layer_name": "Hyperscalers / Cloud", "segment": "Hyperscaler", "role": "Cloud leader + custom silicon", "bscore": 7.3, "breach": 1, "balts": 1, "bconstr": 0.0, "bwhy": "", "bemerging": false}, {"id": "GOOGL", "name": "Alphabet (Google)", "type": "Company", "ticker": "GOOGL", "layer": 10, "layer_name": "Hyperscalers / Cloud", "segment": "Hyperscaler", "role": "TPU = deepest custom-silicon program", "bscore": 7.3, "breach": 1, "balts": 1, "bconstr": 0.0, "bwhy": "", "bemerging": false}, {"id": "META", "name": "Meta Platforms", "type": "Company", "ticker": "META", "layer": 10, "layer_name": "Hyperscalers / Cloud", "segment": "Hyperscaler", "role": "Massive internal AI buildout", "bscore": 0.0, "breach": 0, "balts": 0, "bconstr": 0.0, "bwhy": "", "bemerging": false}, {"id": "ORCL", "name": "Oracle", "type": "Company", "ticker": "ORCL", "layer": 10, "layer_name": "Hyperscalers / Cloud", "segment": "Cloud", "role": "Fast-growing AI cloud capacity", "bscore": 0.0, "breach": 0, "balts": 0, "bconstr": 0.25, "bwhy": "capacity", "bemerging": false}, {"id": "OPENAI", "name": "OpenAI", "type": "Company", "ticker": "private", "layer": 11, "layer_name": "AI Labs / Model Developers", "segment": "AI lab", "role": "Anchor compute demand via Azure", "bscore": 0.0, "breach": 0, "balts": 0, "bconstr": 0.25, "bwhy": "capacity", "bemerging": false}, {"id": "ANTHROPIC", "name": "Anthropic", "type": "Company", "ticker": "private", "layer": 11, "layer_name": "AI Labs / Model Developers", "segment": "AI lab", "role": "Anchor demand via AWS & Google Cloud", "bscore": 0.0, "breach": 0, "balts": 0, "bconstr": 0.0, "bwhy": "", "bemerging": false}, {"id": "EQIX", "name": "Equinix", "type": "Company", "ticker": "EQIX", "layer": 12, "layer_name": "Datacenter Infrastructure (REITs)", "segment": "Datacenter REIT", "role": "Where clouds physically meet", "bscore": 15.4, "breach": 2, "balts": 0, "bconstr": 0.0, "bwhy": "", "bemerging": false}, {"id": "DLR", "name": "Digital Realty", "type": "Company", "ticker": "DLR", "layer": 12, "layer_name": "Datacenter Infrastructure (REITs)", "segment": "Datacenter REIT", "role": "Hyperscale datacenter landlord", "bscore": 10.9, "breach": 1, "balts": 0, "bconstr": 0.0, "bwhy": "", "bemerging": false}, {"id": "VRT", "name": "Vertiv", "type": "Company", "ticker": "VRT", "layer": 13, "layer_name": "Power & Cooling Equipment", "segment": "Power & cooling", "role": "Picks-and-shovels of datacenter power/cooling", "bscore": 27.0, "breach": 6, "balts": 0, "bconstr": 0.0, "bwhy": "", "bemerging": false}, {"id": "ETN", "name": "Eaton", "type": "Company", "ticker": "ETN", "layer": 13, "layer_name": "Power & Cooling Equipment", "segment": "Electrical", "role": "Electrical backbone of datacenters", "bscore": 24.3, "breach": 5, "balts": 0, "bconstr": 0.0, "bwhy": "", "bemerging": false}, {"id": "CEG", "name": "Constellation Energy", "type": "Company", "ticker": "CEG", "layer": 14, "layer_name": "Power Generation / Utilities", "segment": "Nuclear power", "role": "Selling clean baseload to hyperscalers", "bscore": 15.4, "breach": 2, "balts": 0, "bconstr": 0.0, "bwhy": "", "bemerging": false}, {"id": "VST", "name": "Vistra", "type": "Company", "ticker": "VST", "layer": 14, "layer_name": "Power Generation / Utilities", "segment": "Power generation", "role": "Power supply to datacenter demand", "bscore": 15.4, "breach": 2, "balts": 0, "bconstr": 0.0, "bwhy": "", "bemerging": false}, {"id": "GEV", "name": "GE Vernova", "type": "Company", "ticker": "GEV", "layer": 14, "layer_name": "Power Generation / Utilities", "segment": "Power equipment", "role": "Builds the generation & grid gear", "bscore": 26.6, "breach": 6, "balts": 0, "bconstr": 0.0, "bwhy": "", "bemerging": false}, {"id": "T_TRAIN", "name": "AI Training Capex", "type": "Theme", "ticker": "", "layer": 0, "layer_name": "Demand Driver / Theme", "segment": "Demand driver", "role": "Hyperscaler capex on training clusters", "bscore": 0, "breach": 0, "balts": 0, "bconstr": 0, "bwhy": "", "bemerging": false}, {"id": "T_INFER", "name": "AI Inference Demand", "type": "Theme", "ticker": "", "layer": 0, "layer_name": "Demand Driver / Theme", "segment": "Demand driver", "role": "Recurring compute as AI products scale", "bscore": 0, "breach": 0, "balts": 0, "bconstr": 0, "bwhy": "", "bemerging": false}, {"id": "T_HBM", "name": "HBM Demand", "type": "Theme", "ticker": "", "layer": 0, "layer_name": "Demand Driver / Theme", "segment": "Demand driver", "role": "Each accelerator needs stacks of HBM", "bscore": 0, "breach": 0, "balts": 0, "bconstr": 0, "bwhy": "", "bemerging": false}, {"id": "T_COWOS", "name": "CoWoS Advanced Packaging", "type": "Theme", "ticker": "", "layer": 0, "layer_name": "Demand Driver / Theme", "segment": "Demand driver", "role": "The packaging bottleneck for AI chips", "bscore": 0, "breach": 0, "balts": 0, "bconstr": 0, "bwhy": "", "bemerging": false}, {"id": "T_POWER", "name": "Datacenter Power Demand", "type": "Theme", "ticker": "", "layer": 0, "layer_name": "Demand Driver / Theme", "segment": "Demand driver", "role": "AI is reshaping power markets", "bscore": 0, "breach": 0, "balts": 0, "bconstr": 0, "bwhy": "", "bemerging": false}, {"id": "T_COOL", "name": "Liquid Cooling Adoption", "type": "Theme", "ticker": "", "layer": 0, "layer_name": "Demand Driver / Theme", "segment": "Demand driver", "role": "Higher TDP chips force liquid cooling", "bscore": 0, "breach": 0, "balts": 0, "bconstr": 0, "bwhy": "", "bemerging": false}, {"id": "T_NET", "name": "Optical & Networking Buildout", "type": "Theme", "ticker": "", "layer": 0, "layer_name": "Demand Driver / Theme", "segment": "Demand driver", "role": "Clusters need huge optical/switch bandwidth", "bscore": 0, "breach": 0, "balts": 0, "bconstr": 0, "bwhy": "", "bemerging": false}, {"id": "T_CPO", "name": "Co-Packaged Optics (CPO)", "type": "Theme", "ticker": "", "layer": 0, "layer_name": "Demand Driver / Theme", "segment": "Demand driver", "role": "Shift from pluggable optics & copper to co-packaged optics in AI networking", "bscore": 0, "breach": 0, "balts": 0, "bconstr": 0, "bwhy": "", "bemerging": false}, {"id": "T_CHINA", "name": "China Indigenous AI Buildout", "type": "Theme", "ticker": "", "layer": 0, "layer_name": "Demand Driver / Theme", "segment": "Demand driver", "role": "Localization of China's AI chips, equipment, and memory", "bscore": 0, "breach": 0, "balts": 0, "bconstr": 0, "bwhy": "", "bemerging": false}, {"id": "CRDO", "name": "Credo Technology", "type": "Company", "ticker": "CRDO", "layer": 7, "layer_name": "Optical & Interconnect", "segment": "Interconnect / SerDes", "role": "High-speed connectivity for AI clusters", "bscore": 0.0, "breach": 0, "balts": 0, "bconstr": 0.0, "bwhy": "", "bemerging": false}, {"id": "ALPHAWAVE", "name": "Alphawave Semi", "type": "Company", "ticker": "AWE.L", "layer": 7, "layer_name": "Optical & Interconnect", "segment": "Interconnect / SerDes IP", "role": "SerDes IP licensed into AI & networking silicon", "bscore": 0.0, "breach": 0, "balts": 0, "bconstr": 0.0, "bwhy": "", "bemerging": false}, {"id": "FURUKAWA", "name": "Furukawa Electric", "type": "Company", "ticker": "5801.T", "layer": 7, "layer_name": "Optical & Interconnect", "segment": "Optical fiber & cable", "role": "Optical fiber, cable & ferrules for datacenters", "bscore": 0.0, "breach": 0, "balts": 0, "bconstr": 0.0, "bwhy": "", "bemerging": false}, {"id": "TXN", "name": "Texas Instruments", "type": "Company", "ticker": "TXN", "layer": 13, "layer_name": "Power & Cooling Equipment", "segment": "Analog / power", "role": "Broad power-management beneficiary of AI rack power", "bscore": 0.0, "breach": 0, "balts": 0, "bconstr": 0.0, "bwhy": "", "bemerging": true}, {"id": "ADI", "name": "Analog Devices", "type": "Company", "ticker": "ADI", "layer": 13, "layer_name": "Power & Cooling Equipment", "segment": "Analog / power", "role": "Datacenter power & signal chain for AI racks", "bscore": 0.0, "breach": 0, "balts": 0, "bconstr": 0.0, "bwhy": "", "bemerging": true}, {"id": "NAURA", "name": "Naura Technology", "type": "Company", "ticker": "002371.SZ", "layer": 2, "layer_name": "Semiconductor Equipment", "segment": "Semiconductor equipment", "role": "Leading domestic China wafer-fab-equipment supplier", "bscore": 5.1, "breach": 1, "balts": 1, "bconstr": 0.0, "bwhy": "", "bemerging": true}, {"id": "AMEC", "name": "Advanced Micro-Fabrication (AMEC)", "type": "Company", "ticker": "688012.SH", "layer": 2, "layer_name": "Semiconductor Equipment", "segment": "Semiconductor equipment", "role": "China etch-tool leader for domestic fabs", "bscore": 5.1, "breach": 1, "balts": 1, "bconstr": 0.0, "bwhy": "", "bemerging": true}, {"id": "ILUVATAR", "name": "Iluvatar CoreX", "type": "Company", "ticker": "private", "layer": 4, "layer_name": "Chip Designers (Accelerators/Networking)", "segment": "AI accelerators", "role": "Domestic AI GPU targeting training workloads", "bscore": 0.0, "breach": 0, "balts": 1, "bconstr": 0.0, "bwhy": "", "bemerging": true}, {"id": "METAX", "name": "MetaX", "type": "Company", "ticker": "private", "layer": 4, "layer_name": "Chip Designers (Accelerators/Networking)", "segment": "AI accelerators", "role": "Domestic China AI GPU challenger", "bscore": 0.0, "breach": 0, "balts": 1, "bconstr": 0.0, "bwhy": "", "bemerging": true}, {"id": "CXMT", "name": "ChangXin Memory (CXMT)", "type": "Company", "ticker": "private", "layer": 5, "layer_name": "Memory (HBM/DRAM)", "segment": "Memory", "role": "China's domestic DRAM/HBM hope (IPO pending)", "bscore": 0.0, "breach": 0, "balts": 0, "bconstr": 0.25, "bwhy": "hbm", "bemerging": true}, {"id": "YMTC", "name": "Yangtze Memory (YMTC)", "type": "Company", "ticker": "private", "layer": 5, "layer_name": "Memory (HBM/DRAM)", "segment": "Memory", "role": "China's domestic NAND leader", "bscore": 0.0, "breach": 0, "balts": 0, "bconstr": 0.0, "bwhy": "", "bemerging": true}, {"id": "LUXSHARE", "name": "Luxshare Precision", "type": "Company", "ticker": "002475.SZ", "layer": 7, "layer_name": "Optical & Interconnect", "segment": "Connectors / cabling", "role": "High-speed interconnect & assembly for AI servers", "bscore": 0.0, "breach": 0, "balts": 0, "bconstr": 0.0, "bwhy": "", "bemerging": true}, {"id": "BX", "name": "Blackstone", "type": "Company", "ticker": "BX", "layer": 12, "layer_name": "Datacenter Infrastructure (REITs)", "segment": "Datacenter capital", "role": "Finances & builds AI datacenter capacity", "bscore": 21.1, "breach": 2, "balts": 0, "bconstr": 0.75, "bwhy": "scarce", "bemerging": false}, {"id": "T_GLASS", "name": "Glass Core Substrate", "type": "Theme", "ticker": "", "layer": 0, "layer_name": "Demand Driver / Theme", "segment": "Emerging advanced packaging", "role": "Emerging substrate tech replacing organic substrates for high-layer-count AI GPU/ASIC packaging", "bscore": 0, "breach": 0, "balts": 0, "bconstr": 0, "bwhy": "", "bemerging": false}, {"id": "BOE", "name": "BOE Technology", "type": "Company", "ticker": "BOE", "layer": 6, "layer_name": "Advanced Packaging / OSAT", "segment": "Glass core substrate", "role": "Developing glass-core substrate; mass-production target 2028 Q2, synced to domestic core customer", "bscore": 10.9, "breach": 1, "balts": 0, "bconstr": 0.0, "bwhy": "", "bemerging": false}, {"id": "GLW", "name": "Corning", "type": "Company", "ticker": "GLW", "layer": 6, "layer_name": "Advanced Packaging / OSAT", "segment": "Specialty glass / substrate material", "role": "Leading/preferred glass supplier supporting 11-layer glass-core substrate stacking", "bscore": 63.2, "breach": 17, "balts": 0, "bconstr": 0.5, "bwhy": "gatekeeper", "bemerging": false}, {"id": "INNOLUX", "name": "Innolux", "type": "Company", "ticker": "3481.TW", "layer": 6, "layer_name": "Advanced Packaging / OSAT", "segment": "Glass core substrate", "role": "Glass-substrate maker (~7 layers) targeting NVIDIA end-2027 mass production", "bscore": 40.7, "breach": 14, "balts": 0, "bconstr": 0.0, "bwhy": "", "bemerging": false}, {"id": "AUO", "name": "AUO Corporation", "type": "Company", "ticker": "2409.TW", "layer": 6, "layer_name": "Advanced Packaging / OSAT", "segment": "Glass substrate / CPO", "role": "Working with NVIDIA on CPO; early-stage glass-substrate efforts", "bscore": 34.6, "breach": 14, "balts": 0, "bconstr": 0.0, "bwhy": "", "bemerging": false}, {"id": "HUAWEI", "name": "Huawei", "type": "Company", "ticker": "", "layer": 4, "layer_name": "Chip Designers (Accelerators/Networking)", "segment": "AI accelerators (Ascend)", "role": "Domestic core customer driving China glass-substrate and indigenous AI demand", "bscore": 0.0, "breach": 0, "balts": 0, "bconstr": 0.0, "bwhy": "", "bemerging": false}, {"id": "TER", "name": "Teradyne", "type": "Company", "ticker": "TER", "layer": 2, "layer_name": "Semiconductor Equipment", "segment": "ATE / semiconductor test", "role": "Test/ATE vendor with growing exposure to NVDA networking silicon test", "bscore": 0.0, "breach": 0, "balts": 0, "bconstr": 0.0, "bwhy": "", "bemerging": true}, {"id": "XLIGHT", "name": "XLight", "type": "Company", "ticker": "", "layer": 2, "layer_name": "Semiconductor Equipment", "segment": "EUV lithography (development)", "role": "US govt-backed EUV lithography startup aiming to develop domestic EUV; 2028 prototype milestone", "bscore": 0.0, "breach": 0, "balts": 1, "bconstr": 0.25, "bwhy": "euv", "bemerging": false}, {"id": "NBIS", "name": "Nebius", "type": "Company", "ticker": "NBIS", "layer": 10, "layer_name": "Hyperscalers / Cloud", "segment": "Neocloud (GPU cloud)", "role": "Neocloud renting NVIDIA GPU capacity for AI training/inference.", "bscore": 0.0, "breach": 0, "balts": 0, "bconstr": 0.25, "bwhy": "capacity", "bemerging": false}, {"id": "CRWV", "name": "CoreWeave", "type": "Company", "ticker": "CRWV", "layer": 10, "layer_name": "Hyperscalers / Cloud", "segment": "Neocloud (GPU cloud)", "role": "Largest pure-play AI neocloud; rents NVIDIA GPU compute to AI labs.", "bscore": 0.0, "breach": 0, "balts": 0, "bconstr": 0.0, "bwhy": "", "bemerging": false}, {"id": "IREN", "name": "IREN", "type": "Company", "ticker": "IREN", "layer": 10, "layer_name": "Hyperscalers / Cloud", "segment": "Neocloud (AI + BTC)", "role": "Bitcoin miner pivoting to NVIDIA-based AI cloud and datacenters.", "bscore": 0.0, "breach": 0, "balts": 0, "bconstr": 0.0, "bwhy": "", "bemerging": false}, {"id": "CORZ", "name": "Core Scientific", "type": "Company", "ticker": "CORZ", "layer": 12, "layer_name": "Datacenter Infrastructure (REITs)", "segment": "HPC colocation / hosting", "role": "Hosts AI/HPC compute; major CoreWeave capacity provider.", "bscore": 8.8, "breach": 1, "balts": 1, "bconstr": 0.25, "bwhy": "capacity", "bemerging": false}, {"id": "APLD", "name": "Applied Digital", "type": "Company", "ticker": "APLD", "layer": 12, "layer_name": "Datacenter Infrastructure (REITs)", "segment": "AI datacenters", "role": "Builds and leases AI datacenter capacity to neoclouds.", "bscore": 8.8, "breach": 1, "balts": 1, "bconstr": 0.25, "bwhy": "capacity", "bemerging": false}, {"id": "BE", "name": "Bloom Energy", "type": "Company", "ticker": "BE", "layer": 13, "layer_name": "Power & Cooling Equipment", "segment": "On-site power (fuel cells)", "role": "On-site fuel-cell power for datacenters (tweeted as $BLOOM).", "bscore": 16.0, "breach": 3, "balts": 0, "bconstr": 0.0, "bwhy": "", "bemerging": false}, {"id": "SNDK", "name": "Sandisk", "type": "Company", "ticker": "SNDK", "layer": 5, "layer_name": "Memory (HBM/DRAM)", "segment": "NAND flash storage", "role": "NAND/storage supplier benefiting from AI data growth.", "bscore": 0.0, "breach": 0, "balts": 0, "bconstr": 0.0, "bwhy": "", "bemerging": false}, {"id": "IBM", "name": "IBM", "type": "Company", "ticker": "IBM", "layer": 4, "layer_name": "Chip Designers (Accelerators/Networking)", "segment": "Quantum & systems", "role": "Quantum chip & enterprise AI systems; US federal quantum-foundry award.", "bscore": 0.0, "breach": 0, "balts": 0, "bconstr": 0.0, "bwhy": "", "bemerging": true}, {"id": "AAOI", "name": "Applied Optoelectronics", "type": "Company", "ticker": "AAOI", "layer": 7, "layer_name": "Optical & Interconnect", "segment": "Optical transceivers", "role": "Vertically integrated transceiver maker; US-domestic supply for hyperscalers.", "bscore": 8.9, "breach": 2, "balts": 1, "bconstr": 0.0, "bwhy": "", "bemerging": false}, {"id": "XFAB", "name": "X-FAB", "type": "Company", "ticker": "XFAB", "layer": 3, "layer_name": "Foundry / Manufacturing", "segment": "Specialty / SiPh foundry", "role": "Specialty foundry for silicon photonics used in optical interconnect.", "bscore": 0.0, "breach": 0, "balts": 0, "bconstr": 0.0, "bwhy": "", "bemerging": true}, {"id": "POET", "name": "POET Technologies", "type": "Company", "ticker": "POET", "layer": 7, "layer_name": "Optical & Interconnect", "segment": "Photonic integration", "role": "Photonic integration platform for CPO / optical engines.", "bscore": 0.0, "breach": 0, "balts": 0, "bconstr": 0.0, "bwhy": "", "bemerging": false}, {"id": "CLS", "name": "Celestica", "type": "Company", "ticker": "CLS", "layer": 9, "layer_name": "Servers & ODM/OEM", "segment": "EMS / contract mfg", "role": "Contract manufacturer of networking/AI hardware for hyperscalers.", "bscore": 15.5, "breach": 2, "balts": 0, "bconstr": 0.0, "bwhy": "", "bemerging": false}];
+var EDGES = [{"s": "SNPS", "r": "provides EDA tools to", "t": "NVDA", "w": 3}, {"s": "SNPS", "r": "provides EDA tools to", "t": "AMD", "w": 3}, {"s": "SNPS", "r": "provides EDA tools to", "t": "AVGO", "w": 2}, {"s": "CDNS", "r": "provides EDA tools to", "t": "NVDA", "w": 3}, {"s": "CDNS", "r": "provides EDA tools to", "t": "AMD", "w": 2}, {"s": "CDNS", "r": "provides EDA tools to", "t": "MRVL", "w": 2}, {"s": "ARM", "r": "licenses CPU IP to", "t": "NVDA", "w": 2}, {"s": "ARM", "r": "licenses CPU IP to", "t": "AMZN", "w": 3}, {"s": "ARM", "r": "licenses CPU IP to", "t": "MSFT", "w": 2}, {"s": "ASML", "r": "supplies EUV lithography to", "t": "TSM", "w": 3}, {"s": "ASML", "r": "supplies EUV lithography to", "t": "INTC", "w": 2}, {"s": "ASML", "r": "supplies EUV lithography to", "t": "SAMSUNG", "w": 2}, {"s": "AMAT", "r": "supplies fab equipment to", "t": "TSM", "w": 3}, {"s": "AMAT", "r": "supplies fab equipment to", "t": "INTC", "w": 2}, {"s": "LRCX", "r": "supplies etch/deposition to", "t": "TSM", "w": 3}, {"s": "LRCX", "r": "supplies memory equipment to", "t": "MU", "w": 2}, {"s": "LRCX", "r": "supplies memory equipment to", "t": "SKHYNIX", "w": 2}, {"s": "KLAC", "r": "supplies inspection tools to", "t": "TSM", "w": 2}, {"s": "TSM", "r": "manufactures chips for", "t": "NVDA", "w": 3}, {"s": "TSM", "r": "manufactures chips for", "t": "AMD", "w": 3}, {"s": "TSM", "r": "manufactures chips for", "t": "AVGO", "w": 3}, {"s": "TSM", "r": "manufactures chips for", "t": "MRVL", "w": 2}, {"s": "TSM", "r": "manufactures chips for", "t": "GOOGL", "w": 3}, {"s": "TSM", "r": "manufactures chips for", "t": "AMZN", "w": 2}, {"s": "TSM", "r": "manufactures chips for", "t": "MSFT", "w": 2}, {"s": "TSM", "r": "provides CoWoS packaging to", "t": "NVDA", "w": 3}, {"s": "TSM", "r": "provides CoWoS packaging to", "t": "AMD", "w": 2}, {"s": "INTC", "r": "competes with", "t": "TSM", "w": 2}, {"s": "SKHYNIX", "r": "supplies HBM to", "t": "NVDA", "w": 3}, {"s": "MU", "r": "supplies HBM/DRAM to", "t": "NVDA", "w": 2}, {"s": "MU", "r": "supplies HBM to", "t": "AMD", "w": 2}, {"s": "SAMSUNG", "r": "supplies HBM/DRAM to", "t": "NVDA", "w": 2}, {"s": "AMKR", "r": "provides OSAT packaging to", "t": "NVDA", "w": 2}, {"s": "AMKR", "r": "provides OSAT packaging to", "t": "AMD", "w": 2}, {"s": "AVGO", "r": "supplies networking/ASIC chips to", "t": "ANET", "w": 3}, {"s": "AVGO", "r": "co-designs custom silicon with", "t": "GOOGL", "w": 3}, {"s": "AVGO", "r": "co-designs custom silicon with", "t": "META", "w": 2}, {"s": "MRVL", "r": "supplies optical DSP/silicon to", "t": "AMZN", "w": 2}, {"s": "MRVL", "r": "supplies custom silicon to", "t": "MSFT", "w": 2}, {"s": "COHR", "r": "supplies optical transceivers to", "t": "NVDA", "w": 2}, {"s": "COHR", "r": "supplies optical components to", "t": "CSCO", "w": 2}, {"s": "LITE", "r": "supplies optical components to", "t": "ANET", "w": 2}, {"s": "FN", "r": "manufactures optical modules for", "t": "COHR", "w": 2}, {"s": "FN", "r": "manufactures optical modules for", "t": "CSCO", "w": 2}, {"s": "FN", "r": "manufactures optical modules for", "t": "NVDA", "w": 2}, {"s": "ANET", "r": "supplies switches to", "t": "MSFT", "w": 3}, {"s": "ANET", "r": "supplies switches to", "t": "META", "w": 3}, {"s": "CSCO", "r": "supplies networking to", "t": "ORCL", "w": 2}, {"s": "NVDA", "r": "sells GPUs to", "t": "MSFT", "w": 3}, {"s": "NVDA", "r": "sells GPUs to", "t": "AMZN", "w": 3}, {"s": "NVDA", "r": "sells GPUs to", "t": "GOOGL", "w": 3}, {"s": "NVDA", "r": "sells GPUs to", "t": "META", "w": 3}, {"s": "NVDA", "r": "sells GPUs to", "t": "ORCL", "w": 3}, {"s": "NVDA", "r": "sells GPUs to", "t": "SMCI", "w": 3}, {"s": "NVDA", "r": "sells GPUs to", "t": "DELL", "w": 2}, {"s": "NVDA", "r": "sells GPUs to", "t": "HPE", "w": 2}, {"s": "AMD", "r": "sells GPUs to", "t": "MSFT", "w": 2}, {"s": "AMD", "r": "sells GPUs to", "t": "META", "w": 2}, {"s": "AMD", "r": "sells GPUs to", "t": "ORCL", "w": 2}, {"s": "SMCI", "r": "builds AI servers for", "t": "META", "w": 2}, {"s": "SMCI", "r": "builds AI servers for", "t": "ORCL", "w": 2}, {"s": "DELL", "r": "builds AI servers for", "t": "MSFT", "w": 2}, {"s": "FOXCONN", "r": "assembles AI systems for", "t": "NVDA", "w": 3}, {"s": "FOXCONN", "r": "assembles servers for", "t": "MSFT", "w": 2}, {"s": "OPENAI", "r": "runs compute on", "t": "MSFT", "w": 3}, {"s": "ANTHROPIC", "r": "runs compute on", "t": "AMZN", "w": 3}, {"s": "ANTHROPIC", "r": "runs compute on", "t": "GOOGL", "w": 2}, {"s": "OPENAI", "r": "drives GPU demand for", "t": "NVDA", "w": 2}, {"s": "EQIX", "r": "provides datacenter capacity to", "t": "MSFT", "w": 2}, {"s": "DLR", "r": "provides datacenter capacity to", "t": "ORCL", "w": 2}, {"s": "VRT", "r": "supplies power & cooling to", "t": "MSFT", "w": 2}, {"s": "VRT", "r": "supplies power & cooling to", "t": "EQIX", "w": 2}, {"s": "VRT", "r": "supplies power & cooling to", "t": "SMCI", "w": 2}, {"s": "ETN", "r": "supplies electrical equipment to", "t": "EQIX", "w": 2}, {"s": "ETN", "r": "supplies electrical equipment to", "t": "DLR", "w": 2}, {"s": "CEG", "r": "supplies nuclear power to", "t": "MSFT", "w": 3}, {"s": "VST", "r": "supplies power to", "t": "DLR", "w": 1}, {"s": "GEV", "r": "supplies turbines/grid to", "t": "CEG", "w": 2}, {"s": "GEV", "r": "supplies grid equipment to", "t": "VST", "w": 2}, {"s": "NVDA", "r": "benefits from", "t": "T_TRAIN", "w": 3}, {"s": "AMD", "r": "benefits from", "t": "T_TRAIN", "w": 2}, {"s": "TSM", "r": "benefits from", "t": "T_TRAIN", "w": 3}, {"s": "AVGO", "r": "benefits from", "t": "T_TRAIN", "w": 2}, {"s": "SMCI", "r": "benefits from", "t": "T_TRAIN", "w": 2}, {"s": "VRT", "r": "benefits from", "t": "T_TRAIN", "w": 2}, {"s": "NVDA", "r": "benefits from", "t": "T_INFER", "w": 2}, {"s": "AMD", "r": "benefits from", "t": "T_INFER", "w": 2}, {"s": "GOOGL", "r": "benefits from", "t": "T_INFER", "w": 2}, {"s": "AMZN", "r": "benefits from", "t": "T_INFER", "w": 2}, {"s": "AVGO", "r": "benefits from", "t": "T_INFER", "w": 2}, {"s": "SKHYNIX", "r": "benefits from", "t": "T_HBM", "w": 3}, {"s": "MU", "r": "benefits from", "t": "T_HBM", "w": 3}, {"s": "SAMSUNG", "r": "benefits from", "t": "T_HBM", "w": 2}, {"s": "NVDA", "r": "drives demand for", "t": "T_HBM", "w": 2}, {"s": "TSM", "r": "benefits from", "t": "T_COWOS", "w": 3}, {"s": "AMKR", "r": "benefits from", "t": "T_COWOS", "w": 2}, {"s": "NVDA", "r": "drives demand for", "t": "T_COWOS", "w": 2}, {"s": "CEG", "r": "benefits from", "t": "T_POWER", "w": 3}, {"s": "VST", "r": "benefits from", "t": "T_POWER", "w": 3}, {"s": "GEV", "r": "benefits from", "t": "T_POWER", "w": 2}, {"s": "ETN", "r": "benefits from", "t": "T_POWER", "w": 2}, {"s": "VRT", "r": "benefits from", "t": "T_POWER", "w": 2}, {"s": "EQIX", "r": "benefits from", "t": "T_POWER", "w": 2}, {"s": "DLR", "r": "benefits from", "t": "T_POWER", "w": 2}, {"s": "VRT", "r": "benefits from", "t": "T_COOL", "w": 3}, {"s": "COHR", "r": "benefits from", "t": "T_NET", "w": 3}, {"s": "LITE", "r": "benefits from", "t": "T_NET", "w": 2}, {"s": "FN", "r": "benefits from", "t": "T_NET", "w": 2}, {"s": "ANET", "r": "benefits from", "t": "T_NET", "w": 3}, {"s": "AVGO", "r": "benefits from", "t": "T_NET", "w": 2}, {"s": "MRVL", "r": "benefits from", "t": "T_NET", "w": 2}, {"s": "AVGO", "r": "benefits from", "t": "T_CPO", "w": 3}, {"s": "MRVL", "r": "benefits from", "t": "T_CPO", "w": 2}, {"s": "CRDO", "r": "benefits from", "t": "T_NET", "w": 3}, {"s": "CRDO", "r": "benefits from", "t": "T_CPO", "w": 2}, {"s": "ALPHAWAVE", "r": "benefits from", "t": "T_NET", "w": 2}, {"s": "COHR", "r": "benefits from", "t": "T_CPO", "w": 2}, {"s": "LITE", "r": "benefits from", "t": "T_CPO", "w": 2}, {"s": "FN", "r": "benefits from", "t": "T_CPO", "w": 2}, {"s": "NVDA", "r": "drives demand for", "t": "T_CPO", "w": 2}, {"s": "SNPS", "r": "benefits from", "t": "T_NET", "w": 1}, {"s": "CDNS", "r": "benefits from", "t": "T_NET", "w": 1}, {"s": "FURUKAWA", "r": "benefits from", "t": "T_NET", "w": 2}, {"s": "FURUKAWA", "r": "benefits from", "t": "T_CPO", "w": 1}, {"s": "NAURA", "r": "benefits from", "t": "T_CHINA", "w": 3}, {"s": "AMEC", "r": "benefits from", "t": "T_CHINA", "w": 3}, {"s": "NAURA", "r": "supplies fab equipment to", "t": "ILUVATAR", "w": 2}, {"s": "AMEC", "r": "supplies fab equipment to", "t": "ILUVATAR", "w": 2}, {"s": "ILUVATAR", "r": "benefits from", "t": "T_CHINA", "w": 3}, {"s": "ILUVATAR", "r": "benefits from", "t": "T_TRAIN", "w": 2}, {"s": "METAX", "r": "benefits from", "t": "T_CHINA", "w": 2}, {"s": "ILUVATAR", "r": "competes with", "t": "NVDA", "w": 2}, {"s": "METAX", "r": "competes with", "t": "NVDA", "w": 1}, {"s": "CXMT", "r": "benefits from", "t": "T_CHINA", "w": 2}, {"s": "CXMT", "r": "benefits from", "t": "T_HBM", "w": 1}, {"s": "YMTC", "r": "benefits from", "t": "T_CHINA", "w": 2}, {"s": "LUXSHARE", "r": "benefits from", "t": "T_NET", "w": 2}, {"s": "LUXSHARE", "r": "benefits from", "t": "T_CHINA", "w": 2}, {"s": "MU", "r": "supplies memory to", "t": "MSFT", "w": 2}, {"s": "MU", "r": "supplies memory to", "t": "AMZN", "w": 2}, {"s": "ANTHROPIC", "r": "benefits from", "t": "T_INFER", "w": 3}, {"s": "OPENAI", "r": "benefits from", "t": "T_INFER", "w": 3}, {"s": "BX", "r": "partners with", "t": "GOOGL", "w": 2}, {"s": "BX", "r": "benefits from", "t": "T_INFER", "w": 1}, {"s": "TXN", "r": "benefits from", "t": "T_POWER", "w": 3}, {"s": "ADI", "r": "benefits from", "t": "T_POWER", "w": 2}, {"s": "ASML", "r": "benefits from", "t": "T_TRAIN", "w": 3}, {"s": "XLIGHT", "r": "competes with", "t": "ASML", "w": 1}, {"s": "DELL", "r": "benefits from", "t": "T_TRAIN", "w": 3}, {"s": "TER", "r": "benefits from", "t": "T_NET", "w": 1}, {"s": "GLW", "r": "supplies glass to", "t": "BOE", "w": 2}, {"s": "GLW", "r": "supplies glass to", "t": "INNOLUX", "w": 1}, {"s": "BOE", "r": "supplies glass core substrates to", "t": "HUAWEI", "w": 2}, {"s": "INNOLUX", "r": "supplies glass core substrates to", "t": "NVDA", "w": 2}, {"s": "AUO", "r": "co-designs custom silicon with", "t": "NVDA", "w": 1}, {"s": "BOE", "r": "benefits from", "t": "T_GLASS", "w": 3}, {"s": "INNOLUX", "r": "benefits from", "t": "T_GLASS", "w": 2}, {"s": "GLW", "r": "benefits from", "t": "T_GLASS", "w": 2}, {"s": "INTC", "r": "benefits from", "t": "T_GLASS", "w": 2}, {"s": "AUO", "r": "benefits from", "t": "T_GLASS", "w": 1}, {"s": "NVDA", "r": "drives demand for", "t": "T_GLASS", "w": 2}, {"s": "NVDA", "r": "sells GPUs to", "t": "NBIS", "w": 3}, {"s": "NBIS", "r": "benefits from", "t": "T_TRAIN", "w": 3}, {"s": "NBIS", "r": "benefits from", "t": "T_INFER", "w": 2}, {"s": "NVDA", "r": "sells GPUs to", "t": "CRWV", "w": 3}, {"s": "CRWV", "r": "benefits from", "t": "T_TRAIN", "w": 3}, {"s": "CRWV", "r": "benefits from", "t": "T_INFER", "w": 3}, {"s": "CORZ", "r": "provides datacenter capacity to", "t": "CRWV", "w": 3}, {"s": "CORZ", "r": "benefits from", "t": "T_POWER", "w": 2}, {"s": "APLD", "r": "provides datacenter capacity to", "t": "CRWV", "w": 2}, {"s": "APLD", "r": "benefits from", "t": "T_POWER", "w": 2}, {"s": "NVDA", "r": "sells GPUs to", "t": "IREN", "w": 2}, {"s": "IREN", "r": "benefits from", "t": "T_INFER", "w": 2}, {"s": "IREN", "r": "benefits from", "t": "T_POWER", "w": 2}, {"s": "BE", "r": "supplies on-site fuel-cell power to", "t": "EQIX", "w": 2}, {"s": "BE", "r": "benefits from", "t": "T_POWER", "w": 3}, {"s": "SNDK", "r": "benefits from", "t": "T_INFER", "w": 2}, {"s": "IBM", "r": "benefits from", "t": "T_INFER", "w": 1}, {"s": "IBM", "r": "benefits from", "t": "T_TRAIN", "w": 1}, {"s": "AAOI", "r": "supplies optical transceivers to", "t": "AMZN", "w": 2}, {"s": "AAOI", "r": "benefits from", "t": "T_NET", "w": 3}, {"s": "AAOI", "r": "benefits from", "t": "T_CPO", "w": 2}, {"s": "XFAB", "r": "benefits from", "t": "T_CPO", "w": 2}, {"s": "XFAB", "r": "benefits from", "t": "T_NET", "w": 2}, {"s": "POET", "r": "benefits from", "t": "T_CPO", "w": 2}, {"s": "POET", "r": "benefits from", "t": "T_NET", "w": 2}, {"s": "CLS", "r": "manufactures networking/server hardware for", "t": "AMZN", "w": 2}, {"s": "CLS", "r": "benefits from", "t": "T_NET", "w": 2}, {"s": "CLS", "r": "benefits from", "t": "T_TRAIN", "w": 2}];
+var LCOLOR = {"1": "#7c3aed", "2": "#6d28d9", "3": "#2563eb", "4": "#059669", "5": "#0891b2", "6": "#0d9488", "7": "#0284c7", "8": "#4f46e5", "9": "#d97706", "10": "#dc2626", "11": "#db2777", "12": "#9333ea", "13": "#ea580c", "14": "#ca8a04", "0": "#475569"};
+var LNAME = {"1": "EDA & IP", "2": "Semiconductor Equipment", "3": "Foundry / Manufacturing", "4": "Chip Designers (Accelerators/Networking)", "5": "Memory (HBM/DRAM)", "6": "Advanced Packaging / OSAT", "7": "Optical & Interconnect", "8": "Networking Systems", "9": "Servers & ODM/OEM", "10": "Hyperscalers / Cloud", "11": "AI Labs / Model Developers", "12": "Datacenter Infrastructure (REITs)", "13": "Power & Cooling Equipment", "14": "Power Generation / Utilities", "0": "Demand Driver / Theme"};
+
+const cv = document.getElementById('cv'), ctx = cv.getContext('2d');
+const tip = document.getElementById('tip'), detail = document.getElementById('detail');
+let W=0,H=0,DPR=Math.max(1,window.devicePixelRatio||1);
+let view={x:0,y:0,k:1};
+
+const byId={}; NODES.forEach(n=>byId[n.id]=n);
+const deg={}; NODES.forEach(n=>deg[n.id]=0);
+EDGES.forEach(e=>{deg[e.s]++;deg[e.t]++;});
+const adj={}; NODES.forEach(n=>adj[n.id]=new Set());
+EDGES.forEach(e=>{adj[e.s].add(e.t);adj[e.t].add(e.s);});
+
+const layersPresent=[...new Set(NODES.filter(n=>n.layer>0).map(n=>n.layer))].sort((a,b)=>a-b);
+const layerOff=new Set();
+let showLabels=true, showThemes=true, focus=null, hover=null, searchHit=new Set();
+
+let catSeeds=new Set(), catPol=1, catKind='demand', catImpact={}, catBest={}, catActive=false, catMax=1, CATLINKS=null;
+function impactColor(v){
+  if(Math.abs(v)<0.04) return '#39435c';
+  const t=Math.min(1,Math.abs(v)/catMax);
+  return 'hsl('+(v>0?150:4)+',72%,'+Math.round(62-t*22)+'%)';
+}
+
+function resize(){
+  W=cv.clientWidth;H=cv.clientHeight;
+  cv.width=W*DPR;cv.height=H*DPR;ctx.setTransform(DPR,0,0,DPR,0,0);
+}
+window.addEventListener('resize',resize);
+
+const maxL=14, padX=70;
+NODES.forEach(n=>{
+  const lx = n.layer>0 ? padX + (n.layer-0.5)/maxL*(900-2*padX) : 450;
+  n.x = lx + (Math.random()-.5)*40;
+  n.y = (n.layer===0? 560 : 90 + Math.random()*420);
+  n.vx=0;n.vy=0;
+  n.r = 5 + Math.sqrt(deg[n.id])*2.4;
+});
+
+let alpha=1.0;
+function tick(){
+  const cy=320;
+  for(let i=0;i<NODES.length;i++){
+    const a=NODES[i];
+    for(let j=i+1;j<NODES.length;j++){
+      const b=NODES[j];
+      let dx=a.x-b.x, dy=a.y-b.y, d2=dx*dx+dy*dy+0.01;
+      let f=2600/d2;
+      let d=Math.sqrt(d2); dx/=d;dy/=d;
+      a.vx+=dx*f*alpha; a.vy+=dy*f*alpha;
+      b.vx-=dx*f*alpha; b.vy-=dy*f*alpha;
+    }
+  }
+  EDGES.forEach(e=>{
+    const a=byId[e.s], b=byId[e.t];
+    let dx=b.x-a.x, dy=b.y-a.y, d=Math.sqrt(dx*dx+dy*dy)+.01;
+    const L=90; let f=(d-L)*0.012*alpha;
+    dx/=d;dy/=d;
+    a.vx+=dx*f; a.vy+=dy*f; b.vx-=dx*f; b.vy-=dy*f;
+  });
+  NODES.forEach(n=>{
+    if(n.layer===0){
+      let sx=0,c=0; adj[n.id].forEach(t=>{sx+=byId[t].x;c++;});
+      if(c){const tx=sx/c; n.vx+=(tx-n.x)*0.02*alpha;}
+      n.vy+=(560-n.y)*0.02*alpha;
+    } else {
+      const tx = padX + (n.layer-0.5)/maxL*(900-2*padX);
+      n.vx+=(tx-n.x)*0.03*alpha;
+      n.vy+=(cy-n.y)*0.0015*alpha;
+    }
+  });
+  NODES.forEach(n=>{ if(n===dragging) return;
+    n.x+=n.vx; n.y+=n.vy; n.vx*=0.86; n.vy*=0.86; });
+  alpha*=0.992; if(alpha<0.03) alpha=0.03;
+}
+
+function sx(x){return (x-450)*view.k + view.x + W/2;}
+function sy(y){return (y-320)*view.k + view.y + H/2;}
+function wx(px){return (px - view.x - W/2)/view.k + 450;}
+function wy(py){return (py - view.y - H/2)/view.k + 320;}
+
+function neighborsOf(id){const s=new Set([id]); adj[id].forEach(x=>s.add(x)); return s;}
+
+function draw(){
+  ctx.clearRect(0,0,W,H);
+  const active = focus? neighborsOf(focus.id) : (hover? neighborsOf(hover.id):null);
+  EDGES.forEach(e=>{
+    const a=byId[e.s], b=byId[e.t];
+    if(layerOff.has(a.layer)||layerOff.has(b.layer)) return;
+    const isTheme = a.layer===0||b.layer===0;
+    if(isTheme && !showThemes) return;
+    let on = !active || (active.has(e.s)&&active.has(e.t));
+    ctx.beginPath();
+    ctx.moveTo(sx(a.x),sy(a.y)); ctx.lineTo(sx(b.x),sy(b.y));
+    ctx.lineWidth = (on? (e.w*0.5+0.4):0.4);
+    ctx.strokeStyle = on ? (isTheme? 'rgba(148,164,200,.55)' : 'rgba(120,140,180,.45)')
+                         : 'rgba(80,95,130,.08)';
+    if(isTheme){ctx.setLineDash([4,4]);} else {ctx.setLineDash([]);}
+    ctx.stroke(); ctx.setLineDash([]);
+  });
+  NODES.forEach(n=>{
+    if(layerOff.has(n.layer)) return;
+    if(n.layer===0 && !showThemes) return;
+    let on = !active || active.has(n.id);
+    const hit = searchHit.size? searchHit.has(n.id):true;
+    const X=sx(n.x), Y=sy(n.y); let R=n.r*Math.sqrt(view.k); if(bottleneckOn){ R=(4+(n.bscore||0)/bMax*20)*Math.sqrt(view.k); }
+    if(catActive){ on = catSeeds.has(n.id) || Math.abs(catImpact[n.id]||0)>=0.04; }
+    else if(bottleneckOn){ on = n.layer>0 && (n.bscore||0)>0; }
+    ctx.globalAlpha = catActive ? (on?1:0.09) : (bottleneckOn ? (on?1:0.12) : ((on&&hit)?1:0.18));
+    ctx.beginPath();
+    if(n.layer===0){
+      ctx.moveTo(X,Y-R-1);ctx.lineTo(X+R+1,Y);ctx.lineTo(X,Y+R+1);ctx.lineTo(X-R-1,Y);ctx.closePath();
+    } else { ctx.arc(X,Y,R,0,7); }
+    ctx.fillStyle = catActive ? (catSeeds.has(n.id)? '#fde047' : impactColor(catImpact[n.id]||0))
+                              : bottleneckOn ? bottleColor(n) : (LCOLOR[n.layer]||'#888');
+    ctx.fill();
+    if((focus&&focus.id===n.id) || (catActive&&catSeeds.has(n.id))){ctx.lineWidth=2.5;ctx.strokeStyle='#fff';ctx.stroke();}
+    if(searchHit.has(n.id)){ctx.lineWidth=2.5;ctx.strokeStyle='#fde047';ctx.stroke();}
+    if(showLabels && (view.k>0.75 || deg[n.id]>=4 || (active&&active.has(n.id)) || (catActive&&on))){
+      ctx.globalAlpha=(on&&hit)?0.95:0.2;
+      ctx.fillStyle='#dce6ff';
+      ctx.font=(n.layer===0?'italic ':'')+ (deg[n.id]>=6?'600 ':'')+'11px -apple-system,Segoe UI,Arial';
+      ctx.textAlign='center';
+      ctx.fillText(n.name, X, Y+R+12);
+    }
+  });
+  ctx.globalAlpha=1;
+}
+
+function loop(){ tick(); draw(); requestAnimationFrame(loop); }
+
+let dragging=null, panning=false, last={x:0,y:0}, moved=false;
+function pick(px,py){
+  let best=null,bd=18;
+  for(const n of NODES){
+    if(layerOff.has(n.layer))continue;
+    if(n.layer===0&&!showThemes)continue;
+    const dx=sx(n.x)-px, dy=sy(n.y)-py, d=Math.hypot(dx,dy);
+    const R=n.r*Math.sqrt(view.k)+6;
+    if(d<R && d<bd){best=n;bd=d;}
+  }
+  return best;
+}
+cv.addEventListener('mousedown',e=>{
+  const n=pick(e.offsetX,e.offsetY); moved=false;
+  if(n){dragging=n;} else {panning=true; last={x:e.offsetX,y:e.offsetY};}
+});
+cv.addEventListener('mousemove',e=>{
+  if(dragging){
+    dragging.x=wx(e.offsetX); dragging.y=wy(e.offsetY); dragging.vx=0;dragging.vy=0;
+    alpha=Math.max(alpha,0.5); moved=true;
+  } else if(panning){
+    view.x+=e.offsetX-last.x; view.y+=e.offsetY-last.y; last={x:e.offsetX,y:e.offsetY}; moved=true;
+  } else {
+    const n=pick(e.offsetX,e.offsetY);
+    hover=n;
+    if(n){
+      tip.style.display='block';
+      tip.style.left=Math.min(e.offsetX+14,W-250)+'px';
+      tip.style.top=(e.offsetY+14)+'px';
+      let extra = catActive && (catImpact[n.id]!==undefined || catSeeds.has(n.id))
+        ? '<div class="t2">'+(catSeeds.has(n.id)?'SEED':((catImpact[n.id]>0?'benefits +':'hurt ')+(catImpact[n.id]||0).toFixed(2)))+'</div>' : '';
+      tip.innerHTML='<b>'+n.name+'</b>'+(n.ticker&&n.ticker!=='private'&&n.ticker!==''?' · '+n.ticker:'')+
+        '<div class="t2">'+n.layer_name+'</div><div class="t2">'+n.role+'</div>'+extra;
+    } else tip.style.display='none';
+  }
+});
+window.addEventListener('mouseup',e=>{
+  if(dragging&&!moved) selectNode(dragging);
+  else if(!dragging&&!moved&&panning) selectNode(null);
+  dragging=null;panning=false;
+});
+cv.addEventListener('wheel',e=>{
+  e.preventDefault();
+  const f=e.deltaY<0?1.12:0.89;
+  const mx=e.offsetX-W/2-view.x, my=e.offsetY-H/2-view.y;
+  view.x-= mx*(f-1); view.y-= my*(f-1);
+  view.k=Math.max(0.35,Math.min(3,view.k*f));
+},{passive:false});
+
+function selectNode(n){
+  focus=n;
+  if(catActive) return;
+  if(!n){ detail.innerHTML='<p style="color:var(--muted)">Click a node to inspect its relationships. '+
+    'Click a <i>diamond</i> (demand driver) to see exactly which companies benefit from it.<br><br>'+
+    'Or use <b style="color:#fde047">⚡ Catalyst mode</b>: click a node, hit “Set = selected”, choose Positive/Negative and Demand/Supply/Macro, then Run to trace chain effects.</p>'; return; }
+  const out=EDGES.filter(e=>e.s===n.id), inc=EDGES.filter(e=>e.t===n.id);
+  let h='<h2>'+n.name+'</h2>';
+  h+='<span class="tag">'+(n.ticker&&n.ticker!=='' ? n.ticker : 'private')+'</span>';
+  h+='<span class="tag">L'+(n.layer||'·')+' · '+n.layer_name+'</span>';
+  if(n.segment)h+='<span class="tag">'+n.segment+'</span>';
+  h+='<div class="role">'+n.role+'</div>';
+  if(out.length){h+='<h3>'+(n.type==='Theme'?'Drives demand for':'Supplies / sells / benefits →')+'</h3><ul>';
+    out.forEach(e=>{h+='<li><span class="rel">'+e.r+'</span> <b>'+byId[e.t].name+'</b></li>';});h+='</ul>';}
+  if(inc.length){h+='<h3>'+(n.type==='Theme'?'Beneficiaries (who gains)':'← Supplied / served / driven by')+'</h3><ul>';
+    inc.forEach(e=>{h+='<li><b>'+byId[e.s].name+'</b> <span class="rel">'+e.r+'</span></li>';});h+='</ul>';}
+  detail.innerHTML=h;
+}
+
+document.getElementById('search').addEventListener('input',e=>{
+  const q=e.target.value.trim().toLowerCase(); searchHit=new Set();
+  if(q) NODES.forEach(n=>{ if(n.name.toLowerCase().includes(q)||(n.ticker||'').toLowerCase().includes(q)) searchHit.add(n.id);});
+});
+function tg(id,cb){const el=document.getElementById(id);el.onclick=()=>{el.classList.toggle('on');cb(el.classList.contains('on'));};}
+tg('tLabels',v=>showLabels=v);
+tg('tThemes',v=>showThemes=v);
+document.getElementById('tReset').onclick=()=>{view={x:0,y:0,k:1};alpha=0.8;};
+
+const leg=document.getElementById('legend');
+[...layersPresent,0].forEach(L=>{
+  const row=document.createElement('div');row.className='row';
+  row.innerHTML='<span class="dot'+(L===0?' theme':'')+'" style="background:'+(LCOLOR[L])+'"></span>'+
+                '<span>'+(L===0?'':'L'+L+' — ')+LNAME[L]+'</span>';
+  row.onclick=()=>{ if(layerOff.has(L))layerOff.delete(L); else layerOff.add(L); row.classList.toggle('off'); };
+  leg.appendChild(row);
+});
+
+const CH_ACTIVE={demand:new Set(['demand','thematic','driver','compete']),
+  supply:new Set(['supply','thematic','compete']),
+  macro:new Set(['thematic','driver','demand','compete'])};
+function classifyRel(rel){rel=(rel||'').toLowerCase();
+  if(rel.includes('compete'))return'compete';
+  if(rel.includes('benefits from'))return'benefit';
+  if(rel.includes('drives')&&rel.includes('demand'))return'driver';
+  if(rel.includes('runs compute on'))return'compute';
+  return'supply';}
+function buildCatLinks(){
+  const L={}, push=(a,o)=>{(L[a]=L[a]||[]).push(o);};
+  EDGES.forEach(e=>{ const s=e.s,t=e.t,w=e.w||2,f=w/3,ch=classifyRel(e.r);
+    if(ch==='supply'||ch==='compute'){ const up=ch==='supply'?s:t, down=ch==='supply'?t:s;
+      push(down,{b:up,sign:1,f,ch:'demand'}); push(up,{b:down,sign:1,f,ch:'supply'}); }
+    else if(ch==='benefit'){ push(t,{b:s,sign:1,f,ch:'thematic'}); }
+    else if(ch==='driver'){ push(s,{b:t,sign:1,f,ch:'driver'}); }
+    else if(ch==='compete'){ push(s,{b:t,sign:-1,f:f*0.6,ch:'compete'}); push(t,{b:s,sign:-1,f:f*0.6,ch:'compete'}); }
+  });
+  return L;
+}
+function runCatalyst(){
+  if(!catSeeds.size){ catActive=false; detail.innerHTML='<p style="color:var(--muted)">Pick a seed first: click a node, then “Set = selected”.</p>'; return; }
+  CATLINKS=CATLINKS||buildCatLinks();
+  const active=CH_ACTIVE[catKind]; catImpact={}; const best={};
+  const q=[]; catSeeds.forEach(s=>q.push({node:s,val:catPol,hop:0,path:[s]}));
+  const HOPS=3,DECAY=0.5,EPS=0.04; let guard=0;
+  while(q.length&&guard<200000){ guard++; const it=q.shift();
+    if(it.hop>=HOPS)continue;
+    (CATLINKS[it.node]||[]).forEach(({b,sign,f,ch})=>{
+      if(!active.has(ch))return;
+      const c=it.val*sign*f*DECAY;
+      if(Math.abs(c)<EPS||catSeeds.has(b))return;
+      catImpact[b]=(catImpact[b]||0)+c;
+      if(!best[b]||Math.abs(c)>best[b].a) best[b]={a:Math.abs(c),path:it.path.concat(b),ch};
+      q.push({node:b,val:c,hop:it.hop+1,path:it.path.concat(b)});
+    });
+  }
+  catBest=best;
+  const vals=Object.values(catImpact).map(Math.abs); catMax=Math.max(0.2,...(vals.length?vals:[0.2]));
+  catActive=true; alpha=Math.max(alpha,0.25); renderCatResults();
+}
+function renderCatResults(){
+  const seeds=[...catSeeds].map(id=>byId[id].name).join(', ');
+  const ranked=Object.entries(catImpact).filter(([,v])=>Math.abs(v)>=0.04).sort((a,b)=>Math.abs(b[1])-Math.abs(a[1]));
+  let h='<h2>⚡ Catalyst result</h2><div class="role">Seed: <b style="color:#fde047">'+seeds+'</b> · '
+    +(catPol>0?'positive':'negative')+' event · '+catKind+'-side</div>';
+  if(!ranked.length){ h+='<p style="color:var(--muted)">No propagation paths for this type. Try Demand, Supply, or Macro.</p>'; detail.innerHTML=h; return; }
+  h+='<h3>Most affected (ranked)</h3><ul>';
+  ranked.slice(0,16).forEach(([id,v])=>{
+    const b=catBest[id], hops=b?b.path.length-1:0, col=v>0?'#34d399':'#f87171';
+    h+='<li><b>'+byId[id].name+'</b> <span style="color:'+col+'">'+(v>0?'+':'')+v.toFixed(2)
+      +(v>0?' benefits':' hurt')+'</span> <span class="rel">· '+hops+' hop'+(hops===1?'':'s')+'</span>';
+    if(b) h+='<br><span class="rel" style="font-size:11px">'+b.path.map(p=>byId[p].name).join(' → ')+'</span>';
+    h+='</li>';
+  });
+  detail.innerHTML=h+'</ul>';
+}
+function updSeedLabel(){ document.getElementById('catSeed').textContent =
+  catSeeds.size? [...catSeeds].map(i=>byId[i].name).join(', ') : '— click a node, then “Set = selected”'; }
+document.getElementById('catSet').onclick=()=>{ if(focus){catSeeds.add(focus.id);updSeedLabel();} };
+document.getElementById('catClear').onclick=()=>{ catSeeds.clear();catActive=false;catImpact={};catBest={};updSeedLabel();selectNode(null);alpha=Math.max(alpha,0.2); };
+document.getElementById('catRun').onclick=runCatalyst;
+document.querySelectorAll('[data-pol]').forEach(el=>el.onclick=()=>{document.querySelectorAll('[data-pol]').forEach(x=>x.classList.remove('on'));el.classList.add('on');catPol=+el.dataset.pol;});
+document.querySelectorAll('[data-kind]').forEach(el=>el.onclick=()=>{document.querySelectorAll('[data-kind]').forEach(x=>x.classList.remove('on'));el.classList.add('on');catKind=el.dataset.kind;});
+updSeedLabel();
+
+// ---- bottleneck mode (scores precomputed in Python -> node.bscore, for engine/graph parity) ----
+let bottleneckOn=false;
+let bMax=Math.max(1, ...NODES.map(n=>n.bscore||0));
+function bottleColor(n){
+  if(n.layer===0) return '#2a3350';
+  const t=Math.min(1,(n.bscore||0)/bMax);
+  return 'hsl('+Math.round(48-48*t)+',85%,'+Math.round(70-30*t)+'%)';
+}
+function renderBottleneck(){
+  const ranked=NODES.filter(n=>n.layer>0 && (n.bscore||0)>0).sort((a,b)=>(b.bscore||0)-(a.bscore||0));
+  let h='<h2>⛔ Bottleneck ranking</h2><div class="role">Critical × hard-to-substitute × supply-constrained. Bigger & redder = higher score. Idea-generation only — verify against filings.</div><h3>Top chokepoints</h3><ul>';
+  ranked.slice(0,18).forEach(n=>{
+    const lvl=(n.bconstr||0)>=0.75?'tight':((n.bconstr||0)>=0.4?'med':'—');
+    h+='<li><b>'+n.name+'</b> <span style="color:#fbbf24">'+(n.bscore||0).toFixed(0)+'</span> '
+      +'<span class="rel">· '+n.layer_name+'</span><br>'
+      +'<span class="rel" style="font-size:11px">reach '+(n.breach||0)+' · alts '+(n.balts||0)
+      +((n.balts===0)?' (sole-source)':'')+' · constraint '+lvl+(n.bwhy?' ('+n.bwhy+')':'')
+      +(n.bemerging?' · emerging':'')+'</span></li>';
+  });
+  detail.innerHTML=h+'</ul>';
+}
+document.getElementById('tBottle').onclick=()=>{
+  bottleneckOn=!bottleneckOn;
+  document.getElementById('tBottle').classList.toggle('on', bottleneckOn);
+  if(bottleneckOn){ catActive=false; focus=null; renderBottleneck(); alpha=Math.max(alpha,0.2); }
+  else { selectNode(null); }
+};
+
+resize(); selectNode(null);
+for(let i=0;i<260;i++) tick();
+loop();
+</script>
+</body>
+</html>

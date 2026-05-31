@@ -1,0 +1,29 @@
+---
+type: company
+ticker: META
+layer: 10
+layer_name: Hyperscalers / Cloud
+segment: Hyperscaler
+country: USA
+---
+
+# Meta Platforms  (META)
+
+> **Hyperscalers / Cloud** · Hyperscaler · USA
+
+**Role in the AI chain:** Massive internal AI buildout.
+
+**Key products:** MTIA silicon, AI infra.
+
+## Supplied / served by (upstream)
+- [[Broadcom]] co-designs custom silicon with this company — MTIA
+- [[Arista Networks]] supplies switches to this company
+- [[NVIDIA]] sells GPUs to this company
+- [[AMD]] sells GPUs to this company
+- [[Supermicro]] builds AI servers for this company
+
+## Notes
+- _Your analysis here._
+
+## Sources
+- _Add links to filings / articles in `sources/`._
