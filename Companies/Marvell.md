@@ -40,3 +40,6 @@ country: USA
 
 ## Added from research — 2026-06 (X-scan)
 - [[NVIDIA]] partners with this company — (FACT, X-scan 2026-06-02): NVIDIA $2B strategic investment; Jensen Computex "next $1T" endorsement _(X-Reports/2026-06-02-1634-x-scan.md)_
+
+## Added from research — 2026-06-03 (ingest)
+- co-designs custom silicon with [[Alphabet (Google)]] — (VIEW, Funda-AI 2026-06-03): to design the networking chip in the Google/Intel IPU program (?)

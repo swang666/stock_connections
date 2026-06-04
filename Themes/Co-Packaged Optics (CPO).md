@@ -27,3 +27,8 @@ layer: demand-driver
 ## Added from research — 2026-06 (X-scan)
 - [[Sivers Semiconductor]] benefits from this theme — (FACT, X-scan 2026-06-02): CW/LPO laser light sources for co-packaged & pluggable optics _(X-Reports/2026-06-02-0746-x-scan.md)_
 - [[GlobalFoundries]] benefits from this theme — (FACT, X-scan 2026-06-02): silicon-photonics foundry (SCALE platform) for CPO/LPO/pluggables _(X-Reports/2026-06-02-0746-x-scan.md)_
+
+## Added from research — 2026-06-03 (ingest)
+- [[Ayar Labs]] — (FACT, X-scan 2026-06-03): NVIDIA-backed CPO supplier in NVLink Fusion ecosystem
+- [[STMicroelectronics]] — (FACT, X-scan 2026-06-03): SiPh PICs / BiCMOS EICs for datacenter optical engines (~2/3 of ~B 2026 DC rev)
+- [[Semtech]] — (VIEW, TMTB 2026-05-27): DWDM/CPO laser engagements as CPO ramps

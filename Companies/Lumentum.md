@@ -30,3 +30,6 @@ country: USA
 
 ## Added from research — 2026-05
 - benefits from [[Co-Packaged Optics (CPO)]] — (VIEW, Nomura) optics shift to CPO/LPO _(Nomura SerDes 2026-05)_
+
+## Added from research — 2026-06-03 (ingest)
+- supplies optical components to [[NVIDIA]] — (FACT, LITE CEO @JPM 2026-05): NVIDIA locked up a considerable share of Lumentum indium-phosphide (InP) laser capacity with options to take more; capacity tight/locked

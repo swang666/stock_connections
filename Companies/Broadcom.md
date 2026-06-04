@@ -41,3 +41,7 @@ country: USA
 
 ## Added from research — 2026-06-03
 - [[MediaTek]] competes with this company — (VIEW, Morgan Stanley 2026-06-01): MediaTek targets 15-20% of Google ASIC; Broadcom expects to keep 80%+ share (second-source threat)
+
+## Added from research — 2026-06-03 (ingest)
+- co-designs custom silicon with [[Anthropic]] — (FACT, GS 2026-06-03): ramping initial 1GW Anthropic custom-silicon capacity, +5GW from FY27; one of 6 custom-silicon engagements
+- co-designs custom silicon with [[OpenAI]] — (FACT, GS 2026-06-03): OpenAI among Broadcom's six custom-silicon engagements ramping into FY27

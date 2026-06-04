@@ -28,3 +28,6 @@ country: USA
 
 ## Added from research — 2026-05
 - benefits from [[AI Inference Demand]] — (FACT, Citi) guaranteed-capacity inference model _(Citi Inference Ahead 2026-05)_
+
+## Added from research — 2026-06-03 (ingest)
+- runs compute on [[Amazon]] — (FACT, TMTB 2026-05): committed to renting large amounts of current/future AWS Trainium capacity

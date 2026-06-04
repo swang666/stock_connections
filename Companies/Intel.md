@@ -32,3 +32,6 @@ country: USA
 ## Added from research — 2026-06-03
 - [[TSMC]] manufactures chips for this company — (VIEW, Morgan Stanley 2026-06-01): critical roadmap parts (desktop, possibly server Rapids) likely move to TSMC; EMIB-T users see TSMC as plan B
 - [[NVIDIA]] competes with this company — (FACT, Morgan Stanley 2026-06-01): NVIDIA ~$20bn Arm CPU push vs x86 server CPUs
+
+## Added from research — 2026-06-03 (ingest)
+- co-designs custom silicon with [[Alphabet (Google)]] — (FACT, TMTB 2026-06-03): Intel delivering the Infrastructure Processing Unit (IPU) for Google; designed and already being deployed

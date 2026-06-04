@@ -28,3 +28,7 @@ layer: demand-driver
 ## Added from research — 2026-06 (X-scan)
 - [[Qualcomm]] benefits from this theme — (FACT, X-scan 2026-06-02): on-device / edge AI inference silicon _(X-Reports/2026-06-02-1634-x-scan.md)_
 - [[Cipher Mining]] benefits from this theme — (FACT, X-scan 2026-06-02): crypto-miner pivoting to AI/HPC capacity amid compute-shortage narrative _(X-Reports/2026-06-02-0746-x-scan.md)_
+
+## Added from research — 2026-06-03 (ingest)
+- [[STMicroelectronics]] — (FACT, X-scan 2026-06-03): datacenter revenue ramp on AI-infra demand; guidance could double in 2027
+- [[Astera Labs]] — (VIEW, ISI 2026-05): scale-up switch demand growing for inference clusters

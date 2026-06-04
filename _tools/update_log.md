@@ -126,3 +126,32 @@
   - "UBS-Tencent Holdings 2026 AIC" — **image-only PDF (no text layer, no embedded fonts)**; pdftotext yields no usable text. NOT ingested — re-drop a text-based copy to process.
   - ZeroHedge / TMTB EOD / tmtb632026 / GS Korea are market-flow / strategy commentary; processed but yielded few/no new concrete supply-chain edges (used only for theme VIEW evidence). Treated VIEWs as tagged, not facts.
   - Excel was CLOSED (no lock file) — xlsx written directly.
+
+## 2026-06-03 — inbox ingest (APPLY)
+**Files processed (33):** 3 x-scan extracts (0734/1634/2229), TMTB_dell_nvda, 22 TMTB daily morning/wrap notes (0515–0603), and PDFs (ASML, LITE 纪要, 博通/Broadcom GS, semianalysis space DC, UBS-Tencent, 'Worries Are Gone' ZeroHedge).
+
+**New companies added (5):** AYAR (Ayar Labs, L7), STM (STMicroelectronics, L7), NANYA (Nanya Technology, L5), ALAB (Astera Labs, L7), SMTC (Semtech, L7).
+
+**New edges added (20):**
+- AYAR→NVDA (supplies optical components), AYAR→T_CPO.
+- STM→T_CPO, STM→T_INFER, STM→T_POWER.
+- NANYA→T_HBM, NANYA→CSCO (supplies memory).
+- AVGO→ANTHROPIC + AVGO→OPENAI (co-designs custom silicon; Broadcom now 6 custom-silicon engagements per GS 6/3).
+- LITE→NVDA (supplies optical components; NVIDIA locked considerable InP laser capacity).
+- ALAB→AMZN (supplies interconnect, Trainium/UALink), ALAB→T_NET, ALAB→T_INFER.
+- OPENAI→AMZN (runs compute on; Trainium capacity).
+- INTC→GOOGL (co-designs custom silicon; Intel IPU deployed at Google).
+- MRVL→GOOGL (co-designs custom silicon; networking chip in Google/Intel IPU — flagged (?)).
+- BE→NBIS (supplies on-site fuel-cell power).
+- SMTC→T_NET, SMTC→T_CPO.
+- ASML→T_HBM.
+
+**Dedup:** 0 duplicate edges added. Several restated relationships from x-scan/TMTB (AVGO↔GOOGL/MTK, TSM→AVGO, ANTHROPIC→GOOGL, MU→T_HBM, AMAT→INTC, FOXCONN→NVDA) already existed and were skipped.
+
+**FACT vs VIEW:** FACT edges from filings-grade/CEO statements/x-scan FACT extracts; tagged VIEW for analyst forecasts (STM→T_POWER Mizuho, ALAB→T_INFER ISI, MRVL→GOOGL Funda-AI(?), SMTC→T_CPO, ASML→T_HBM GS).
+
+**Skipped / not extracted:** The 22 TMTB daily wraps are dominated by analyst price-target/rating commentary (VIEWs) and already-known relationships; only genuinely new, concrete supply/demand links were folded in to avoid graph bloat. ZeroHedge (macro sentiment), semianalysis space-datacenter (niche orbital compute), and UBS-Tencent (China domestic AI, Tencent not a vault node) yielded no net-new on-theme edges. No instruction-like/unsafe file content encountered.
+
+**Validator:** errors=0  warnings=188 (all pre-existing legacy-edge gaps: source_doc/evidence missing on older rows) — PASS. Graph regenerated: 94 nodes, 225 edges, bottleneck baked; START HERE + Degree sheet re-synced.
+
+**Note:** Excel was NOT open (no lock file); xlsx written directly, no pending CSV.

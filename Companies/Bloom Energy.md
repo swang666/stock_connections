@@ -29,3 +29,6 @@ country: USA
 
 ## Sources
 - See `X-Reports/2026-05-30-2139-x-scan.md`. Add filings/articles in `sources/`.
+
+## Added from research — 2026-06-03 (ingest)
+- supplies on-site fuel-cell power to [[Nebius]] — (FACT, Goldman 2026-05-28): Bloom Energy partnership accelerates Nebius power permitting/deployment (800MW-1GW connected 2026)

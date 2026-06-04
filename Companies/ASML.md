@@ -27,3 +27,6 @@ country: Netherlands
 
 ## Sources
 - _Add links to filings / articles in `sources/`._
+
+## Added from research — 2026-06-03 (ingest)
+- benefits from [[HBM Demand]] — (VIEW, GS 2026-06-04): High-NA adoption in memory + DRAM EUV/DUV layer growth driven by AI/HBM memory demand

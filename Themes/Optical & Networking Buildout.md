@@ -31,3 +31,7 @@ layer: demand-driver
 
 ## Companies linked
 - [[Teradyne]] — (VIEW, UBS via TMTB 2026-05-29): NVDA networking test exposure (?)
+
+## Added from research — 2026-06-03 (ingest)
+- [[Astera Labs]] — (FACT, TMTB 2026-05): scale-up switching (Scorpio), retimers, UALink for AI racks
+- [[Semtech]] — (FACT, TMTB 2026-05-27): 800G FiberEdge & 1.6T design wins incl some sole-source sockets; HieFo demand ~3x supply

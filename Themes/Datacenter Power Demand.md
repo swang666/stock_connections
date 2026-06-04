@@ -25,3 +25,6 @@ layer: demand-driver
 ## Added from research — 2026-05
 - [[Texas Instruments]] — (VIEW, SemiAnalysis via TMT Breakout) broadest power-portfolio beneficiary of AI rack power _(TMT Breakout 2026-05)_
 - [[Analog Devices]] — (VIEW, TMT Breakout) datacenter power (Empower acquisition) _(TMT Breakout 2026-05)_
+
+## Added from research — 2026-06-03 (ingest)
+- [[STMicroelectronics]] — (VIEW, Mizuho 2026-05-19): AI rack 800V power architectures drive analog/power-semi content growth

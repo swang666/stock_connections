@@ -23,13 +23,13 @@ A living map of who supplies, sells to, and benefits from whom across the AI val
 [[AMD]], [[Broadcom]], [[Huawei]], [[IBM]], [[Iluvatar CoreX]], [[Marvell]], [[MediaTek]], [[MetaX]], [[NVIDIA]], [[Qualcomm]]
 
 **L5 — Memory (HBM/DRAM)**
-[[ChangXin Memory (CXMT)]], [[Micron]], [[SK Hynix]], [[Sandisk]], [[Yangtze Memory (YMTC)]]
+[[ChangXin Memory (CXMT)]], [[Micron]], [[Nanya Technology]], [[SK Hynix]], [[Sandisk]], [[Yangtze Memory (YMTC)]]
 
 **L6 — Advanced Packaging / OSAT**
 [[AUO Corporation]], [[Amkor Technology]], [[BOE Technology]], [[Corning]], [[Innolux]]
 
 **L7 — Optical & Interconnect**
-[[Alphawave Semi]], [[Applied Optoelectronics]], [[Coherent]], [[Credo Technology]], [[Fabrinet]], [[Furukawa Electric]], [[Lumentum]], [[Luxshare Precision]], [[POET Technologies]], [[Sivers Semiconductor]]
+[[Alphawave Semi]], [[Applied Optoelectronics]], [[Astera Labs]], [[Ayar Labs]], [[Coherent]], [[Credo Technology]], [[Fabrinet]], [[Furukawa Electric]], [[Lumentum]], [[Luxshare Precision]], [[POET Technologies]], [[STMicroelectronics]], [[Semtech]], [[Sivers Semiconductor]]
 
 **L8 — Networking Systems**
 [[Arista Networks]], [[Cisco]]
