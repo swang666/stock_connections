@@ -27,9 +27,17 @@ python3 _tools/update_graph.py
 python3 _tools/validate.py
 ```
 
-**Just want to look?** Open **`AI Supply Chain Graph.html`** in any browser — it's fully
-self-contained (data baked in, no server or internet needed) and has Catalyst and Bottleneck
-modes in the side panel.
+**Just want to look?** Two ways:
+
+- **Live (no download):** https://swang666.github.io/stock_connections/ — runs in the browser, nothing to install.
+- **Local:** open **`AI Supply Chain Graph.html`** in any browser — fully self-contained (data baked in, no server or internet needed).
+
+Both have Catalyst and Bottleneck modes in the side panel.
+
+> **Maintainers:** the live page is `index.html` at the repo root, regenerated automatically by
+> `_tools/update_graph.py` (a byte-identical copy of the graph). To publish it, enable **GitHub
+> Pages**: repo **Settings → Pages → Source: Deploy from a branch → Branch: `main` / root → Save**.
+> The site goes live at the link above in ~1 minute and refreshes on every push.
 
 ## What's here
 

@@ -16,6 +16,7 @@ country: USA
 **Key products:** Azure cloud, Maia silicon.
 
 ## Supplied / served by (upstream)
+- [[Applied Optoelectronics]] supplies optical transceivers to this company — (FACT, AAOI 10-K 2026-02-26): MSFT 28.8% of AAOI FY2025 revenue
 - [[Arm Holdings]] licenses CPU IP to this company — Cobalt
 - [[TSMC]] manufactures chips for this company — Maia
 - [[Marvell]] supplies custom silicon to this company
@@ -38,3 +39,6 @@ country: USA
 
 ## Added from research — 2026-05
 - [[Micron]] supplies memory to this — (FACT, UBS) hyperscaler DDR5/HBM under enhanced LTA _(UBS Micron LTAs 2026-05)_
+
+## Added from research — 2026-06-03
+- [[Credo Technology]] supplies AECs to this company — (FACT, TMTB 2026-06-02): 10%+ Credo customer in FQ4

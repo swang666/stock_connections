@@ -23,3 +23,7 @@ layer: demand-driver
 
 ## Sources
 - See `sources/inbox/` research reports.
+
+## Added from research — 2026-06 (X-scan)
+- [[Sivers Semiconductor]] benefits from this theme — (FACT, X-scan 2026-06-02): CW/LPO laser light sources for co-packaged & pluggable optics _(X-Reports/2026-06-02-0746-x-scan.md)_
+- [[GlobalFoundries]] benefits from this theme — (FACT, X-scan 2026-06-02): silicon-photonics foundry (SCALE platform) for CPO/LPO/pluggables _(X-Reports/2026-06-02-0746-x-scan.md)_

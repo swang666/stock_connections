@@ -33,3 +33,6 @@ country: USA
 
 ## Added from research — 2026-05
 - [[Blackstone]] partners with this — (FACT, Citi) Blackstone-Google Cloud partnership (5/18) _(Citi Inference Ahead 2026-05)_
+
+## Added from research — 2026-06-03
+- [[MediaTek]] co-designs custom silicon with this company — (FACT, Morgan Stanley 2026-06-01): lower-cost TPU/ASIC, ramp as soon as 2027

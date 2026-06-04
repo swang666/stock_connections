@@ -16,6 +16,7 @@ country: USA
 **Key products:** Optical transceivers (US-made)
 
 ## Supplies / sells to (downstream)
+- supplies optical transceivers to [[Microsoft]] — (FACT, AAOI 10-K 2026-02-26): largest internet DC customer, 28.8% of FY2025 revenue
 - supplies optical transceivers to [[Amazon]]
 
 ## Supplied / served by (upstream)

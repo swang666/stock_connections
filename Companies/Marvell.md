@@ -37,3 +37,6 @@ country: USA
 
 ## Added from research — 2026-05
 - benefits from [[Co-Packaged Optics (CPO)]] — (FACT, Nomura) in-house SerDes for AI networking _(Nomura SerDes 2026-05)_
+
+## Added from research — 2026-06 (X-scan)
+- [[NVIDIA]] partners with this company — (FACT, X-scan 2026-06-02): NVIDIA $2B strategic investment; Jensen Computex "next $1T" endorsement _(X-Reports/2026-06-02-1634-x-scan.md)_

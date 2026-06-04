@@ -1,0 +1,169 @@
+{
+  "scans": [
+    {
+      "utc": "2026-06-02T23:34Z",
+      "local": "2026-06-02 23:25",
+      "slot": "afternoon",
+      "tickers": {
+        "PANW": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "MRVL": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "IBM": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "NBIS": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "NVDA": {
+          "mentions": 3,
+          "sentiment": "neu"
+        },
+        "CRWD": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "CRM": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "CSCO": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "ARM": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "QCOM": {
+          "mentions": 1,
+          "sentiment": "neg"
+        },
+        "STM": {
+          "mentions": 1,
+          "sentiment": "neu"
+        },
+        "MU": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "SIVE": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "RGTI": {
+          "mentions": 1,
+          "sentiment": "neu"
+        }
+      }
+    },
+    {
+      "utc": "2026-06-03T14:43Z",
+      "local": "2026-06-03 07:43",
+      "slot": "morning",
+      "tickers": {
+        "MRVL": {
+          "mentions": 3,
+          "sentiment": "pos"
+        },
+        "STM": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "AVGO": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "NBIS": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "TSM": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "MU": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "SNDK": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "SIVE": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "POET": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "XFAB": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "GOOGL": {
+          "mentions": 2,
+          "sentiment": "neu"
+        },
+        "NVDA": {
+          "mentions": 2,
+          "sentiment": "neu"
+        }
+      }
+    },
+    {
+      "utc": "2026-06-03T23:42Z",
+      "local": "2026-06-03 16:42",
+      "slot": "afternoon",
+      "tickers": {
+        "AVGO": {
+          "mentions": 3,
+          "sentiment": "neu"
+        },
+        "GOOGL": {
+          "mentions": 3,
+          "sentiment": "pos"
+        },
+        "NVDA": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "MRVL": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "MU": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "SIVE": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "POET": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "XFAB": {
+          "mentions": 1,
+          "sentiment": "neu"
+        },
+        "NBIS": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "MTK": {
+          "mentions": 1,
+          "sentiment": "neu"
+        }
+      }
+    }
+  ]
+}

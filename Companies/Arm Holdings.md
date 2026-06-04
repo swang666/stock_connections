@@ -25,3 +25,6 @@ country: UK
 
 ## Sources
 - _Add links to filings / articles in `sources/`._
+
+## Added from research — 2026-06 (X-scan)
+- licenses CPU IP to [[Qualcomm]] — (FACT, X-scan 2026-06-02): Qualcomm Arm-architecture licensee; custom Oryon/NUVIA CPUs _(X-Reports/2026-06-02-1634-x-scan.md)_

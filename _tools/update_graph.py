@@ -51,6 +51,9 @@ out=(tmpl.replace("/*NODES*/","NODES = "+json.dumps(nodes))
         .replace("/*LCOLOR*/","LCOLOR = "+json.dumps(lcolor))
         .replace("/*LNAME*/","LNAME = "+json.dumps(lname)))
 open(os.path.join(VAULT,"AI Supply Chain Graph.html"),"w",encoding="utf-8").write(out)
+# also publish a copy as index.html at the repo root so GitHub Pages serves it at the site root
+# (share link becomes https://<user>.github.io/<repo>/ with no %20-escaped filename).
+open(os.path.join(VAULT,"index.html"),"w",encoding="utf-8").write(out)
 
 # ---------- 2) regenerate START HERE layer index ----------
 by_layer=defaultdict(list)

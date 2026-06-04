@@ -61,3 +61,6 @@ country: USA
 - drives demand for [[Co-Packaged Optics (CPO)]] — (FACT, Nomura) integrates SerDes; networking roadmap to CPO _(Nomura SerDes 2026-05)_
 - [[Iluvatar CoreX]] competes with this — (VIEW, JPM) substitute amid limited NVIDIA approvals in China _(JPM China Summit 2026-05)_
 - [[MetaX]] competes with this — (VIEW, JPM) China GPU alternative _(JPM China Summit 2026-05)_
+
+## Added from research — 2026-06-03
+- competes with [[Intel]] — (FACT, Morgan Stanley 2026-06-01): NVIDIA targeting ~$20bn CPU (Grace/Vera Arm) vs x86 server CPUs; CPU supply tight

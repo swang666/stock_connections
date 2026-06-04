@@ -23,3 +23,6 @@ layer: demand-driver
 
 ## Added from research — 2026-05
 - [[ChangXin Memory (CXMT)]] — (VIEW, JPM) developing domestic HBM _(JPM China Summit 2026-05)_
+
+## Added from research — 2026-06-03
+- [[SK Hynix]] / [[Samsung Electronics]] — (VIEW, GS/Morgan Stanley 2026-06): HBM/DRAM undersupplied through 2028; shortage drives pricing power, 3Q ASP +20%+, LTAs signal tight supply

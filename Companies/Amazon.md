@@ -34,3 +34,6 @@ country: USA
 
 ## Added from research — 2026-05
 - [[Micron]] supplies memory to this — (FACT, UBS) hyperscaler DDR5 under enhanced LTA _(UBS Micron LTAs 2026-05)_
+
+## Added from research — 2026-06-03
+- [[Credo Technology]] supplies AECs to this company — (FACT, TMTB 2026-06-02): top-3 10%+ Credo customer in FQ4

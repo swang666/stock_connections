@@ -38,3 +38,6 @@ country: USA
 
 ## Added from research — 2026-05
 - benefits from [[Co-Packaged Optics (CPO)]] — (FACT, Nomura) in-house SerDes + CPO switch leader _(Nomura SerDes 2026-05)_
+
+## Added from research — 2026-06-03
+- [[MediaTek]] competes with this company — (VIEW, Morgan Stanley 2026-06-01): MediaTek targets 15-20% of Google ASIC; Broadcom expects to keep 80%+ share (second-source threat)

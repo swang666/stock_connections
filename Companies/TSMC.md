@@ -42,3 +42,7 @@ country: Taiwan
 
 ## Sources
 - _Add links to filings / articles in `sources/`._
+
+## Added from research — 2026-06-03
+- manufactures chips for [[Intel]] — (VIEW, Morgan Stanley 2026-06-01): critical Intel roadmap parts likely move to TSMC; EMIB-T plan B
+- [[Entegris]] supplies materials to this company — (FACT, Bernstein 2026-06-02): yield-critical specialty/purity materials

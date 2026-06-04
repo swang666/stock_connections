@@ -62,3 +62,67 @@
   ERRORs must be driven to zero before a run is considered clean; validator summary recorded in the log.
 - Removed dead _tools/graph_template_v2.html (v3 is the live template).
 - Rebuilt + validated: 82 nodes, 189 edges, errors=0, warnings=196 (evidence/source gaps to backfill).
+
+## 2026-06-01 — daily ingest (Cowork scheduled job)
+- MANIFEST REPAIR: _tools/ingested.json was truncated mid-write (unterminated string in the "edgar"
+  array). Backed up to ingested.json.corrupt.bak and rebuilt as valid JSON, preserving all 13
+  ingested filenames and the 3 recorded accessions (NVDA/AMD/MRVL). fetch_edgar.py had been crashing
+  on json.load before this fix.
+- EDGAR (STEP 1): live fetch_edgar.py run repaired-and-launched, but SEC filer-discovery did not
+  complete within the sandbox network/time budget (no new "pulling/wrote" output beyond filer
+  enumeration; 10 foreign-listed filers correctly skipped). No NEW filings pulled by this run.
+  However, 11 EDGAR extracts from a prior (crashed) run were sitting unprocessed in sources/inbox —
+  these were processed this run as STEP 2 new files.
+- Inbox files processed (11, all EDGAR extracts):
+  AMD 10-K (0000002488-26-000018), NVDA 10-K (0001045810-26-000021),
+  MRVL 10-K (0001835632-26-000011), AMZN 10-K (0001018724-26-000004),
+  BE 10-K (0001628280-26-006516), ANET 10-K (0001596532-26-000013),
+  AMKR 10-K (0001047127-26-000014), ASML 20-F (0001628280-26-011378),
+  AAOI 10-K (0001437749-26-005875), BX 10-K (0001193125-26-082531),
+  ARM 20-F (0001973239-26-000097).
+- New companies added: 0 (all 11 issuers already nodes).
+- New edges added: 1
+  • AAOI -> Microsoft "supplies optical transceivers to" (s3) — AAOI 10-K names Microsoft as
+    largest internet-data-center customer at 28.8% of FY2025 revenue (top-10 = 96.6%). FACT,
+    source_doc = AAOI 10-K index URL.
+- Existing edges strengthened (evidence upgraded to primary EDGAR FACT + source_doc; no dup rows): 6
+  • AVGO->ANET: added sole-source/predominant merchant-silicon signal (ANET 10-K) — bottleneck cue.
+  • AMD->MSFT, AMD->META, AMD->ORCL: filled empty evidence with AMD 10-K (Instinct MI300 deployed
+    at scale by Microsoft/Meta/Oracle).
+  • MRVL->MSFT (Maia) and MRVL->AMZN (Trainium/XPU): upgraded secondary sources to MRVL 10-K FACT.
+- Wiki: additive bullets on Applied Optoelectronics.md (->Microsoft), Microsoft.md (<-AAOI), and a
+  sole-source note on Arista Networks.md.
+- Skipped / no new edges (boilerplate risk-factor sections, no named AI counterparty): AMZN, ASML,
+  ARM, AMKR, BE, BX. BE named SK ecoplant/SK eternix (S.Korea distribution) — out of AI-supply-chain
+  scope, not added. NVDA 10-K confirms customer concentration (top customer 22%, second 14%) but
+  does NOT name customers, so existing named NVDA edges left unchanged.
+- Regenerate: graph rebuilt 82 nodes / 190 edges; START HERE + Degree sheet re-synced.
+- Validate: errors=0, warnings=190 (was 196; evidence/source backfill from this run). PASS.
+- NOTE: Excel lock file (.~lock.AI-Supply-Chain-Network.xlsx#) present — openpyxl write still
+  succeeded on disk. User should close Excel WITHOUT saving and reopen, or a stale copy may
+  overwrite these changes.
+
+2026-06-01: no new files (manual re-run). EDGAR fetch_edgar.py blocked by SEC 403 Forbidden on filer discovery (sandbox fair-access throttling); 0 filings pulled. No new inbox files. Graph unchanged at 82 nodes / 190 edges.
+
+2026-06-02: no new files. EDGAR fetch_edgar.py unreachable from sandbox (DNS name-resolution failure / proxy 403 Forbidden on sec.gov — network not allowlisted); 0 filings pulled. All 24 inbox files already in ingested.json — 0 new inbox files. ingested.json unchanged; graph unchanged at 82 nodes / 190 edges. No spreadsheet write attempted.
+
+2026-06-02 (manual, X-report ingest): One-off fold of X-Reports FACT-tagged findings into the graph (X reports live in X-Reports/, not sources/inbox/, so they had never been ingested).
+- New companies (4): SIVE Sivers Semiconductor (L7), GFS GlobalFoundries (L3), QCOM Qualcomm (L4), CIFR Cipher Mining (L12).
+- New edges (7), all (FACT, X-scan 2026-06-02): SIVE-partners with->GFS; SIVE-benefits from->T_CPO; GFS-benefits from->T_CPO; ARM-licenses CPU IP to->QCOM; QCOM-benefits from->T_INFER; NVDA-partners with->MRVL ($2B investment); CIFR-benefits from->T_INFER.
+- Held back (per conservative policy): all VIEW/unverified items — Serenity's "$XFAB next $TSEM" framing, Xintech COUPE idea, the $36B Anthropic-TPU debt package, TSMC +15% 3nm-hike rumor, Leopold/Situational Awareness holding claims, Trump/quantum clickbait, Sunny Optical CPO entry. Candidates CIEN/JBL/GLXY left out (lower priority).
+- Wiki: created 4 company pages; additive bullets on Marvell, Arm Holdings, Co-Packaged Optics (CPO), AI Inference Demand.
+- Regenerate: 86 nodes / 197 edges. Validate: errors=0, warnings=190. PASS. Excel was closed.
+
+## 2026-06-03 — scheduled ingest
+- **Inbox files processed (7):** Bernstein "5 CEOs at SDC" (260602); Morgan Stanley "Taiwan meetings" (260601); ZeroHedge "Nobody Wanted Software"; TMTB EOD Wrap (CRDO/HPE first takes); TMTB Morning Wrap(17); tmtb632026; GS Korea strategy "KOSPI→12000".
+- **Edges added: 8.** New companies added: 3 — xAI (L11), MediaTek (L4), Entegris (L2).
+  - CRDO → supplies AECs to → Amazon / Microsoft / xAI (FACT, TMTB 2026-06-02: top 10%+ FQ4 customers).
+  - MediaTek → co-designs custom silicon with → Google (FACT, MS 06-01: lower-cost TPU, ramp ~2027); MediaTek → competes with → Broadcom (VIEW, MS: 15-20% vs 80%+ share).
+  - NVIDIA → competes with → Intel (FACT, MS: ~$20bn Grace/Vera Arm CPU vs x86); TSMC → manufactures chips for → Intel (VIEW, MS: roadmap parts moving to TSMC, EMIB-T plan B).
+  - Entegris → supplies materials to → TSMC (FACT, Bernstein: yield-critical specialty/purity materials).
+- **Evidence strengthened (no dup):** SK Hynix & Samsung → benefits from → HBM Demand had EMPTY evidence; filled with (VIEW, GS/MS 2026-06): HBM/DRAM undersupplied through 2028, ASP +20%+, LTAs.
+- **Validator:** errors=0, warnings=188 (pre-existing source_doc/evidence-coverage on legacy rows). PASS. Graph: 89 nodes, 205 edges.
+- **Flagged / skipped:**
+  - "UBS-Tencent Holdings 2026 AIC" — **image-only PDF (no text layer, no embedded fonts)**; pdftotext yields no usable text. NOT ingested — re-drop a text-based copy to process.
+  - ZeroHedge / TMTB EOD / tmtb632026 / GS Korea are market-flow / strategy commentary; processed but yielded few/no new concrete supply-chain edges (used only for theme VIEW evidence). Treated VIEWs as tagged, not facts.
+  - Excel was CLOSED (no lock file) — xlsx written directly.

@@ -40,7 +40,15 @@ source of truth — read it, don't reinvent it.
 - `_tools/update_graph.py` — regenerates the interactive HTML; bakes bottleneck scores into nodes.
 - `_tools/graph_template_v3.html` — the template used by the regenerator.
 - `_tools/ingested.json`, `_tools/update_log.md` — daily-job manifest and history.
-- `_prompts/` — Extraction, Analyst Report Extraction, Catalyst Analysis, Bottleneck Analysis.
+- `_prompts/` — Extraction, Analyst Report Extraction, Catalyst Analysis, Bottleneck Analysis, **X Scan**.
+- **X scan (twice-daily, scheduled `x-stock-scan-twice-daily`)** — writes `X-Reports/YYYY-MM-DD-HHMM-x-scan.md`
+  and a FACT-only `sources/inbox/...-x-scan-extract.md` for the daily ingest. Canonical instructions live in
+  `_prompts/X Scan Prompt.md` (the scheduled task just points to it). Config + state under `_tools/x_scan/`:
+  `watchlist.json` (accounts, hardened standing searches, bait exclude-list, timezone/slots — edit handles HERE,
+  not in the task prompt), `x_scan_state.py` (helper: `slot-now`, `state-set`, `trend-add`, `trend-report`,
+  `price-queries`), `x_scan_state.json` (last-seen manifest → exact since-last-scan window), `trends.json`
+  (rolling ticker mention/sentiment history). Dead handles `@Mule_Capital` (Doug O'Laughlin) and `@Jukanlosreve`
+  are retired → replaced by `@SemiAnalysis_` + memory/HBM standing search.
 
 ## Operational notes
 

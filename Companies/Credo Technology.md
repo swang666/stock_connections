@@ -24,3 +24,8 @@ country: USA
 
 ## Sources
 - See `sources/inbox/` research reports.
+
+## Added from research — 2026-06-03
+- supplies AECs to [[Amazon]] — (FACT, TMTB 2026-06-02): top-3 10%+ customer in FQ4; AECs core growth engine; allocation tight
+- supplies AECs to [[Microsoft]] — (FACT, TMTB 2026-06-02): 10%+ customer in FQ4; AEC adoption broadening
+- supplies AECs to [[xAI]] — (FACT, TMTB 2026-06-02): top-3 10%+ customer in FQ4

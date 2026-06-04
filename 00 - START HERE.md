@@ -14,13 +14,13 @@ A living map of who supplies, sells to, and benefits from whom across the AI val
 [[Arm Holdings]], [[Cadence]], [[Synopsys]]
 
 **L2 — Semiconductor Equipment**
-[[ASML]], [[Advanced Micro-Fabrication (AMEC)]], [[Applied Materials]], [[KLA Corporation]], [[Lam Research]], [[Naura Technology]], [[Teradyne]], [[XLight]]
+[[ASML]], [[Advanced Micro-Fabrication (AMEC)]], [[Applied Materials]], [[Entegris]], [[KLA Corporation]], [[Lam Research]], [[Naura Technology]], [[Teradyne]], [[XLight]]
 
 **L3 — Foundry / Manufacturing**
-[[Intel]], [[Samsung Electronics]], [[TSMC]], [[X-FAB]]
+[[GlobalFoundries]], [[Intel]], [[Samsung Electronics]], [[TSMC]], [[X-FAB]]
 
 **L4 — Chip Designers (Accelerators/Networking)**
-[[AMD]], [[Broadcom]], [[Huawei]], [[IBM]], [[Iluvatar CoreX]], [[Marvell]], [[MetaX]], [[NVIDIA]]
+[[AMD]], [[Broadcom]], [[Huawei]], [[IBM]], [[Iluvatar CoreX]], [[Marvell]], [[MediaTek]], [[MetaX]], [[NVIDIA]], [[Qualcomm]]
 
 **L5 — Memory (HBM/DRAM)**
 [[ChangXin Memory (CXMT)]], [[Micron]], [[SK Hynix]], [[Sandisk]], [[Yangtze Memory (YMTC)]]
@@ -29,7 +29,7 @@ A living map of who supplies, sells to, and benefits from whom across the AI val
 [[AUO Corporation]], [[Amkor Technology]], [[BOE Technology]], [[Corning]], [[Innolux]]
 
 **L7 — Optical & Interconnect**
-[[Alphawave Semi]], [[Applied Optoelectronics]], [[Coherent]], [[Credo Technology]], [[Fabrinet]], [[Furukawa Electric]], [[Lumentum]], [[Luxshare Precision]], [[POET Technologies]]
+[[Alphawave Semi]], [[Applied Optoelectronics]], [[Coherent]], [[Credo Technology]], [[Fabrinet]], [[Furukawa Electric]], [[Lumentum]], [[Luxshare Precision]], [[POET Technologies]], [[Sivers Semiconductor]]
 
 **L8 — Networking Systems**
 [[Arista Networks]], [[Cisco]]
@@ -41,10 +41,10 @@ A living map of who supplies, sells to, and benefits from whom across the AI val
 [[Alphabet (Google)]], [[Amazon]], [[CoreWeave]], [[IREN]], [[Meta Platforms]], [[Microsoft]], [[Nebius]], [[Oracle]]
 
 **L11 — AI Labs / Model Developers**
-[[Anthropic]], [[OpenAI]]
+[[Anthropic]], [[OpenAI]], [[xAI]]
 
 **L12 — Datacenter Infrastructure (REITs)**
-[[Applied Digital]], [[Blackstone]], [[Core Scientific]], [[Digital Realty]], [[Equinix]]
+[[Applied Digital]], [[Blackstone]], [[Cipher Mining]], [[Core Scientific]], [[Digital Realty]], [[Equinix]]
 
 **L13 — Power & Cooling Equipment**
 [[Analog Devices]], [[Bloom Energy]], [[Eaton]], [[Texas Instruments]], [[Vertiv]]

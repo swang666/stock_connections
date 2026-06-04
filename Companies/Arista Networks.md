@@ -28,6 +28,7 @@ country: USA
 
 ## Notes
 - _Your analysis here._
+- Broadcom is Arista's predominant / sole-source merchant-silicon vendor for switching chips (Tomahawk 5, Jericho 3-AI) — supply concentration risk (FACT, ANET 10-K 2026-02-17).
 
 ## Sources
 - _Add links to filings / articles in `sources/`._
