@@ -28,3 +28,6 @@ country: USA
 
 ## Added from research — 2026-05
 - benefits from [[AI Inference Demand]] — (FACT, Citi) 2Q rev +130% QoQ; inference demand wall _(Citi Inference Ahead 2026-05)_
+
+## Added from research — 2026-06-05 (X-scan)
+- runs compute on [[SpaceX (Colossus compute)]] — (FACT, X-scan 2026-06-05): ~$45B multiyear compute deal, $1.25B/mo through May-2029 (?) Colossus usually attributed to xAI _(X-Reports/2026-06-05-2004-x-scan.md)_

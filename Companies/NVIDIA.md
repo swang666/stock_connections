@@ -64,3 +64,6 @@ country: USA
 
 ## Added from research — 2026-06-03
 - competes with [[Intel]] — (FACT, Morgan Stanley 2026-06-01): NVIDIA targeting ~$20bn CPU (Grace/Vera Arm) vs x86 server CPUs; CPU supply tight
+
+## Added from research — 2026-06-05 (X-scan)
+- sells GPUs to [[SpaceX (Colossus compute)]] — (FACT, X-scan 2026-06-05): Colossus deploys ~110k NVIDIA GPUs for the Google contract (?) _(X-Reports/2026-06-05-2004-x-scan.md)_

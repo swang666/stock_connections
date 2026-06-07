@@ -1,51 +1,51 @@
 {
-  "last_scan_utc": "2026-06-04T05:39Z",
-  "last_scan_local": "2026-06-03 22:39",
+  "last_scan_utc": "2026-06-07T06:07Z",
+  "last_scan_local": "2026-06-06 23:07",
   "last_slot": "afternoon",
   "handles": {
     "aleabitoreddit": {
-      "last_post_url": "https://x.com/aleabitoreddit/status/2062390116820365350",
-      "topic": "AVGO transcript, upstream semis, Goldman $5.3T capex"
+      "last_post_url": "https://x.com/aleabitoreddit/status/2063465386960736396",
+      "topic": "glass substrate CoPoS, HBF memory teaser, XFAB CPO, small-caps"
     },
     "dylan522p": {
-      "last_post_url": "https://x.com/dylan522p/status/2061309863305920528",
-      "topic": "no new (stale)"
+      "last_post_url": "https://x.com/dylan522p/status/2062519504744399150",
+      "topic": "no new originals"
     },
     "SemiAnalysis_": {
-      "last_post_url": "https://x.com/SemiAnalysis_/status/2062383955131650338",
-      "topic": "Cerebras IPO mechanical/cooling"
+      "last_post_url": "https://x.com/SemiAnalysis_/status/2063076680470581679",
+      "topic": "MLCC chokepoint (pre-cutoff)"
     },
     "dnystedt": {
-      "last_post_url": "https://x.com/dnystedt/status/2062330029581774871",
-      "topic": "Nanya +730%, Foxconn-Nvidia, TSMC undersupply, Intel 18A AMAT"
+      "last_post_url": "https://x.com/dnystedt/status/2062840167333814697",
+      "topic": "Foxconn May rev; WSTS forecast"
     },
     "mingchikuo": {
       "last_post_url": "https://x.com/mingchikuo/status/2062216902609695054",
-      "topic": "Apple XR (pre-cutoff)"
+      "topic": "no new (Apple XR, pre-cutoff)"
     },
     "firstadopter": {
-      "last_post_url": "https://x.com/firstadopter/status/2062360665650814990",
-      "topic": "banter; no FACT"
+      "last_post_url": "https://x.com/firstadopter/status/2063464239889576125",
+      "topic": "memory bulls vs bears"
     },
     "Beth_Kindig": {
-      "last_post_url": "https://x.com/Beth_Kindig/status/2062180276713771305",
-      "topic": "TSMC 3nm capacity (pre-cutoff)"
+      "last_post_url": "https://x.com/Beth_Kindig/status/2063373197806895495",
+      "topic": "CPU price hikes, datacenter power doubling"
     },
     "TheTranscript_": {
-      "last_post_url": "https://x.com/TheTranscript_/status/2062374120910733600",
-      "topic": "AVGO -13%, NET bot traffic, Altman AI cost"
+      "last_post_url": "https://x.com/TheTranscript_/status/2063278491970470006",
+      "topic": "AVGO Hock Tan long lead times"
     },
     "unusual_whales": {
-      "last_post_url": "https://x.com/unusual_whales/status/2062372267321901397",
-      "topic": "macro/political noise"
+      "last_post_url": "https://x.com/unusual_whales/status/2063090036325888321",
+      "topic": "Iran missiles Kuwait/Bahrain (macro)"
     },
     "PatrickMoorhead": {
-      "last_post_url": "https://x.com/PatrickMoorhead/status/2062351653504979417",
-      "topic": "AVGO Q2 details, Dell AI servers"
+      "last_post_url": "https://x.com/PatrickMoorhead/status/2063369581042028698",
+      "topic": "AI model rollout commentary"
     },
     "danielnewmanUV": {
-      "last_post_url": "https://x.com/danielnewmanUV/status/2062359247908680094",
-      "topic": "AVGO compute demand soaring, $100B FY27 XPU"
+      "last_post_url": "https://x.com/danielnewmanUV/status/2063437112221798906",
+      "topic": "AI commentary"
     },
     "asianometry": {
       "last_post_url": "https://x.com/asianometry/status/2055298033282396473",
@@ -54,6 +54,14 @@
     "fabknowledge": {
       "last_post_url": "https://x.com/fabknowledge/status/2062189614136230378",
       "topic": "located active handle (Doug O Laughlin)"
+    },
+    "jukan05": {
+      "last_post_url": "https://x.com/jukan05/status/2062715537944445212",
+      "topic": "SK Hynix US listing; DRAM/NAND ASPs; KRW"
+    },
+    "melone3710": {
+      "last_post_url": "https://x.com/melone3710/status/2062830961822466537",
+      "topic": "Rubin SOCAMM DRAM reduction pressuring MU"
     }
   }
 }

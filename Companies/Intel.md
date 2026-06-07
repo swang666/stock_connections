@@ -35,3 +35,9 @@ country: USA
 
 ## Added from research — 2026-06-03 (ingest)
 - co-designs custom silicon with [[Alphabet (Google)]] — (FACT, TMTB 2026-06-03): Intel delivering the Infrastructure Processing Unit (IPU) for Google; designed and already being deployed
+
+## Added from research — 2026-06-04 (X-scan)
+- partners with [[Foxconn (Hon Hai)]] — (FACT, X-scan 2026-06-04): Hon Hai (Foxconn) and Intel announced strategic collaboration on next-gen AI infrastructure, Edge AI, and Physical AI
+
+## Added from research — 2026-06-05 (X-scan)
+- partners with [[SambaNova Systems]] — (FACT, X-scan 2026-06-04): SambaNova AI platform paired with Intel Xeon processors in rack-scale infrastructure for hyperscale deployments (Computex 2026)

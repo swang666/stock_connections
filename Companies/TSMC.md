@@ -46,3 +46,6 @@ country: Taiwan
 ## Added from research — 2026-06-03
 - manufactures chips for [[Intel]] — (VIEW, Morgan Stanley 2026-06-01): critical Intel roadmap parts likely move to TSMC; EMIB-T plan B
 - [[Entegris]] supplies materials to this company — (FACT, Bernstein 2026-06-02): yield-critical specialty/purity materials
+
+## Added from research — 2026-06-05 (X-scan)
+- benefits from [[AI Inference Demand]] — (FACT, X-scan 2026-06-05): C.C. Wei at 6/4 AGM guided 2026 revenue growth >30% USD and 2026 capex near upper end of $52-56B, citing agentic-AI compute/token demand

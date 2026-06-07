@@ -155,3 +155,46 @@
 **Validator:** errors=0  warnings=188 (all pre-existing legacy-edge gaps: source_doc/evidence missing on older rows) — PASS. Graph regenerated: 94 nodes, 225 edges, bottleneck baked; START HERE + Degree sheet re-synced.
 
 **Note:** Excel was NOT open (no lock file); xlsx written directly, no pending CSV.
+2026-06-04: no new files
+
+## 2026-06-04
+- Inbox files processed: 2026-06-04-0404-x-scan-extract.md (1 new file; all other inbox files already ingested).
+- Edges added: 1 — FOXCONN —partners with→ INTC (strength 2, FACT X-scan 2026-06-04: Hon Hai/Intel strategic collaboration on next-gen AI infrastructure, Edge AI, Physical AI).
+- Skipped (de-dup, restated existing edges): SIVE —partners with→ GFS; LITE —benefits from→ T_CPO.
+- New companies added: 0 (all referenced nodes already in Nodes sheet).
+- Wiki: added "partners with" bullets to Companies/Foxconn (Hon Hai).md and Companies/Intel.md (additive sections).
+- Validator: errors=0, warnings=188 (pre-existing: source_doc/evidence coverage). PASS.
+- Excel: no lock file found; xlsx written directly. Graph regenerated (94 nodes, 226 edges).
+
+## 2026-06-05 (Cowork daily ingest)
+Inbox files processed (3, all FACT-only X-scan extracts):
+- 2026-06-04-1204-x-scan-extract.md
+- 2026-06-04-2004-x-scan-extract.md
+- 2026-06-05-0404-x-scan-extract.md
+
+Edges added: 2
+- SAMBANOVA --partners with--> INTC (strength 1) — Intel Xeon rack-scale pairing, Computex 2026
+- TSM --benefits from--> T_INFER (strength 3) — C.C. Wei 6/4 AGM, 2026 rev >30%, agentic-AI demand
+
+New companies added: 1
+- SambaNova Systems (SAMBANOVA), layer 4 Chip Designers (Accelerators/Networking), USA — private
+
+Skipped as duplicates of existing edges (7 candidate edges in extracts, 5 already present):
+- FOXCONN--partners with-->INTC (exists, X-scan 2026-06-04 prior ingest)
+- AVGO--co-designs custom silicon with-->ANTHROPIC / OPENAI / META (all exist)
+- AVGO--benefits from-->T_TRAIN (exists; Q2 FY26 $10.8B confirmation noted but not duplicated)
+
+Wiki: created Companies/SambaNova Systems.md; appended additive bullets to Companies/Intel.md, Companies/TSMC.md, Themes/AI Inference Demand.md.
+
+Validator: errors=0, warnings=188 (all pre-existing missing-evidence/source_doc on older rows; new rows fully tagged). Graph regenerated: 95 nodes, 228 edges.
+Spreadsheet was NOT open (no lock file); xlsx written directly, no pending CSV needed.
+
+## 2026-06-06 — daily ingest
+- Inbox files processed (2): 2026-06-05-1204-x-scan-extract.md, 2026-06-05-2004-x-scan-extract.md (both FACT-grade X-scan extracts).
+- New companies added (2): ByteDance (BYTEDANCE, layer 10), SpaceX (Colossus compute) (SPCX, layer 10).
+- New edges added (9): MU→NVDA & SAMSUNG→NVDA (supplies HBM, Vera Rubin HBM4); ARM→META/OPENAI/ORCL/BYTEDANCE (licenses CPU IP, Arm AGI-CPU); GOOGL→SPCX & ANTHROPIC→SPCX (runs compute on); NVDA→SPCX (sells GPUs to).
+- Strengthened 2 existing edges (untagged→FACT + source_doc): SKHYNIX→NVDA (HBM4 cert), AVGO→GOOGL (TPU commitment). No duplicate rows added.
+- Deduped out (2): SKHYNIX→NVDA and AVGO→GOOGL already existed (strengthened instead).
+- Validator: errors=0, warnings=184 (PASS). The 5 "flagged" warnings are intentional (?) markers.
+- FLAGGED FOR USER REVIEW: the 20:04 extract attributes the "Colossus" compute facilities (Memphis) to SpaceX, but Colossus is commonly associated with xAI. The 3 SPCX edges and the SPCX node carry a "(?)" flag and a warning callout on the page. Verify the SpaceX-vs-xAI attribution and the ~$30B Google / ~$45B Anthropic deal figures against primary sources before relying on them.
+- Spreadsheet was NOT open (no lock file); xlsx written directly, no pending CSV.

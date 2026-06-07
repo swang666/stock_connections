@@ -28,3 +28,9 @@ country: UK
 
 ## Added from research — 2026-06 (X-scan)
 - licenses CPU IP to [[Qualcomm]] — (FACT, X-scan 2026-06-02): Qualcomm Arm-architecture licensee; custom Oryon/NUVIA CPUs _(X-Reports/2026-06-02-1634-x-scan.md)_
+
+## Added from research — 2026-06-05 (X-scan)
+- licenses CPU IP to [[Meta Platforms]] — (FACT, X-scan 2026-06-05): Meta named Arm AGI-CPU customer (Computex); press-corroborated _(X-Reports/2026-06-05-1204-x-scan.md)_
+- licenses CPU IP to [[OpenAI]] — (FACT, X-scan 2026-06-05): OpenAI in Arm AGI-CPU customer roster; press-corroborated _(X-Reports/2026-06-05-1204-x-scan.md)_
+- licenses CPU IP to [[Oracle]] — (FACT, X-scan 2026-06-05): Oracle named Arm AGI-CPU adopter (Computex); press-corroborated _(X-Reports/2026-06-05-1204-x-scan.md)_
+- licenses CPU IP to [[ByteDance]] — (FACT, X-scan 2026-06-05): ByteDance named Arm AGI-CPU adopter (Computex); press-corroborated _(X-Reports/2026-06-05-1204-x-scan.md)_

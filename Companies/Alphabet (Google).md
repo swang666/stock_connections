@@ -36,3 +36,7 @@ country: USA
 
 ## Added from research — 2026-06-03
 - [[MediaTek]] co-designs custom silicon with this company — (FACT, Morgan Stanley 2026-06-01): lower-cost TPU/ASIC, ramp as soon as 2027
+
+## Added from research — 2026-06-05 (X-scan)
+- runs compute on [[SpaceX (Colossus compute)]] — (FACT, X-scan 2026-06-05): ~$30B / ~110k-GPU compute deal, $920M/mo Oct-2026→Jun-2029 (?) Colossus usually attributed to xAI _(X-Reports/2026-06-05-2004-x-scan.md)_
+- co-designs custom silicon with [[Broadcom]] — (FACT, X-scan 2026-06-05): AVGO Q2 FY26 call — Google TPU commitment 'remains substantial' _(X-Reports/2026-06-05-1204-x-scan.md)_

@@ -29,11 +29,36 @@ for r in wb["Nodes"].iter_rows(min_row=2, values_only=True):
     if not r or not r[0]: continue
     nodes.append({"id":r[0],"name":r[1],"type":r[2],"ticker":r[3] or "","layer":r[4],
                   "layer_name":r[5],"segment":r[6] or "","role":r[9] or ""})
+def evtag(ev):
+    """Derive a confidence tag from the evidence text: FACT (stated), VIEW (analyst opinion),
+    ? (flagged/uncertain), or '' (untagged). Mirrors the FACT/VIEW discipline in CLAUDE.md."""
+    t = (ev or "").lower()
+    if "needs-" in t or t.strip().endswith("(?)") or " (?)" in t: return "?"
+    has_f, has_v = "(fact" in t, "(view" in t
+    if has_f and not has_v: return "FACT"
+    if has_v and not has_f: return "VIEW"
+    if has_f and has_v: return "FACT"   # mixed -> treat as fact-backed
+    return ""
+def public_src(s):
+    """Only expose a source link if it's a public http(s) URL. Private/local source_doc values
+    (analyst PDFs, expert-call docs, X-scan files) are NOT in the repo, so linking them would be a
+    broken relative link AND would leak a private filename onto the public page — drop those."""
+    s = str(s or "").strip()
+    return s if s.lower().startswith(("http://", "https://")) else ""
 edges=[]
 for r in wb["Edges"].iter_rows(min_row=2, values_only=True):
     if not r or not r[0]: continue
-    edges.append({"s":r[0],"r":r[2],"t":r[3],"w":r[5] if isinstance(r[5],(int,float)) else 2})
+    ev = r[6] or ""
+    edges.append({"s":r[0],"r":r[2],"t":r[3],"w":r[5] if isinstance(r[5],(int,float)) else 2,
+                  "ev":ev, "src":public_src(r[8]), "asof":(str(r[7])[:10] if r[7] else ""),
+                  "tag":evtag(ev)})
+# node extras: country + key_products (already-present columns, just not previously surfaced)
+node_extra={}
+for r in wb["Nodes"].iter_rows(min_row=2, values_only=True):
+    if r and r[0]: node_extra[r[0]] = {"country": r[7] or "", "key_products": r[8] or ""}
 wb.close()
+for nd in nodes:
+    nd.update(node_extra.get(nd["id"], {"country":"", "key_products":""}))
 
 # ---------- 1) interactive graph ----------
 bn, be = ba.load(); rows = ba.analyze(bn, be); S = {x["id"]: x for x in rows}

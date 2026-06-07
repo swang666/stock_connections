@@ -20,7 +20,7 @@ A living map of who supplies, sells to, and benefits from whom across the AI val
 [[GlobalFoundries]], [[Intel]], [[Samsung Electronics]], [[TSMC]], [[X-FAB]]
 
 **L4 — Chip Designers (Accelerators/Networking)**
-[[AMD]], [[Broadcom]], [[Huawei]], [[IBM]], [[Iluvatar CoreX]], [[Marvell]], [[MediaTek]], [[MetaX]], [[NVIDIA]], [[Qualcomm]]
+[[AMD]], [[Broadcom]], [[Huawei]], [[IBM]], [[Iluvatar CoreX]], [[Marvell]], [[MediaTek]], [[MetaX]], [[NVIDIA]], [[Qualcomm]], [[SambaNova Systems]]
 
 **L5 — Memory (HBM/DRAM)**
 [[ChangXin Memory (CXMT)]], [[Micron]], [[Nanya Technology]], [[SK Hynix]], [[Sandisk]], [[Yangtze Memory (YMTC)]]
@@ -38,7 +38,7 @@ A living map of who supplies, sells to, and benefits from whom across the AI val
 [[Celestica]], [[Dell Technologies]], [[Foxconn (Hon Hai)]], [[Hewlett Packard Enterprise]], [[Supermicro]]
 
 **L10 — Hyperscalers / Cloud**
-[[Alphabet (Google)]], [[Amazon]], [[CoreWeave]], [[IREN]], [[Meta Platforms]], [[Microsoft]], [[Nebius]], [[Oracle]]
+[[Alphabet (Google)]], [[Amazon]], [[ByteDance]], [[CoreWeave]], [[IREN]], [[Meta Platforms]], [[Microsoft]], [[Nebius]], [[Oracle]], [[SpaceX (Colossus compute)]]
 
 **L11 — AI Labs / Model Developers**
 [[Anthropic]], [[OpenAI]], [[xAI]]

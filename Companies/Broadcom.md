@@ -45,3 +45,6 @@ country: USA
 ## Added from research — 2026-06-03 (ingest)
 - co-designs custom silicon with [[Anthropic]] — (FACT, GS 2026-06-03): ramping initial 1GW Anthropic custom-silicon capacity, +5GW from FY27; one of 6 custom-silicon engagements
 - co-designs custom silicon with [[OpenAI]] — (FACT, GS 2026-06-03): OpenAI among Broadcom's six custom-silicon engagements ramping into FY27
+
+## Added from research — 2026-06-05 (X-scan)
+- co-designs custom silicon with [[Alphabet (Google)]] — (FACT, X-scan 2026-06-05): AVGO Q2 FY26 call — Google TPU commitment 'remains substantial' despite supplier diversification _(X-Reports/2026-06-05-1204-x-scan.md)_

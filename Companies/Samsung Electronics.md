@@ -29,3 +29,6 @@ country: South Korea
 
 ## Sources
 - _Add links to filings / articles in `sources/`._
+
+## Added from research — 2026-06-05 (X-scan)
+- supplies HBM to [[NVIDIA]] — (FACT, X-scan 2026-06-05): Jensen certified Samsung for Vera Rubin HBM4 supply; press-corroborated _(X-Reports/2026-06-05-1204-x-scan.md)_

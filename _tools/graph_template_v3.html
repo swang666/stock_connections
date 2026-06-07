@@ -24,9 +24,11 @@
   .btn{font-size:11px;padding:5px 9px;border-radius:7px;border:1px solid var(--line);
     background:#0d1426;color:var(--muted);cursor:pointer;user-select:none}
   .btn.on{color:var(--ink);border-color:var(--accent);background:#13233f}
-  .catbox{padding:11px 16px;border-bottom:1px solid var(--line);font-size:12px;
+  .catbox,.pathbox{padding:11px 16px;border-bottom:1px solid var(--line);font-size:12px;
     display:flex;flex-direction:column;gap:7px;background:#0e1730}
-  .catbox .head{display:flex;align-items:center;font-weight:600;color:var(--ink)}
+  .pathbox{background:#0c1626}
+  .catbox .head,.pathbox .head{display:flex;align-items:center;font-weight:600;color:var(--ink)}
+  #pathA,#pathB{color:#7cc4ff}
   .catrow{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
   .catlbl{color:var(--muted);width:42px;font-size:11px}
   .catseed{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
@@ -43,6 +45,19 @@
   #detail ul{margin:0;padding-left:16px}
   #detail li{margin:3px 0}
   #detail .rel{color:var(--muted)}
+  #detail .kp{font-size:11px;color:var(--muted);margin:-6px 0 4px}
+  #detail ul.edges{padding-left:14px}
+  #detail ul.edges li{margin:6px 0}
+  .ev{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.04em;padding:1px 5px;
+    border-radius:10px;vertical-align:middle;margin-left:3px}
+  .ev.fact{background:#0e3a26;color:#4ade80;border:1px solid #1c5c3e}
+  .ev.view{background:#3a2e0e;color:#fbbf24;border:1px solid #5c4a1c}
+  .ev.flag{background:#3a1e1e;color:#f87171;border:1px solid #5c2c2c}
+  .evtext{font-size:11px;color:var(--muted);line-height:1.45;margin:1px 0 0 2px;
+    padding-left:7px;border-left:2px solid var(--line)}
+  .evtext .cite{color:#7cc4ff;text-decoration:none;white-space:nowrap}
+  .evtext .cite:hover{text-decoration:underline}
+  .evtext .asof{color:#5d6b8c;font-size:10px;margin-left:4px}
   #legend{padding:10px 16px;border-top:1px solid var(--line);max-height:30%;overflow:auto}
   #legend .row{display:flex;align-items:center;gap:8px;font-size:11px;padding:2px 0;cursor:pointer;color:var(--muted)}
   #legend .row.off{opacity:.35}
@@ -73,6 +88,7 @@
       <div class="toggles">
         <span class="btn on" id="tLabels">Labels</span>
         <span class="btn on" id="tThemes">Theme links</span>
+        <span class="btn" id="tFact" title="Hide analyst-opinion (VIEW) edges; show only stated-fact relationships">✓ FACT only</span>
         <span class="btn" id="tBottle">⛔ Bottlenecks</span>
         <span class="btn" id="tReset">Reset view</span>
       </div>
@@ -88,6 +104,12 @@
         <span class="btn seg" data-kind="supply">Supply</span>
         <span class="btn seg" data-kind="macro">Macro</span></div>
       <div class="catrow"><span class="btn run" id="catRun">Run catalyst &#9656;</span></div>
+    </div>
+    <div class="pathbox">
+      <div class="head">🔗 Path trace <span class="btn" id="pathClear" style="margin-left:auto">Clear</span></div>
+      <div class="catseed">A:&nbsp;<span id="pathA">—</span> <span class="btn" id="pathSetA">Set = selected</span></div>
+      <div class="catseed">B:&nbsp;<span id="pathB">—</span> <span class="btn" id="pathSetB">Set = selected</span></div>
+      <div class="catrow"><span class="btn run" id="pathRun">Trace path &#9656;</span></div>
     </div>
     <div id="detail"></div>
     <div id="legend"></div>
@@ -109,10 +131,13 @@ const deg={}; NODES.forEach(n=>deg[n.id]=0);
 EDGES.forEach(e=>{deg[e.s]++;deg[e.t]++;});
 const adj={}; NODES.forEach(n=>adj[n.id]=new Set());
 EDGES.forEach(e=>{adj[e.s].add(e.t);adj[e.t].add(e.s);});
+const dadj={}; NODES.forEach(n=>dadj[n.id]=new Set());   // directed: source -> target
+EDGES.forEach(e=>dadj[e.s].add(e.t));
 
 const layersPresent=[...new Set(NODES.filter(n=>n.layer>0).map(n=>n.layer))].sort((a,b)=>a-b);
 const layerOff=new Set();
-let showLabels=true, showThemes=true, focus=null, hover=null, searchHit=new Set();
+let showLabels=true, showThemes=true, factOnly=false, focus=null, hover=null, searchHit=new Set();
+let pathA=null, pathB=null, pathNodes=new Set(), pathEdges=new Set(), pathActive=false;
 
 let catSeeds=new Set(), catPol=1, catKind='demand', catImpact={}, catBest={}, catActive=false, catMax=1, CATLINKS=null;
 function impactColor(v){
@@ -188,13 +213,20 @@ function draw(){
     if(layerOff.has(a.layer)||layerOff.has(b.layer)) return;
     const isTheme = a.layer===0||b.layer===0;
     if(isTheme && !showThemes) return;
+    const isView = e.tag==='VIEW' || e.tag==='?';
+    if(factOnly && isView) return;                 // "FACT only" filter
     let on = !active || (active.has(e.s)&&active.has(e.t));
+    const onPath = pathActive && pathEdges.has(e.s+'>'+e.t);
     ctx.beginPath();
     ctx.moveTo(sx(a.x),sy(a.y)); ctx.lineTo(sx(b.x),sy(b.y));
+    if(onPath){ ctx.lineWidth=3; ctx.strokeStyle='#22d3ee'; ctx.setLineDash([]); ctx.stroke();
+      ctx.setLineDash([]); return; }
+    if(pathActive){ ctx.lineWidth=0.4; ctx.strokeStyle='rgba(80,95,130,.06)'; ctx.setLineDash([]); ctx.stroke(); return; }
     ctx.lineWidth = (on? (e.w*0.5+0.4):0.4);
-    ctx.strokeStyle = on ? (isTheme? 'rgba(148,164,200,.55)' : 'rgba(120,140,180,.45)')
+    // VIEW/uncertain edges are amber & dashed; FACT/structural edges solid; themes faint dashed.
+    ctx.strokeStyle = on ? (isView? 'rgba(245,180,80,.55)' : (isTheme? 'rgba(148,164,200,.55)' : 'rgba(120,140,180,.45)'))
                          : 'rgba(80,95,130,.08)';
-    if(isTheme){ctx.setLineDash([4,4]);} else {ctx.setLineDash([]);}
+    if(isView){ctx.setLineDash([2,3]);} else if(isTheme){ctx.setLineDash([4,4]);} else {ctx.setLineDash([]);}
     ctx.stroke(); ctx.setLineDash([]);
   });
   NODES.forEach(n=>{
@@ -205,7 +237,8 @@ function draw(){
     const X=sx(n.x), Y=sy(n.y); let R=n.r*Math.sqrt(view.k); if(bottleneckOn){ R=(4+(n.bscore||0)/bMax*20)*Math.sqrt(view.k); }
     if(catActive){ on = catSeeds.has(n.id) || Math.abs(catImpact[n.id]||0)>=0.04; }
     else if(bottleneckOn){ on = n.layer>0 && (n.bscore||0)>0; }
-    ctx.globalAlpha = catActive ? (on?1:0.09) : (bottleneckOn ? (on?1:0.12) : ((on&&hit)?1:0.18));
+    else if(pathActive){ on = pathNodes.has(n.id); }
+    ctx.globalAlpha = catActive ? (on?1:0.09) : (bottleneckOn ? (on?1:0.12) : (pathActive ? (on?1:0.07) : ((on&&hit)?1:0.18)));
     ctx.beginPath();
     if(n.layer===0){
       ctx.moveTo(X,Y-R-1);ctx.lineTo(X+R+1,Y);ctx.lineTo(X,Y+R+1);ctx.lineTo(X-R-1,Y);ctx.closePath();
@@ -215,6 +248,7 @@ function draw(){
     ctx.fill();
     if((focus&&focus.id===n.id) || (catActive&&catSeeds.has(n.id))){ctx.lineWidth=2.5;ctx.strokeStyle='#fff';ctx.stroke();}
     if(searchHit.has(n.id)){ctx.lineWidth=2.5;ctx.strokeStyle='#fde047';ctx.stroke();}
+    if(pathActive && (n.id===(pathA&&pathA.id)||n.id===(pathB&&pathB.id))){ctx.lineWidth=2.5;ctx.strokeStyle='#22d3ee';ctx.stroke();}
     if(showLabels && (view.k>0.75 || deg[n.id]>=4 || (active&&active.has(n.id)) || (catActive&&on))){
       ctx.globalAlpha=(on&&hit)?0.95:0.2;
       ctx.fillStyle='#dce6ff';
@@ -277,22 +311,48 @@ cv.addEventListener('wheel',e=>{
   view.k=Math.max(0.35,Math.min(3,view.k*f));
 },{passive:false});
 
+function tagChip(tag){
+  if(tag==='FACT') return '<span class="ev fact">FACT</span>';
+  if(tag==='VIEW') return '<span class="ev view">VIEW</span>';
+  if(tag==='?')    return '<span class="ev flag">?</span>';
+  return '';
+}
+function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function cleanEv(ev){
+  // strip the leading "(FACT, firm date):" / "(VIEW, ...)" marker — the chip already shows it
+  return esc((ev||'').replace(/^\s*\((fact|view)[^)]*\)\s*:?\s*/i,'').replace(/^\s*\(\?\)\s*/,'').trim());
+}
+function edgeLine(otherName, e, dir){
+  const tip = cleanEv(e.ev);
+  // open in a new tab; if a previewer blocks window.open we fall back to same-tab navigation.
+  const src = e.src ? ' <a class="cite" href="'+esc(e.src)+'" target="_blank" rel="noopener noreferrer" title="'+esc(e.src)+
+    '" onclick="try{window.open(this.href,\'_blank\',\'noopener\')}catch(_){location.href=this.href}return false;">source ↗</a>' : '';
+  const asof = e.asof ? ' <span class="asof">'+e.asof+'</span>' : '';
+  const name = '<b>'+otherName+'</b>', rel='<span class="rel">'+e.r+'</span>';
+  let line = '<li>'+(dir==='in' ? name+' '+rel : rel+' '+name)+' '+tagChip(e.tag);
+  if(tip) line += '<div class="evtext">'+tip+src+asof+'</div>';
+  else if(e.src||e.asof) line += '<div class="evtext rel">(no note)'+src+asof+'</div>';
+  return line+'</li>';
+}
 function selectNode(n){
   focus=n;
   if(catActive) return;
   if(!n){ detail.innerHTML='<p style="color:var(--muted)">Click a node to inspect its relationships. '+
     'Click a <i>diamond</i> (demand driver) to see exactly which companies benefit from it.<br><br>'+
     'Or use <b style="color:#fde047">⚡ Catalyst mode</b>: click a node, hit “Set = selected”, choose Positive/Negative and Demand/Supply/Macro, then Run to trace chain effects.</p>'; return; }
-  const out=EDGES.filter(e=>e.s===n.id), inc=EDGES.filter(e=>e.t===n.id);
+  const keep=e=>!(factOnly && (e.tag==='VIEW'||e.tag==='?'));
+  const out=EDGES.filter(e=>e.s===n.id).filter(keep), inc=EDGES.filter(e=>e.t===n.id).filter(keep);
   let h='<h2>'+n.name+'</h2>';
   h+='<span class="tag">'+(n.ticker&&n.ticker!=='' ? n.ticker : 'private')+'</span>';
   h+='<span class="tag">L'+(n.layer||'·')+' · '+n.layer_name+'</span>';
   if(n.segment)h+='<span class="tag">'+n.segment+'</span>';
+  if(n.country)h+='<span class="tag">'+n.country+'</span>';
   h+='<div class="role">'+n.role+'</div>';
-  if(out.length){h+='<h3>'+(n.type==='Theme'?'Drives demand for':'Supplies / sells / benefits →')+'</h3><ul>';
-    out.forEach(e=>{h+='<li><span class="rel">'+e.r+'</span> <b>'+byId[e.t].name+'</b></li>';});h+='</ul>';}
-  if(inc.length){h+='<h3>'+(n.type==='Theme'?'Beneficiaries (who gains)':'← Supplied / served / driven by')+'</h3><ul>';
-    inc.forEach(e=>{h+='<li><b>'+byId[e.s].name+'</b> <span class="rel">'+e.r+'</span></li>';});h+='</ul>';}
+  if(n.key_products)h+='<div class="kp"><b>Key products:</b> '+n.key_products+'</div>';
+  if(out.length){h+='<h3>'+(n.type==='Theme'?'Drives demand for':'Supplies / sells / benefits →')+'</h3><ul class="edges">';
+    out.forEach(e=>{h+=edgeLine(byId[e.t].name, e, 'out');});h+='</ul>';}
+  if(inc.length){h+='<h3>'+(n.type==='Theme'?'Beneficiaries (who gains)':'← Supplied / served / driven by')+'</h3><ul class="edges">';
+    inc.forEach(e=>{h+=edgeLine(byId[e.s].name, e, 'in');});h+='</ul>';}
   detail.innerHTML=h;
 }
 
@@ -303,6 +363,7 @@ document.getElementById('search').addEventListener('input',e=>{
 function tg(id,cb){const el=document.getElementById(id);el.onclick=()=>{el.classList.toggle('on');cb(el.classList.contains('on'));};}
 tg('tLabels',v=>showLabels=v);
 tg('tThemes',v=>showThemes=v);
+tg('tFact',v=>{factOnly=v; if(focus)selectNode(focus);});
 document.getElementById('tReset').onclick=()=>{view={x:0,y:0,k:1};alpha=0.8;};
 
 const leg=document.getElementById('legend');
@@ -380,6 +441,51 @@ document.querySelectorAll('[data-pol]').forEach(el=>el.onclick=()=>{document.que
 document.querySelectorAll('[data-kind]').forEach(el=>el.onclick=()=>{document.querySelectorAll('[data-kind]').forEach(x=>x.classList.remove('on'));el.classList.add('on');catKind=el.dataset.kind;});
 updSeedLabel();
 
+// ---- path trace (shortest supplier→customer path between two nodes) ----
+function bfsPath(startId, goalId, adjMap){
+  if(startId===goalId) return [startId];
+  const prev={}, seen=new Set([startId]); const q=[startId];
+  while(q.length){
+    const x=q.shift();
+    for(const y of adjMap[x]||[]){
+      if(seen.has(y)) continue;
+      seen.add(y); prev[y]=x;
+      if(y===goalId){ const path=[y]; let c=y; while(c!==startId){c=prev[c];path.unshift(c);} return path; }
+      q.push(y);
+    }
+  }
+  return null;
+}
+function tracePath(){
+  if(!pathA||!pathB){ detail.innerHTML='<p style="color:var(--muted)">Pick two nodes: click one, “Set = selected” for A; click another, Set for B.</p>'; return; }
+  catActive=false; bottleneckOn=false; document.getElementById('tBottle').classList.remove('on');
+  // try directed (A supplies toward B), then reverse, then undirected as a fallback
+  let path=bfsPath(pathA.id,pathB.id,dadj), dir='downstream (A → B)';
+  if(!path){ path=bfsPath(pathB.id,pathA.id,dadj); if(path){path=path.slice().reverse(); dir='upstream (A ← B)';} }
+  if(!path){ path=bfsPath(pathA.id,pathB.id,adj); dir='undirected (ignoring edge direction)'; }
+  pathNodes=new Set(); pathEdges=new Set();
+  if(!path){ pathActive=false; detail.innerHTML='<h2>🔗 No path</h2><div class="role">No connection found between <b>'+pathA.name+'</b> and <b>'+pathB.name+'</b> in the graph.</div>'; return; }
+  path.forEach(id=>pathNodes.add(id));
+  for(let i=0;i<path.length-1;i++){ pathEdges.add(path[i]+'>'+path[i+1]); pathEdges.add(path[i+1]+'>'+path[i]); }
+  pathActive=true; alpha=Math.max(alpha,0.25);
+  // describe each hop with its relationship verb
+  let h='<h2>🔗 Path: '+pathA.name+' → '+pathB.name+'</h2><div class="role">'+(path.length-1)+' hop'+(path.length-1===1?'':'s')+' · '+dir+'</div><ul class="edges">';
+  for(let i=0;i<path.length-1;i++){
+    const a=path[i], b=path[i+1];
+    const e=EDGES.find(x=>(x.s===a&&x.t===b)||(x.s===b&&x.t===a));
+    const rel=e? e.r : 'connected to';
+    h+='<li><b>'+byId[a].name+'</b> <span class="rel">'+rel+'</span> <b>'+byId[b].name+'</b></li>';
+  }
+  detail.innerHTML=h+'</ul>';
+}
+function updPathLabels(){ document.getElementById('pathA').textContent=pathA?pathA.name:'—';
+  document.getElementById('pathB').textContent=pathB?pathB.name:'—'; }
+document.getElementById('pathSetA').onclick=()=>{ if(focus){pathA=focus; updPathLabels();} };
+document.getElementById('pathSetB').onclick=()=>{ if(focus){pathB=focus; updPathLabels();} };
+document.getElementById('pathRun').onclick=tracePath;
+document.getElementById('pathClear').onclick=()=>{ pathA=pathB=null; pathActive=false; pathNodes=new Set(); pathEdges=new Set(); updPathLabels(); selectNode(null); alpha=Math.max(alpha,0.2); };
+updPathLabels();
+
 // ---- bottleneck mode (scores precomputed in Python -> node.bscore, for engine/graph parity) ----
 let bottleneckOn=false;
 let bMax=Math.max(1, ...NODES.map(n=>n.bscore||0));
@@ -404,7 +510,7 @@ function renderBottleneck(){
 document.getElementById('tBottle').onclick=()=>{
   bottleneckOn=!bottleneckOn;
   document.getElementById('tBottle').classList.toggle('on', bottleneckOn);
-  if(bottleneckOn){ catActive=false; focus=null; renderBottleneck(); alpha=Math.max(alpha,0.2); }
+  if(bottleneckOn){ catActive=false; pathActive=false; focus=null; renderBottleneck(); alpha=Math.max(alpha,0.2); }
   else { selectNode(null); }
 };
 

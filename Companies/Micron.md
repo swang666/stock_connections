@@ -35,3 +35,6 @@ country: USA
 ## Added from research — 2026-05
 - supplies memory to [[Microsoft]] — (FACT, UBS) hyperscaler DDR5/HBM under enhanced LTA _(UBS Micron LTAs 2026-05)_
 - supplies memory to [[Amazon]] — (FACT, UBS) hyperscaler DDR5 under enhanced LTA _(UBS Micron LTAs 2026-05)_
+
+## Added from research — 2026-06-05 (X-scan)
+- supplies HBM to [[NVIDIA]] — (FACT, X-scan 2026-06-05): Jensen certified Micron for Vera Rubin HBM4 supply; press-corroborated _(X-Reports/2026-06-05-1204-x-scan.md)_

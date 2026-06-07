@@ -32,3 +32,6 @@ layer: demand-driver
 ## Added from research — 2026-06-03 (ingest)
 - [[STMicroelectronics]] — (FACT, X-scan 2026-06-03): datacenter revenue ramp on AI-infra demand; guidance could double in 2027
 - [[Astera Labs]] — (VIEW, ISI 2026-05): scale-up switch demand growing for inference clusters
+
+## Added from research — 2026-06-05 (X-scan)
+- [[TSMC]] benefits from this theme — (FACT, X-scan 2026-06-05): C.C. Wei at 6/4 AGM guided 2026 revenue >30% growth and capex near upper end of $52-56B, citing agentic-AI compute/token demand _(X-Reports/2026-06-05-0404-x-scan.md)_

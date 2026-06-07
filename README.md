@@ -32,7 +32,15 @@ python3 _tools/validate.py
 - **Live (no download):** https://swang666.github.io/stock_connections/ — runs in the browser, nothing to install.
 - **Local:** open **`AI Supply Chain Graph.html`** in any browser — fully self-contained (data baked in, no server or internet needed).
 
-Both have Catalyst and Bottleneck modes in the side panel.
+Both have Catalyst, Bottleneck, and **Path-trace** modes in the side panel, show the **evidence and
+source citation** behind every relationship when you click a node, and distinguish stated-fact edges
+from analyst-opinion edges (FACT vs VIEW). A **"FACT only"** toggle hides opinion-based edges so
+you can see just the confirmed structure.
+
+**Path trace** lets you pick any two companies (Set = A, Set = B) and highlights the shortest
+supply-chain path between them — e.g. *ASML → TSMC → Microsoft* — with the relationship verb on each
+hop. It prefers the directed supplier→customer route, falling back to the reverse or an undirected
+path if needed.
 
 > **Maintainers:** the live page is `index.html` at the repo root, regenerated automatically by
 > `_tools/update_graph.py` (a byte-identical copy of the graph). To publish it, enable **GitHub

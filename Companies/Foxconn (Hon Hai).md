@@ -24,3 +24,6 @@ country: Taiwan
 
 ## Sources
 - _Add links to filings / articles in `sources/`._
+
+## Added from research — 2026-06-04 (X-scan)
+- partners with [[Intel]] — (FACT, X-scan 2026-06-04): Hon Hai (Foxconn) and Intel announced strategic collaboration on next-gen AI infrastructure, Edge AI, and Physical AI
