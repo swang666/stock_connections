@@ -1,25 +1,95 @@
 {
   "_comment": "Config for the twice-daily X scan. Edit handles/searches here, not in the scheduled-task prompt. Read by _tools/x_scan/x_scan_state.py and referenced by _prompts/X Scan Prompt.md.",
   "timezone": "America/Los_Angeles",
-  "slots": { "morning_cron_local": "07:34", "afternoon_cron_local": "16:34", "afternoon_starts_at_local_hour": 12 },
+  "slots": {
+    "morning_cron_local": "07:34",
+    "afternoon_cron_local": "16:34",
+    "afternoon_starts_at_local_hour": 12
+  },
   "scan_window_hours_fallback": 12,
   "accounts": [
-    { "handle": "aleabitoreddit", "name": "Serenity", "role": "anchor; AI/semi supply-chain analyst", "note": "best ideas are often subscribe-to-unlock; capture the visible teaser + ticker, mark [paywalled]" },
-    { "handle": "dylan522p", "name": "Dylan Patel", "role": "SemiAnalysis founder" },
-    { "handle": "SemiAnalysis_", "name": "SemiAnalysis (firm)", "role": "institutional feed; carries Doug O'Laughlin + team research", "note": "replaces dead @Mule_Capital" },
-    { "handle": "dnystedt", "name": "Dan Nystedt", "role": "Asia supply-chain news" },
-    { "handle": "mingchikuo", "name": "Ming-Chi Kuo", "role": "supply-chain checks" },
-    { "handle": "asianometry", "name": "Asianometry", "role": "structural semi explainers; posts infrequently" },
-    { "handle": "firstadopter", "name": "Tae Kim", "role": "Nvidia/AI; Barron's" },
-    { "handle": "Beth_Kindig", "name": "Beth Kindig", "role": "I/O Fund; AI infra" },
-    { "handle": "TheTranscript_", "name": "The Transcript", "role": "earnings-call quotes" },
-    { "handle": "unusual_whales", "name": "Unusual Whales", "role": "flow/news; filter macro noise" },
-    { "handle": "PatrickMoorhead", "name": "Patrick Moorhead", "role": "Moor Insights; events" },
-    { "handle": "danielnewmanUV", "name": "Daniel Newman", "role": "Futurum; events" }
+    {
+      "handle": "aleabitoreddit",
+      "name": "Serenity",
+      "role": "anchor; AI/semi supply-chain analyst",
+      "note": "best ideas are often subscribe-to-unlock; capture the visible teaser + ticker, mark [paywalled]"
+    },
+    {
+      "handle": "dylan522p",
+      "name": "Dylan Patel",
+      "role": "SemiAnalysis founder"
+    },
+    {
+      "handle": "SemiAnalysis_",
+      "name": "SemiAnalysis (firm)",
+      "role": "institutional feed; carries Doug O'Laughlin + team research",
+      "note": "replaces dead @Mule_Capital"
+    },
+    {
+      "handle": "fabknowledge",
+      "name": "Doug O'Laughlin (Fabricated Knowledge)",
+      "role": "SemiAnalysis President; semi/memory research",
+      "note": "located 2026-06-07 via fabricated_knowledge standing search; was retired @Mule_Capital"
+    },
+    {
+      "handle": "dnystedt",
+      "name": "Dan Nystedt",
+      "role": "Asia supply-chain news"
+    },
+    {
+      "handle": "mingchikuo",
+      "name": "Ming-Chi Kuo",
+      "role": "supply-chain checks"
+    },
+    {
+      "handle": "asianometry",
+      "name": "Asianometry",
+      "role": "structural semi explainers; posts infrequently"
+    },
+    {
+      "handle": "firstadopter",
+      "name": "Tae Kim",
+      "role": "Nvidia/AI; Barron's"
+    },
+    {
+      "handle": "Beth_Kindig",
+      "name": "Beth Kindig",
+      "role": "I/O Fund; AI infra"
+    },
+    {
+      "handle": "TheTranscript_",
+      "name": "The Transcript",
+      "role": "earnings-call quotes"
+    },
+    {
+      "handle": "unusual_whales",
+      "name": "Unusual Whales",
+      "role": "flow/news; filter macro noise"
+    },
+    {
+      "handle": "PatrickMoorhead",
+      "name": "Patrick Moorhead",
+      "role": "Moor Insights; events"
+    },
+    {
+      "handle": "danielnewmanUV",
+      "name": "Daniel Newman",
+      "role": "Futurum; events"
+    }
   ],
   "retired_accounts": [
-    { "handle": "Mule_Capital", "name": "Doug O'Laughlin (Fabricated Knowledge)", "status": "dead/renamed; new personal handle not locatable as of 2026-06-02", "replaced_by": "SemiAnalysis_ + standing search 'fabricated_knowledge'" },
-    { "handle": "Jukanlosreve", "name": "Jukan (memory/HBM)", "status": "account deleted/renamed; no findable successor as of 2026-06-02", "replaced_by": "standing search 'memory_hbm'" }
+    {
+      "handle": "Mule_Capital",
+      "name": "Doug O'Laughlin (Fabricated Knowledge)",
+      "status": "dead/renamed; new personal handle not locatable as of 2026-06-02",
+      "replaced_by": "SemiAnalysis_ + standing search 'fabricated_knowledge'"
+    },
+    {
+      "handle": "Jukanlosreve",
+      "name": "Jukan (memory/HBM)",
+      "status": "account deleted/renamed; no findable successor as of 2026-06-02",
+      "replaced_by": "standing search 'memory_hbm'"
+    }
   ],
   "standing_searches": [
     {
@@ -50,7 +120,15 @@
       "purpose": "surface his current handle if he resurfaces; if a clear personal account is found, add it to accounts[] and drop this search"
     }
   ],
-  "exclude_accounts_global": ["midascabal", "WWPDCoin", "itsmichaelluu", "StockSavvyShay", "Tablesalt13", "ReallyAmerican1", "DC_Draino"],
+  "exclude_accounts_global": [
+    "midascabal",
+    "WWPDCoin",
+    "itsmichaelluu",
+    "StockSavvyShay",
+    "Tablesalt13",
+    "ReallyAmerican1",
+    "DC_Draino"
+  ],
   "exclude_note": "these are engagement-bait / pump / pure-politics accounts seen flooding the standing searches; paraphrase only if a claim is independently corroborated, else omit",
   "earnings_sources": [
     "Pinned 'Next week in earnings' calendar from @TheTranscript_",

@@ -40,3 +40,6 @@ country: USA
 ## Added from research — 2026-06-05 (X-scan)
 - runs compute on [[SpaceX (Colossus compute)]] — (FACT, X-scan 2026-06-05): ~$30B / ~110k-GPU compute deal, $920M/mo Oct-2026→Jun-2029 (?) Colossus usually attributed to xAI _(X-Reports/2026-06-05-2004-x-scan.md)_
 - co-designs custom silicon with [[Broadcom]] — (FACT, X-scan 2026-06-05): AVGO Q2 FY26 call — Google TPU commitment 'remains substantial' _(X-Reports/2026-06-05-1204-x-scan.md)_
+
+## Added from research — 2026-06-07 (ingest)
+- drives demand for [[AI Training Capex]] — (FACT, Jefferies 2026-06): $85bn equity raise to fund AI compute; C26 capex $180-190bn, C27 higher

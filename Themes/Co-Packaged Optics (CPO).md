@@ -32,3 +32,10 @@ layer: demand-driver
 - [[Ayar Labs]] — (FACT, X-scan 2026-06-03): NVIDIA-backed CPO supplier in NVLink Fusion ecosystem
 - [[STMicroelectronics]] — (FACT, X-scan 2026-06-03): SiPh PICs / BiCMOS EICs for datacenter optical engines (~2/3 of ~B 2026 DC rev)
 - [[Semtech]] — (VIEW, TMTB 2026-05-27): DWDM/CPO laser engagements as CPO ramps
+
+## Added from research — 2026-06-07 (ingest)
+- [[Foxconn (Hon Hai)]] benefits from this theme — (FACT, Citi 2026-06): builds NVIDIA Spectrum-6 SPX scale-out CPO rack
+- [[MediaTek]] benefits from this theme — (VIEW, Citi 2026-06): growing Ayar Labs CPO partnership; CPO solution in 2-3 yrs
+- [[TSMC]] benefits from this theme — (FACT, Citi 2026-06): COUPE packaging + chip testing for CPO
+- [[Wiwynn]] benefits from this theme — (FACT, Citi 2026-06): demoed optical-I/O CPO rack with Ayar Labs & GUC
+- [[Largan Precision]] benefits from this theme — (VIEW, Citi 2026-06): Fiber Array micron-level alignment, key CPO bottleneck

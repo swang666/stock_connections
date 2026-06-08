@@ -27,3 +27,6 @@ country: Taiwan
 
 ## Added from research — 2026-06-04 (X-scan)
 - partners with [[Intel]] — (FACT, X-scan 2026-06-04): Hon Hai (Foxconn) and Intel announced strategic collaboration on next-gen AI infrastructure, Edge AI, and Physical AI
+
+## Added from research — 2026-06-07 (ingest)
+- benefits from [[Co-Packaged Optics (CPO)]] — (FACT, Citi 2026-06): builds NVIDIA Spectrum-6 SPX scale-out CPO rack; expanding Taiwan CPO supply chain

@@ -48,3 +48,6 @@ country: USA
 
 ## Added from research — 2026-06-05 (X-scan)
 - co-designs custom silicon with [[Alphabet (Google)]] — (FACT, X-scan 2026-06-05): AVGO Q2 FY26 call — Google TPU commitment 'remains substantial' despite supplier diversification _(X-Reports/2026-06-05-1204-x-scan.md)_
+
+## Added from research — 2026-06-07 (ingest)
+- drives demand for [[HBM Demand]] — (FACT, Jefferies 2026-06): TPUv8 higher HBM content; HBM a pass-through cost

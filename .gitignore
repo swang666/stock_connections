@@ -33,3 +33,6 @@ X-Reports/
 .obsidian/workspace-mobile.json
 .obsidian/workspace.json.bak
 .obsidian/cache
+
+# Live-price cache (regenerated at runtime via the proxy; don't commit raw history)
+_tools/prices_history.json

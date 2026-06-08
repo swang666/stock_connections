@@ -27,3 +27,6 @@ layer: demand-driver
 ## Companies linked
 - [[ASML]] — (VIEW, Goldman Sachs 2026-05-28): AI-driven EUV demand step-up
 - [[Dell Technologies]] — (FACT, Goldman Sachs 2026-05-28): F2027 AI-server outlook raised to ~$60bn
+
+## Added from research — 2026-06-07 (ingest)
+- [[Alphabet (Google)]] drives demand for this theme — (FACT, Jefferies 2026-06): $85bn equity raise to fund AI compute; C26 capex $180-190bn

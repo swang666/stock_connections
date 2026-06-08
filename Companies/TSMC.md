@@ -49,3 +49,6 @@ country: Taiwan
 
 ## Added from research — 2026-06-05 (X-scan)
 - benefits from [[AI Inference Demand]] — (FACT, X-scan 2026-06-05): C.C. Wei at 6/4 AGM guided 2026 revenue growth >30% USD and 2026 capex near upper end of $52-56B, citing agentic-AI compute/token demand
+
+## Added from research — 2026-06-07 (ingest)
+- benefits from [[Co-Packaged Optics (CPO)]] — (FACT, Citi 2026-06): COUPE packaging + chip testing for CPO

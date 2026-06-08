@@ -70,11 +70,24 @@ for nd in nodes:
     else:
         nd.update({"bscore":0,"breach":0,"balts":0,"bconstr":0,"bwhy":"","bemerging":False})
 lcolor={str(k):"#"+v for k,v in LAYER_COLOR.items()}; lname={str(k):v for k,v in LAYERS.items()}
+# price proxy config (optional; empty PROXY_URL just disables the live-price layer)
+try:
+    pricecfg=json.load(open(os.path.join(HERE,"price_config.json"),encoding="utf-8"))
+    pricecfg={"PROXY_URL":pricecfg.get("PROXY_URL","") or "","REFRESH_SECONDS":pricecfg.get("REFRESH_SECONDS",60)}
+except Exception:
+    pricecfg={"PROXY_URL":"","REFRESH_SECONDS":60}
+# catalyst calendar (optional; missing file -> empty calendar)
+try:
+    catalysts=json.load(open(os.path.join(HERE,"catalysts.json"),encoding="utf-8"))
+except Exception:
+    catalysts=[]
 tmpl=open(TMPL,encoding="utf-8").read()
 out=(tmpl.replace("/*NODES*/","NODES = "+json.dumps(nodes))
         .replace("/*EDGES*/","EDGES = "+json.dumps(edges))
         .replace("/*LCOLOR*/","LCOLOR = "+json.dumps(lcolor))
-        .replace("/*LNAME*/","LNAME = "+json.dumps(lname)))
+        .replace("/*LNAME*/","LNAME = "+json.dumps(lname))
+        .replace("/*PRICECFG*/","PRICECFG = "+json.dumps(pricecfg))
+        .replace("/*CATALYSTS*/","CATALYSTS = "+json.dumps(catalysts)))
 open(os.path.join(VAULT,"AI Supply Chain Graph.html"),"w",encoding="utf-8").write(out)
 # also publish a copy as index.html at the repo root so GitHub Pages serves it at the site root
 # (share link becomes https://<user>.github.io/<repo>/ with no %20-escaped filename).
@@ -111,6 +124,4 @@ for nd in sorted(nodes, key=lambda n:-(outd[n["id"]]+ind[n["id"]])):
     i=nd["id"]; ws.append([i,id2name[i],id2layer[i],outd[i],ind[i],outd[i]+ind[i]])
 wb2.save(XLSX)
 
-print(f"regenerated: graph ({len(nodes)} nodes, {len(edges)} edges, bottleneck baked) | "
-      f"START HERE index ({sum(1 for L in range(1,15) if by_layer.get(L))} layers, {len(by_layer.get(0,[]))} themes) | "
-      f"Degree sheet ({len(nodes)} rows)")
+print(f"regenerated: graph ({len(nodes)} nodes, {len(edges)} edges) | START HERE | Degree sheet | prices+catalysts baked")

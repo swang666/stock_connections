@@ -1,0 +1,5 @@
+{
+  "PROXY_URL": "https://ai-graph-prices.sumengwang1.workers.dev",
+  "_comment": "Deployed Cloudflare Worker URL for live quotes. Leave empty to disable the live-price layer. After editing, run: python3 _tools/update_graph.py",
+  "REFRESH_SECONDS": 60
+}

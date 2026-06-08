@@ -42,6 +42,29 @@ supply-chain path between them — e.g. *ASML → TSMC → Microsoft* — with t
 hop. It prefers the directed supplier→customer route, falling back to the reverse or an undirected
 path if needed.
 
+### Live market layer (optional)
+
+The graph can overlay **near-real-time prices** onto the structural map:
+
+- **📈 Prices** — colors every ticker'd node green→red by its 1D move and lists the day's top
+  movers; price shows in each node's detail panel.
+- **🧺 Baskets** — equal-weight 1D return for each demand-driver theme, computed from that theme's
+  member companies (the basket membership *is* your graph's benefit/driver edges).
+- **📅 Catalysts** — a countdown calendar of upcoming events (e.g. the China Ga/Ge/Sb export-control
+  expiry) from `_tools/catalysts.json`; each event links to affected nodes and a **Run scenario**
+  button that propagates the shock through the catalyst engine.
+
+Prices come through a free **Cloudflare Worker** proxy (stock quotes are public; no API key). The
+graph works fully without it — the price layer just stays off until configured. One-time setup:
+**`_tools/PRICE_PROXY_SETUP.md`**.
+
+### Mobile
+
+The page is responsive: on narrow screens the canvas and panel stack vertically, controls get
+larger tap targets, and a floating **☰ Panel** button collapses the sidebar so the graph can use
+the full screen. Touch gestures work — one finger drags a node or pans, a tap selects, and two
+fingers pinch-to-zoom.
+
 > **Maintainers:** the live page is `index.html` at the repo root, regenerated automatically by
 > `_tools/update_graph.py` (a byte-identical copy of the graph). To publish it, enable **GitHub
 > Pages**: repo **Settings → Pages → Source: Deploy from a branch → Branch: `main` / root → Save**.

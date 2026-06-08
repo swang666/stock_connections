@@ -1,0 +1,38 @@
+[
+  {
+    "date": "2026-11-27",
+    "title": "China Ga/Ge/Sb export-control suspension expires",
+    "desc": "The single biggest date in the chokepoint complex. Re-imposition would be a step-function up for gallium/germanium/antimony-exposed substrate & optical names; permanent removal compresses the scarcity premium.",
+    "nodes": ["COHR", "LITE", "TSM", "NVDA"],
+    "seed": "T_CHINA",
+    "polarity": "neg",
+    "kind": "supply"
+  },
+  {
+    "date": "2027-01-14",
+    "title": "NVIDIA Rubin Ultra + HBM4 ramp window",
+    "desc": "Next-gen accelerator ramp pulls HBM4 and advanced packaging. Watch memory + CoWoS suppliers.",
+    "nodes": ["NVDA", "SKHYNIX", "MU", "TSM"],
+    "seed": "NVDA",
+    "polarity": "pos",
+    "kind": "demand"
+  },
+  {
+    "date": "2027-06-29",
+    "title": "HBM4E ramp + advanced-packaging inflection",
+    "desc": "HBM4E and hybrid-bonding capacity become the choke. Memory and packaging names in focus.",
+    "nodes": ["SKHYNIX", "MU", "SAMSUNG", "AMKR", "TSM"],
+    "seed": "T_HBM",
+    "polarity": "pos",
+    "kind": "macro"
+  },
+  {
+    "date": "2028-03-30",
+    "title": "Glass-core substrate mass production",
+    "desc": "T-glass undersupplied until ~2028; Corning + substrate ramps. Intel/Microsoft glass-substrate triangulation.",
+    "nodes": ["GLW", "INTC", "MSFT"],
+    "seed": "T_GLASS",
+    "polarity": "pos",
+    "kind": "macro"
+  }
+]

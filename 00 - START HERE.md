@@ -14,28 +14,28 @@ A living map of who supplies, sells to, and benefits from whom across the AI val
 [[Arm Holdings]], [[Cadence]], [[Synopsys]]
 
 **L2 — Semiconductor Equipment**
-[[ASML]], [[Advanced Micro-Fabrication (AMEC)]], [[Applied Materials]], [[Entegris]], [[KLA Corporation]], [[Lam Research]], [[Naura Technology]], [[Teradyne]], [[XLight]]
+[[ASML]], [[Advanced Micro-Fabrication (AMEC)]], [[Applied Materials]], [[Camtek]], [[Entegris]], [[KLA Corporation]], [[Lam Research]], [[Naura Technology]], [[Teradyne]], [[XLight]]
 
 **L3 — Foundry / Manufacturing**
-[[GlobalFoundries]], [[Intel]], [[Samsung Electronics]], [[TSMC]], [[X-FAB]]
+[[GlobalFoundries]], [[Intel]], [[SMIC]], [[Samsung Electronics]], [[TSMC]], [[X-FAB]]
 
 **L4 — Chip Designers (Accelerators/Networking)**
-[[AMD]], [[Broadcom]], [[Huawei]], [[IBM]], [[Iluvatar CoreX]], [[Marvell]], [[MediaTek]], [[MetaX]], [[NVIDIA]], [[Qualcomm]], [[SambaNova Systems]]
+[[AMD]], [[Broadcom]], [[Cambricon]], [[Huawei]], [[IBM]], [[Iluvatar CoreX]], [[Marvell]], [[MediaTek]], [[MetaX]], [[NVIDIA]], [[Qualcomm]], [[SambaNova Systems]]
 
 **L5 — Memory (HBM/DRAM)**
 [[ChangXin Memory (CXMT)]], [[Micron]], [[Nanya Technology]], [[SK Hynix]], [[Sandisk]], [[Yangtze Memory (YMTC)]]
 
 **L6 — Advanced Packaging / OSAT**
-[[AUO Corporation]], [[Amkor Technology]], [[BOE Technology]], [[Corning]], [[Innolux]]
+[[AUO Corporation]], [[Amkor Technology]], [[BOE Technology]], [[Corning]], [[Innolux]], [[Zhen Ding Technology]]
 
 **L7 — Optical & Interconnect**
-[[Alphawave Semi]], [[Applied Optoelectronics]], [[Astera Labs]], [[Ayar Labs]], [[Coherent]], [[Credo Technology]], [[Fabrinet]], [[Furukawa Electric]], [[Lumentum]], [[Luxshare Precision]], [[POET Technologies]], [[STMicroelectronics]], [[Semtech]], [[Sivers Semiconductor]]
+[[Alphawave Semi]], [[Applied Optoelectronics]], [[Astera Labs]], [[Ayar Labs]], [[Coherent]], [[Credo Technology]], [[Fabrinet]], [[Furukawa Electric]], [[Largan Precision]], [[Lumentum]], [[Luxshare Precision]], [[POET Technologies]], [[STMicroelectronics]], [[Semtech]], [[Sivers Semiconductor]]
 
 **L8 — Networking Systems**
 [[Arista Networks]], [[Cisco]]
 
 **L9 — Servers & ODM/OEM**
-[[Celestica]], [[Dell Technologies]], [[Foxconn (Hon Hai)]], [[Hewlett Packard Enterprise]], [[Supermicro]]
+[[Celestica]], [[Dell Technologies]], [[Foxconn (Hon Hai)]], [[Hewlett Packard Enterprise]], [[Supermicro]], [[Wiwynn]]
 
 **L10 — Hyperscalers / Cloud**
 [[Alphabet (Google)]], [[Amazon]], [[ByteDance]], [[CoreWeave]], [[IREN]], [[Meta Platforms]], [[Microsoft]], [[Nebius]], [[Oracle]], [[SpaceX (Colossus compute)]]

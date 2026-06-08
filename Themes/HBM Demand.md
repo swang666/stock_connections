@@ -30,3 +30,7 @@ layer: demand-driver
 ## Added from research — 2026-06-03 (ingest)
 - [[Nanya Technology]] — (FACT, X-scan 2026-06-03): May revenue +730% YoY on AI-driven DRAM price surge
 - [[ASML]] — (VIEW, GS 2026-06-04): High-NA in memory + DRAM EUV layer growth driven by AI/HBM demand
+
+## Added from research — 2026-06-07 (ingest)
+- [[Broadcom]] drives demand for this theme — (FACT, Jefferies 2026-06): TPUv8 higher HBM content
+- [[Camtek]] benefits from this theme — (FACT, Jefferies 2026-06): $50M+ Hawk inspection orders from a leading HBM player

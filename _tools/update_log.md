@@ -198,3 +198,36 @@ Spreadsheet was NOT open (no lock file); xlsx written directly, no pending CSV n
 - Validator: errors=0, warnings=184 (PASS). The 5 "flagged" warnings are intentional (?) markers.
 - FLAGGED FOR USER REVIEW: the 20:04 extract attributes the "Colossus" compute facilities (Memphis) to SpaceX, but Colossus is commonly associated with xAI. The 3 SPCX edges and the SPCX node carry a "(?)" flag and a warning callout on the page. Verify the SpaceX-vs-xAI attribution and the ~$30B Google / ~$45B Anthropic deal figures against primary sources before relying on them.
 - Spreadsheet was NOT open (no lock file); xlsx written directly, no pending CSV.
+
+## 2026-06-07
+- Inbox files processed: 2026-06-06-2256-x-scan-extract.md, 2026-06-07-0404-x-scan-extract.md (both pre-extracted FACT-grade x-scan extracts).
+- Edges added: 0. All 7 unique candidate edges (AVGO co-designs w/ GOOGL/META/OPENAI/ANTHROPIC; MU/SAMSUNG/SKHYNIX supplies HBM to NVDA) already exist as FACT-grade rows — restatements of the 2026-06-05 x-scan, deduplicated.
+- New companies added: 0 (all 9 referenced nodes already present).
+- Strengthened 1 existing edge: AVGO|co-designs custom silicon with|META — added source_doc (X-Reports/2026-06-06-2256-x-scan.md) and dated FACT provenance to a previously unsourced "MTIA"-only evidence note. No duplicate row created.
+- Validator: errors=0, warnings=182 (PASS). Graph rebuilt: 97 nodes / 237 edges.
+- Excel: no lock file found (spreadsheet not open); xlsx write succeeded.
+- Flagged for review: existing SAMSUNG|supplies HBM/DRAM to|NVDA edge still carries a NEEDS-REVIEW(?) note (prior Samsung HBM3E qual failures) — unchanged this run; the new x-scan asserts FACT-grade Samsung HBM4 cert, which the separate "supplies HBM to" edge already reflects.
+
+## 2026-06-07 (ingest)
+**Inbox files processed:** 15 new files.
+**Edges added:** 20 (de-duplicated; ~10 candidate edges skipped as already present). **New companies:** 6.
+
+**New nodes:** SMIC (L3 China foundry), Cambricon (L4 China AI accel), Largan Precision (L7 TW optical), Zhen Ding Technology (L6 TW PCB/substrate), Wiwynn (L9 TW ODM), Camtek (L2 IL inspection).
+
+**Files that yielded new relationships:**
+- *Bernstein — Huawei LogicFolding (2026-06-04):* SMIC benefits-from China buildout + manufactures-for Huawei/Cambricon; Cambricon/SMIC as China-AI beneficiaries. (Mostly VIEW — beneficiary calls, tagged accordingly.)
+- *Citi — COMPUTEX CPO Ready to Go (2026-06-05):* Foxconn/MediaTek/TSMC/Wiwynn/Largan → CPO; MediaTek co-designs with Ayar Labs.
+- *Citi — Zhen Ding (4958.TW) (2026-06-05):* ZDT optical-module PCB → Optical buildout; ABF-substrate supply to MediaTek (FACT-ish) and NVDA/AVGO/QCOM ("in the queue" → VIEW, flagged "(?)").
+- *Jefferies — Blayne's Bytes (2026-06-05):* Broadcom drives HBM demand (TPUv8 content); Google → AI Training Capex ($85bn raise); Camtek HBM-inspection orders.
+- *Morgan Stanley — Build for Future AI Infrastructure:* MediaTek co-designs Grace CPU with NVIDIA (N1X AI PC); SMIC→Cambricon foundry (VIEW, "(?)"); Cambricon competes with NVIDIA.
+- *BofA — NVIDIA CFO Keynote (2026-06-04):* confirms existing NVDA→CPO (Feynman optical scale-up) — no new edge.
+
+**Processed, no new edges (macro / positioning / consumer / narrative, or image-only PDFs):** Asia Technology Outlook (HBM tightness restates existing), Barclays US Economics (jobs), Goldman Sachs US Daily (no Fed cuts), J.P. Morgan Positioning Intelligence, Morgan Stanley Global Macro (payrolls), Bernstein Apple WWDC preview (consumer), 利率问题解读 (rates), 期权解读周五暴跌 (options), Anthropic-vs-OpenAI IPO race (The Information, narrative).
+
+**Notes / flags:**
+- Several PDFs were image-only (no text layer); supply-chain-relevant ones OCR'd via tesseract (BofA NVDA, both Citi notes, Jefferies). Macro/consumer image-only PDFs were not OCR'd (no graph value).
+- VIEW vs FACT: China-semis beneficiary calls and "ABF clients in queue" stored as VIEW; speculative/pipeline items flagged "(?)".
+- NOT in vault but repeatedly named (held back as conservative, no clean single edge): GUC, Alchip, Hua Hong, Piotech, Hygon, Onto, Cohu, Unimicron.
+- Spreadsheet was NOT open (no lock file); xlsx written directly.
+
+**Validator:** errors=0, warnings=182 (pre-existing categories: source_doc/evidence missing on legacy rows). Graph: 103 nodes, 257 edges. PASS.

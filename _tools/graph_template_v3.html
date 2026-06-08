@@ -69,6 +69,23 @@
   #tip .t2{color:var(--muted);font-size:11px}
   #hint{position:absolute;left:12px;bottom:12px;font-size:11px;color:var(--muted);
     background:#0d142699;padding:6px 10px;border-radius:8px;border:1px solid var(--line)}
+  #panelToggle{display:none}
+  /* ---- mobile / narrow screens ---- */
+  @media (max-width: 760px){
+    #wrap{flex-direction:column}
+    #stage{flex:none;height:52vh;width:100vw}
+    #side{width:100vw;border-left:none;border-top:1px solid var(--line);flex:1;min-height:0}
+    .toggles{gap:6px}
+    .btn{padding:6px 10px;font-size:12px}   /* bigger tap targets */
+    #hint{font-size:10px;left:8px;bottom:8px;padding:5px 8px}
+    header p{display:none}                    /* save vertical space */
+    /* collapsed state: hide the panel, give the graph the whole screen */
+    body.panel-collapsed #stage{height:100vh}
+    body.panel-collapsed #side{display:none}
+    #panelToggle{display:flex;position:fixed;right:12px;bottom:12px;z-index:20;
+      align-items:center;gap:6px;background:var(--accent);color:#06122b;font-weight:700;
+      font-size:13px;padding:9px 14px;border-radius:22px;border:none;box-shadow:0 2px 10px #0008;cursor:pointer}
+  }
 </style>
 </head>
 <body>
@@ -90,6 +107,9 @@
         <span class="btn on" id="tThemes">Theme links</span>
         <span class="btn" id="tFact" title="Hide analyst-opinion (VIEW) edges; show only stated-fact relationships">✓ FACT only</span>
         <span class="btn" id="tBottle">⛔ Bottlenecks</span>
+        <span class="btn" id="tPrice" title="Color nodes by today's price move (needs the price proxy configured)">📈 Prices</span>
+        <span class="btn" id="tBasket" title="Equal-weight 1D return per theme (load Prices first)">🧺 Baskets</span>
+        <span class="btn" id="tCat" title="Upcoming catalysts with countdowns">📅 Catalysts</span>
         <span class="btn" id="tReset">Reset view</span>
       </div>
     </div>
@@ -115,11 +135,15 @@
     <div id="legend"></div>
   </div>
 </div>
+<button id="panelToggle" aria-label="Toggle panel">☰ Panel</button>
 <script>
 var /*NODES*/;
 var /*EDGES*/;
 var /*LCOLOR*/;
 var /*LNAME*/;
+var /*PRICECFG*/;
+var /*CATALYSTS*/;
+var PRICES={};   // ticker -> {price, chg1d, rsi, spark:[...]} populated live via the proxy
 
 const cv = document.getElementById('cv'), ctx = cv.getContext('2d');
 const tip = document.getElementById('tip'), detail = document.getElementById('detail');
@@ -138,6 +162,12 @@ const layersPresent=[...new Set(NODES.filter(n=>n.layer>0).map(n=>n.layer))].sor
 const layerOff=new Set();
 let showLabels=true, showThemes=true, factOnly=false, focus=null, hover=null, searchHit=new Set();
 let pathA=null, pathB=null, pathNodes=new Set(), pathEdges=new Set(), pathActive=false;
+let priceOn=false;
+function priceColor(n){
+  const p=PRICES[n.ticker]; if(!p||p.chg1d==null) return '#39435c';
+  const v=Math.max(-8,Math.min(8,p.chg1d)); // clamp ±8%
+  return v>=0 ? 'hsl(150,72%,'+Math.round(60-v*3)+'%)' : 'hsl(4,72%,'+Math.round(60+v*3)+'%)';
+}
 
 let catSeeds=new Set(), catPol=1, catKind='demand', catImpact={}, catBest={}, catActive=false, catMax=1, CATLINKS=null;
 function impactColor(v){
@@ -244,7 +274,8 @@ function draw(){
       ctx.moveTo(X,Y-R-1);ctx.lineTo(X+R+1,Y);ctx.lineTo(X,Y+R+1);ctx.lineTo(X-R-1,Y);ctx.closePath();
     } else { ctx.arc(X,Y,R,0,7); }
     ctx.fillStyle = catActive ? (catSeeds.has(n.id)? '#fde047' : impactColor(catImpact[n.id]||0))
-                              : bottleneckOn ? bottleColor(n) : (LCOLOR[n.layer]||'#888');
+                              : bottleneckOn ? bottleColor(n)
+                              : priceOn ? priceColor(n) : (LCOLOR[n.layer]||'#888');
     ctx.fill();
     if((focus&&focus.id===n.id) || (catActive&&catSeeds.has(n.id))){ctx.lineWidth=2.5;ctx.strokeStyle='#fff';ctx.stroke();}
     if(searchHit.has(n.id)){ctx.lineWidth=2.5;ctx.strokeStyle='#fde047';ctx.stroke();}
@@ -311,6 +342,49 @@ cv.addEventListener('wheel',e=>{
   view.k=Math.max(0.35,Math.min(3,view.k*f));
 },{passive:false});
 
+// ---- touch input (mobile): 1 finger = drag node / pan, tap = select; 2 fingers = pinch-zoom ----
+function relXY(t){ const r=cv.getBoundingClientRect(); return {x:t.clientX-r.left, y:t.clientY-r.top}; }
+let pinch=null;
+cv.addEventListener('touchstart',e=>{
+  if(e.touches.length===1){
+    const p=relXY(e.touches[0]); const n=pick(p.x,p.y); moved=false;
+    if(n){dragging=n;} else {panning=true; last={x:p.x,y:p.y};}
+  } else if(e.touches.length===2){
+    dragging=null; panning=false;
+    const a=relXY(e.touches[0]), b=relXY(e.touches[1]);
+    pinch={d:Math.hypot(a.x-b.x,a.y-b.y), cx:(a.x+b.x)/2, cy:(a.y+b.y)/2};
+  }
+},{passive:false});
+cv.addEventListener('touchmove',e=>{
+  e.preventDefault();
+  if(e.touches.length===2 && pinch){
+    const a=relXY(e.touches[0]), b=relXY(e.touches[1]);
+    const d=Math.hypot(a.x-b.x,a.y-b.y), f=d/(pinch.d||d);
+    const mx=pinch.cx-W/2-view.x, my=pinch.cy-H/2-view.y;
+    view.x-=mx*(f-1); view.y-=my*(f-1);
+    view.k=Math.max(0.35,Math.min(3,view.k*f));
+    pinch.d=d; moved=true; return;
+  }
+  if(e.touches.length!==1) return;
+  const p=relXY(e.touches[0]);
+  if(dragging){ dragging.x=wx(p.x); dragging.y=wy(p.y); dragging.vx=0;dragging.vy=0; alpha=Math.max(alpha,0.5); moved=true; }
+  else if(panning){ view.x+=p.x-last.x; view.y+=p.y-last.y; last={x:p.x,y:p.y}; moved=true; }
+},{passive:false});
+cv.addEventListener('touchend',e=>{
+  if(e.touches.length===0){
+    if(dragging&&!moved) selectNode(dragging);
+    else if(panning&&!moved) selectNode(null);
+    dragging=null; panning=false; pinch=null; hover=null; tip.style.display='none';
+  }
+},{passive:false});
+
+// ---- mobile panel toggle (show/hide sidebar so the graph can use the whole screen) ----
+(function(){ const t=document.getElementById('panelToggle'); if(!t) return;
+  t.onclick=()=>{ document.body.classList.toggle('panel-collapsed');
+    t.textContent=document.body.classList.contains('panel-collapsed')?'☰ Panel':'✕ Close';
+    setTimeout(resize,60); };
+})();
+
 function tagChip(tag){
   if(tag==='FACT') return '<span class="ev fact">FACT</span>';
   if(tag==='VIEW') return '<span class="ev view">VIEW</span>';
@@ -348,6 +422,7 @@ function selectNode(n){
   if(n.segment)h+='<span class="tag">'+n.segment+'</span>';
   if(n.country)h+='<span class="tag">'+n.country+'</span>';
   h+='<div class="role">'+n.role+'</div>';
+  if(typeof priceLine==='function'){ const pl=priceLine(n); if(pl) h+=pl; }
   if(n.key_products)h+='<div class="kp"><b>Key products:</b> '+n.key_products+'</div>';
   if(out.length){h+='<h3>'+(n.type==='Theme'?'Drives demand for':'Supplies / sells / benefits →')+'</h3><ul class="edges">';
     out.forEach(e=>{h+=edgeLine(byId[e.t].name, e, 'out');});h+='</ul>';}
@@ -510,9 +585,118 @@ function renderBottleneck(){
 document.getElementById('tBottle').onclick=()=>{
   bottleneckOn=!bottleneckOn;
   document.getElementById('tBottle').classList.toggle('on', bottleneckOn);
-  if(bottleneckOn){ catActive=false; pathActive=false; focus=null; renderBottleneck(); alpha=Math.max(alpha,0.2); }
+  if(bottleneckOn){ catActive=false; pathActive=false; priceOn=false; document.getElementById('tPrice').classList.remove('on'); focus=null; renderBottleneck(); alpha=Math.max(alpha,0.2); }
   else { selectNode(null); }
 };
+
+// ====== LIVE PRICES (via the Cloudflare proxy in PRICECFG.PROXY_URL; off if empty) ======
+function fmtPct(v){ return (v>0?'+':'')+(v==null?'—':v.toFixed(2)+'%'); }
+function tickersInGraph(){ return [...new Set(NODES.filter(n=>n.ticker&&n.ticker!=='private'&&n.ticker!=='').map(n=>n.ticker))]; }
+async function fetchPrices(){
+  const base=(PRICECFG&&PRICECFG.PROXY_URL)||''; if(!base) return false;
+  const syms=tickersInGraph();
+  try{
+    let got=0;
+    // worker returns a compact map { SYM:{price,prev,chgPct} } from Yahoo's v8 chart endpoint
+    for(let i=0;i<syms.length;i+=50){
+      const chunk=syms.slice(i,i+50);
+      const r=await fetch(base.replace(/\/$/,'')+'/quote?symbols='+encodeURIComponent(chunk.join(',')));
+      const j=await r.json();
+      if(j&&j.error){ console.warn('proxy error',j.error); continue; }
+      Object.keys(j||{}).forEach(sym=>{ const q=j[sym];
+        if(q&&q.price!=null){ PRICES[sym]={price:q.price, chg1d:q.chgPct, prev:q.prev}; got++; } });
+    }
+    return got>0;
+  }catch(e){ console.warn('price fetch failed',e); return false; }
+}
+function priceLine(n){
+  const p=PRICES[n.ticker]; if(!p||p.price==null) return '';
+  const col=p.chg1d>=0?'#34d399':'#f87171';
+  return '<div class="evtext"><b>$'+Number(p.price).toFixed(2)+'</b> <span style="color:'+col+'">'+fmtPct(p.chg1d)+'</span> <span class="asof">1D</span></div>';
+}
+document.getElementById('tPrice').onclick=async ()=>{
+  const base=(PRICECFG&&PRICECFG.PROXY_URL)||'';
+  if(!base){ detail.innerHTML='<h2>📈 Live prices</h2><div class="role">Price proxy not configured. See <code>_tools/PRICE_PROXY_SETUP.md</code> — deploy the free Cloudflare Worker and put its URL in <code>price_config.json</code>.</div>'; return; }
+  priceOn=!priceOn;
+  document.getElementById('tPrice').classList.toggle('on', priceOn);
+  if(priceOn){ catActive=false; bottleneckOn=false; pathActive=false; document.getElementById('tBottle').classList.remove('on');
+    detail.innerHTML='<h2>📈 Live prices</h2><div class="role">Fetching quotes…</div>';
+    const ok=await fetchPrices(); alpha=Math.max(alpha,0.2);
+    renderPricePanel(ok);
+    if(window._priceTimer) clearInterval(window._priceTimer);
+    const sec=(PRICECFG&&PRICECFG.REFRESH_SECONDS)||60;
+    window._priceTimer=setInterval(async()=>{ if(priceOn){ await fetchPrices(); if(priceOn) renderPricePanel(true); } }, sec*1000);
+  } else { if(window._priceTimer) clearInterval(window._priceTimer); selectNode(null); }
+};
+function renderPricePanel(ok){
+  if(!ok){ detail.innerHTML='<h2>📈 Live prices</h2><div class="role">Couldn\'t reach the price proxy. Check the Worker URL in price_config.json.</div>'; return; }
+  const named=NODES.filter(n=>PRICES[n.ticker]&&PRICES[n.ticker].chg1d!=null);
+  const up=named.slice().sort((a,b)=>PRICES[b.ticker].chg1d-PRICES[a.ticker].chg1d);
+  let h='<h2>📈 Live prices</h2><div class="role">'+named.length+' quoted · colored by 1D move · ~live via proxy</div>';
+  h+='<h3>Top movers</h3><ul class="edges">';
+  up.slice(0,6).forEach(n=>{const p=PRICES[n.ticker];h+='<li><b>'+n.name+'</b> <span style="color:#34d399">'+fmtPct(p.chg1d)+'</span> <span class="rel">$'+Number(p.price).toFixed(2)+'</span></li>';});
+  h+='</ul><h3>Worst</h3><ul class="edges">';
+  up.slice(-6).reverse().forEach(n=>{const p=PRICES[n.ticker];h+='<li><b>'+n.name+'</b> <span style="color:#f87171">'+fmtPct(p.chg1d)+'</span> <span class="rel">$'+Number(p.price).toFixed(2)+'</span></li>';});
+  detail.innerHTML=h+'</ul>';
+}
+
+// ====== THEME BASKETS (equal-weight 1D move of each theme's member companies) ======
+function basketFor(themeId){
+  // members = companies with a benefit/driver edge to this theme
+  const ids=new Set();
+  EDGES.forEach(e=>{ if(e.t===themeId && /benefit/i.test(e.r)) ids.add(e.s);
+                     if(e.s===themeId && /driv/i.test(e.r)) ids.add(e.t); });
+  const members=[...ids].map(id=>byId[id]).filter(n=>n&&PRICES[n.ticker]&&PRICES[n.ticker].chg1d!=null);
+  if(!members.length) return null;
+  const avg=members.reduce((s,n)=>s+PRICES[n.ticker].chg1d,0)/members.length;
+  members.sort((a,b)=>PRICES[b.ticker].chg1d-PRICES[a.ticker].chg1d);
+  return {avg, members};
+}
+function renderBaskets(){
+  const themes=NODES.filter(n=>n.type==='Theme');
+  let h='<h2>🧺 Theme baskets</h2><div class="role">Equal-weight 1D move of each theme\'s member companies (needs prices loaded).</div>';
+  let any=false;
+  themes.forEach(t=>{ const b=basketFor(t.id); if(!b) return; any=true;
+    const col=b.avg>=0?'#34d399':'#f87171';
+    h+='<h3>'+t.name+' <span style="color:'+col+'">'+fmtPct(b.avg)+'</span></h3>';
+    h+='<div class="rel" style="font-size:11px">'+b.members.length+' names · best '+b.members[0].name+' '+fmtPct(PRICES[b.members[0].ticker].chg1d)+'</div>';
+  });
+  if(!any) h+='<div class="role">Load 📈 Prices first, then reopen Baskets to see returns.</div>';
+  detail.innerHTML=h;
+}
+document.getElementById('tBasket').onclick=async ()=>{
+  catActive=false; bottleneckOn=false; pathActive=false;
+  document.getElementById('tBottle').classList.remove('on');
+  const base=(PRICECFG&&PRICECFG.PROXY_URL)||'';
+  if(base && !Object.keys(PRICES).length){ detail.innerHTML='<h2>🧺 Theme baskets</h2><div class="role">Fetching quotes…</div>'; await fetchPrices(); }
+  renderBaskets();
+};
+
+// ====== CATALYST CALENDAR (with countdowns + Run scenario into the catalyst engine) ======
+function daysUntil(d){ const ms=new Date(d+'T00:00:00')-new Date(); return Math.ceil(ms/86400000); }
+function renderCatalysts(){
+  const items=(CATALYSTS||[]).slice().sort((a,b)=>new Date(a.date)-new Date(b.date));
+  let h='<h2>📅 Catalyst calendar</h2><div class="role">'+items.length+' ahead · click a name to inspect · Run scenario propagates the shock through the graph</div>';
+  if(!items.length){ detail.innerHTML=h+'<div class="role">No catalysts defined. Edit _tools/catalysts.json.</div>'; return; }
+  items.forEach((c,i)=>{
+    const dd=daysUntil(c.date);
+    h+='<h3>'+(dd>=0?'T-'+dd+'d':'past')+' · '+c.date+'</h3>';
+    h+='<div style="font-weight:600;color:var(--ink)">'+esc(c.title)+'</div>';
+    h+='<div class="rel" style="font-size:11px;margin:2px 0">'+esc(c.desc||'')+'</div>';
+    h+='<div style="margin:3px 0">'+(c.nodes||[]).map(id=>byId[id]?'<a class="node" data-id="'+id+'">'+byId[id].name+'</a>':'').filter(Boolean).join(' · ')+'</div>';
+    if(c.seed&&byId[c.seed]) h+='<div><span class="btn" data-cat="'+i+'">Run scenario ▸</span></div>';
+  });
+  detail.innerHTML=h;
+  detail.querySelectorAll('a.node').forEach(a=>a.onclick=()=>{const n=byId[a.dataset.id]; if(n){focus=n;selectNode(n);}});
+  detail.querySelectorAll('[data-cat]').forEach(b=>b.onclick=()=>{
+    const c=items[+b.dataset.cat]; const seed=byId[c.seed]; if(!seed) return;
+    catSeeds=new Set([c.seed]); catPol=(c.polarity==='neg')?-1:1; catKind=c.kind||'demand';
+    updSeedLabel(); runCatalyst();
+  });
+}
+document.getElementById('tCat').onclick=()=>{ catActive=false; bottleneckOn=false; pathActive=false; priceOn=false;
+  document.getElementById('tBottle').classList.remove('on'); document.getElementById('tPrice').classList.remove('on');
+  renderCatalysts(); };
 
 resize(); selectNode(null);
 for(let i=0;i<260;i++) tick();

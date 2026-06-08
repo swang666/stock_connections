@@ -24,3 +24,8 @@ country: Taiwan
 
 ## Sources
 - See `sources/inbox/` research reports.
+
+## Added from research — 2026-06-07 (ingest)
+- benefits from [[Co-Packaged Optics (CPO)]] — (VIEW, Citi 2026-06): growing Ayar Labs CPO partnership; targets CPO solution in 2-3 yrs
+- co-designs custom silicon with [[Ayar Labs]] — (FACT, Citi 2026-06): MediaTek + Ayar Labs CPO partnership (advanced I/O, chiplet, ASIC + optical engine)
+- co-designs custom silicon with [[NVIDIA]] — (FACT, Morgan Stanley 2026-06): 20-core customized Grace CPU for NVIDIA N1X AI PC (RTX Spark)

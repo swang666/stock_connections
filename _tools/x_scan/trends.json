@@ -528,6 +528,111 @@
           "sentiment": "neu"
         }
       }
+    },
+    {
+      "utc": "2026-06-07T11:12Z",
+      "local": "2026-06-07 04:12",
+      "slot": "morning",
+      "tickers": {
+        "MU": {
+          "mentions": 6,
+          "sentiment": "pos"
+        },
+        "NVDA": {
+          "mentions": 5,
+          "sentiment": "neu"
+        },
+        "SKHYNIX": {
+          "mentions": 3,
+          "sentiment": "pos"
+        },
+        "SAMSUNG": {
+          "mentions": 3,
+          "sentiment": "pos"
+        },
+        "NBIS": {
+          "mentions": 1,
+          "sentiment": "neu"
+        },
+        "IREN": {
+          "mentions": 1,
+          "sentiment": "neg"
+        }
+      }
+    },
+    {
+      "utc": "2026-06-07T19:11Z",
+      "local": "2026-06-07 12:11",
+      "slot": "afternoon",
+      "tickers": {
+        "MU": {
+          "mentions": 6,
+          "sentiment": "pos"
+        },
+        "NVDA": {
+          "mentions": 7,
+          "sentiment": "neu"
+        },
+        "SKHYNIX": {
+          "mentions": 5,
+          "sentiment": "pos"
+        },
+        "SAMSUNG": {
+          "mentions": 3,
+          "sentiment": "pos"
+        },
+        "TSM": {
+          "mentions": 2,
+          "sentiment": "neu"
+        },
+        "AVGO": {
+          "mentions": 3,
+          "sentiment": "neg"
+        },
+        "SNDK": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "SIVE": {
+          "mentions": 2,
+          "sentiment": "pos"
+        }
+      }
+    },
+    {
+      "utc": "2026-06-08T03:13Z",
+      "local": "2026-06-07 20:13",
+      "slot": "afternoon",
+      "tickers": {
+        "SKHYNIX": {
+          "mentions": 6,
+          "sentiment": "pos"
+        },
+        "NVDA": {
+          "mentions": 5,
+          "sentiment": "neu"
+        },
+        "MU": {
+          "mentions": 4,
+          "sentiment": "neg"
+        },
+        "MRVL": {
+          "mentions": 3,
+          "sentiment": "neg"
+        },
+        "AVGO": {
+          "mentions": 3,
+          "sentiment": "neg"
+        },
+        "SAMSUNG": {
+          "mentions": 3,
+          "sentiment": "neg"
+        },
+        "TSM": {
+          "mentions": 1,
+          "sentiment": "neu"
+        }
+      }
     }
   ]
 }
