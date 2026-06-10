@@ -33,3 +33,7 @@ country: USA
 
 ## Added from research — 2026-06-03 (ingest)
 - supplies optical components to [[NVIDIA]] — (FACT, LITE CEO @JPM 2026-05): NVIDIA locked up a considerable share of Lumentum indium-phosphide (InP) laser capacity with options to take more; capacity tight/locked
+
+
+## Added from research — 2026-06-09 (ingest)
+- [[Co-Packaged Optics (CPO)]] evidence update — (FACT, X-scan 2026-06-09): incremental multi-hundred-$M CPO order tied to NVDA Spectrum-X/Quantum-X (Mizuho 6/9); (VIEW, SemiAnalysis 2026-06-09): cautious on timing — scale-out CPO shipments to be revised down, scale-up CPO volume ramp ~2029

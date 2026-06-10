@@ -30,3 +30,7 @@ country: USA
 
 ## Sources
 - _Add links to filings / articles in `sources/`._
+
+
+## Added from research — 2026-06-09 (ingest)
+- [[Datacenter Power Demand]] evidence update — (VIEW, SemiAnalysis 2026-06-09): 800VDC pushout to 2028+ neutral-to-positive — extends life of large UPS business; grey-space power rack demoed at Computex

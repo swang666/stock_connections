@@ -14,7 +14,7 @@ A living map of who supplies, sells to, and benefits from whom across the AI val
 [[Arm Holdings]], [[Cadence]], [[Synopsys]]
 
 **L2 — Semiconductor Equipment**
-[[ASML]], [[Advanced Micro-Fabrication (AMEC)]], [[Applied Materials]], [[Camtek]], [[Entegris]], [[Hitachi]], [[KLA Corporation]], [[Lam Research]], [[Naura Technology]], [[Teradyne]], [[XLight]]
+[[ASML]], [[Advanced Micro-Fabrication (AMEC)]], [[Applied Materials]], [[Camtek]], [[Entegris]], [[FormFactor]], [[Hanmi Semiconductor]], [[Hitachi]], [[KLA Corporation]], [[Lam Research]], [[Naura Technology]], [[Teradyne]], [[XLight]]
 
 **L3 — Foundry / Manufacturing**
 [[GlobalFoundries]], [[Intel]], [[SMIC]], [[Samsung Electronics]], [[TSMC]], [[X-FAB]]
@@ -29,7 +29,7 @@ A living map of who supplies, sells to, and benefits from whom across the AI val
 [[AUO Corporation]], [[Amkor Technology]], [[BOE Technology]], [[Corning]], [[Innolux]], [[Zhen Ding Technology]]
 
 **L7 — Optical & Interconnect**
-[[Alphawave Semi]], [[Applied Optoelectronics]], [[Astera Labs]], [[Ayar Labs]], [[Coherent]], [[Credo Technology]], [[Fabrinet]], [[Furukawa Electric]], [[Largan Precision]], [[Lumentum]], [[Luxshare Precision]], [[POET Technologies]], [[STMicroelectronics]], [[Semtech]], [[Sivers Semiconductor]]
+[[Alphawave Semi]], [[Amphenol]], [[Applied Optoelectronics]], [[Astera Labs]], [[Ayar Labs]], [[Coherent]], [[Credo Technology]], [[Fabrinet]], [[Furukawa Electric]], [[Largan Precision]], [[Lumentum]], [[Luxshare Precision]], [[POET Technologies]], [[STMicroelectronics]], [[Semtech]], [[Sivers Semiconductor]]
 
 **L8 — Networking Systems**
 [[ALL.SPACE]], [[Arista Networks]], [[Cisco]]

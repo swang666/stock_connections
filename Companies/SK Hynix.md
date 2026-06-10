@@ -35,3 +35,7 @@ country: South Korea
 
 ## Added from research — 2026-06-08 (X-scan)
 - partners with [[NVIDIA]] — (FACT, X-scan 2026-06-08): multiyear co-development pact (SOCAMM2/HBM4 for Vera Rubin); NVIDIA CUDA-X, PhysicsNeMo, Omniverse applied to SK Hynix chip design, TCAD workflows and autonomous fab digital twins _(X-Reports/2026-06-07-2003-x-scan.md)_
+
+
+## Added from research — 2026-06-09 (ingest)
+- [[Hanmi Semiconductor]] supplies HBM bonding equipment to this company — (FACT, X-scan 2026-06-09): ₩44.2B (~15 units) TC Bonder 4.5 Griffin order to ramp HBM4 (TrendForce/Korea Herald 6/9)

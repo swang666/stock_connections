@@ -39,3 +39,9 @@ layer: demand-driver
 - [[TSMC]] benefits from this theme — (FACT, Citi 2026-06): COUPE packaging + chip testing for CPO
 - [[Wiwynn]] benefits from this theme — (FACT, Citi 2026-06): demoed optical-I/O CPO rack with Ayar Labs & GUC
 - [[Largan Precision]] benefits from this theme — (VIEW, Citi 2026-06): Fiber Array micron-level alignment, key CPO bottleneck
+
+
+## Added from research — 2026-06-09 (ingest)
+- [[FormFactor]] benefits from this theme — (VIEW, SemiAnalysis 2026-06-09): CPO test picks-and-shovels; PIC wafer probing ahead of volume
+- [[Teradyne]] benefits from this theme — (VIEW, SemiAnalysis 2026-06-09): frontrunner in NVIDIA CPO test qualification; ficonTEC partnership
+- Timing caution — (VIEW, SemiAnalysis 2026-06-09): scale-out CPO switch forecasts to be revised down (Spectrum 6 CPO slipping >2 quarters on >3.5dB insertion loss; ~19% system yield at 32 COUPEs/ASIC); scale-up CPO volume ramp seen ~2029; near-term favors copper (AECs) and pluggable transceivers

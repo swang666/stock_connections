@@ -26,3 +26,7 @@ country: USA
 
 ## Sources
 - - sources/inbox/2026-06-08-2004-x-scan-extract.md
+
+
+## Added from research — 2026-06-09 (ingest)
+- runs compute on [[NVIDIA]] — (FACT, X-scan 2026-06-09): Apple Private Cloud Compute runs Apple Intelligence on NVIDIA GPUs via Google Cloud (announced 6/9)

@@ -34,3 +34,7 @@ layer: demand-driver
 ## Added from research — 2026-06-07 (ingest)
 - [[Broadcom]] drives demand for this theme — (FACT, Jefferies 2026-06): TPUv8 higher HBM content
 - [[Camtek]] benefits from this theme — (FACT, Jefferies 2026-06): $50M+ Hawk inspection orders from a leading HBM player
+
+
+## Added from research — 2026-06-09 (ingest)
+- HBM4 capacity ramp confirmed via capex: SK Hynix placed ₩44.2B TC-bonder order with [[Hanmi Semiconductor]] — (FACT, X-scan 2026-06-09)

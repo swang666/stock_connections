@@ -34,3 +34,7 @@ country: USA
 
 ## Added from research — 2026-06-08 (ingest)
 - builds AI servers for [[xAI]] — (VIEW, TMTB/Bluefin via X 2026-06-08): reported award of ~1,500 racks (~$5B+) from xAI (?)
+
+
+## Added from research — 2026-06-09 (ingest)
+- benefits from [[AI Inference Demand]] — (FACT, X-scan 2026-06-09): disclosed ~$39B AI-server orders from >20 customers, raising $7B to fund components

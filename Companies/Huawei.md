@@ -20,3 +20,7 @@ country: China
 
 ## Sources
 - sources/inbox/玻璃基板行业交流20260526.docx
+
+
+## Added from research — 2026-06-09 (ingest)
+- benefits from [[China Indigenous AI Buildout]] — (FACT, X-scan 2026-06-09): Bloomberg — China prepping ~$295B (¥2T) nationwide AI-datacenter buildout, ≥80% domestic tech incl. Huawei chips _(X-Reports/2026-06-09-1204-x-scan.md)_

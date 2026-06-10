@@ -20,3 +20,7 @@ country: USA
 
 ## Sources
 - sources/inbox/TMTB：全面走强  EOD Wrap - TMT Breakout.pdf
+
+
+## Added from research — 2026-06-09 (ingest)
+- benefits from [[Co-Packaged Optics (CPO)]] — (VIEW, SemiAnalysis 2026-06-09): frontrunner in NVIDIA CPO test qualification; ficonTEC partnership

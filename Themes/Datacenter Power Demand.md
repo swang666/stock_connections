@@ -28,3 +28,7 @@ layer: demand-driver
 
 ## Added from research — 2026-06-03 (ingest)
 - [[STMicroelectronics]] — (VIEW, Mizuho 2026-05-19): AI rack 800V power architectures drive analog/power-semi content growth
+
+
+## Added from research — 2026-06-09 (ingest)
+- 800VDC architecture pushout — (VIEW, SemiAnalysis 2026-06-09): Nvidia-driven single-ended 800VDC volume shipments pushed to 2028+ on hyperscaler pushback; +400VDC HVDC for hyperscaler ASIC racks still on track 2H26, sidecar manufacturing ramp 1Q27; neutral for power-rack suppliers ([[Vertiv]], Delta, Lite-On), negative for wide-bandgap pure-plays (Wolfspeed, Navitas)

@@ -39,3 +39,7 @@ layer: demand-driver
 ## Added from research — 2026-06-08 (ingest)
 - [[Cerebras Systems]] benefits from this theme — (VIEW, Morgan Stanley 2026-06-08): wafer-scale low-latency inference; contracts → $6bn 2028 rev, ~1% AI-processor share; Initiate OW PT $250
 - [[Kioxia Holdings]] benefits from this theme — (VIEW, Morgan Stanley 2026-06-08): NAND/SSD for diverse AI inference; tight NAND supply, ~50% CY28 volume under LTA
+
+
+## Added from research — 2026-06-09 (ingest)
+- [[Supermicro]] benefits from this theme — (FACT, X-scan 2026-06-09): ~$39B AI-server orders from >20 customers; raising $7B to fund components

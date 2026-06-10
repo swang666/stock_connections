@@ -269,3 +269,20 @@ Graph regenerated: 105 nodes, 260 edges. Spreadsheet was NOT open (no lock file)
 - Wiki: appended downstream bullet to Companies/Sivers Semiconductor.md; created Companies/ALL.SPACE.md.
 - Validator: errors=0, warnings=182 (pre-existing: source_doc/evidence coverage; PASS).
 - EDGAR pull remains DISABLED (sec.gov unreachable). No instruction-like files encountered. Excel was not open (no lock file).
+
+## 2026-06-10 — daily ingest
+
+Inbox files processed (3):
+- 2026-06-09-1204-x-scan-extract.md
+- 2026-06-09-2004-x-scan-extract.md
+- Semianalysis 原文- Powered Down, Lights Off. 800VDC Pushout and CPO Delays.pdf (image-only PDF; OCR'd via tesseract)
+
+Changes:
+- New companies (3): HANMI (Hanmi Semiconductor, equip/TC bonders), APH (Amphenol, copper interconnect), FORM (FormFactor, test/probe).
+- New edges (7): HUAWEI→T_CHINA (FACT, $295B China DC buildout); HANMI→SKHYNIX supplies HBM bonding equipment (FACT, ₩44.2B HBM4 TC-bonder order); AAPL runs compute on NVDA (FACT, PCC on NVDA GPUs via Google Cloud); SMCI→T_INFER (FACT, ~$39B order book); APH→T_NET (VIEW, SemiAnalysis); FORM→T_CPO (VIEW, SemiAnalysis); TER→T_CPO (VIEW, SemiAnalysis).
+- Evidence strengthened (2): LITE→T_CPO (added FACT CPO order + SemiAnalysis timing caution); VRT→T_POWER (was empty; SemiAnalysis 800VDC-pushout view).
+- Skipped as duplicates: AAPL→GOOGL runs compute on, NVDA→GOOGL sells GPUs to, MU/SKHYNIX/SAMSUNG→NVDA supplies HBM to, LITE→NVDA optical, SKHYNIX→T_HBM, LITE→T_CPO (strengthened instead).
+- Wiki: 3 new pages (Hanmi Semiconductor, Amphenol, FormFactor); additive bullets on Huawei, SK Hynix, Apple, Supermicro, Teradyne, Lumentum, Vertiv + Themes (China Indigenous AI Buildout, AI Inference Demand, CPO, Optical & Networking Buildout, HBM Demand, Datacenter Power Demand).
+- Notable VIEWs not graphed (logged only): SemiAnalysis negative on LITE/COHR/HIMX/AAOI (CPO timing), WOLF/NVTS (800VDC pushout removes near-term WBG catalyst) — negative sentiment has no edge type; captured in theme/company notes.
+- Validator: nodes=113 edges=278 errors=0 warnings=181 (pre-existing coverage gaps: source_doc/evidence missing on older rows). Graph regenerated.
+- Excel not open; xlsx written directly. (Note: this run completed a 2026-06-09 ingest that was interrupted before regenerate/record; no double-writes — dedupe guard verified.)

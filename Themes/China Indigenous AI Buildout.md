@@ -24,3 +24,7 @@ layer: demand-driver
 ## Added from research — 2026-06-07 (ingest)
 - [[Cambricon]] benefits from this theme — (VIEW, MS/Bernstein 2026-06): leading China AI GPGPU inference, OW
 - [[SMIC]] benefits from this theme — (VIEW, Bernstein 2026-06): critical leading-edge foundry enabler for Huawei advanced logic
+
+
+## Added from research — 2026-06-09 (ingest)
+- [[Huawei]] benefits from this theme — (FACT, X-scan 2026-06-09): Bloomberg — China prepping ~$295B (¥2T) nationwide AI-datacenter buildout, ≥80% domestic tech incl. Huawei chips
