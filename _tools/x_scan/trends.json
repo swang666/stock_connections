@@ -633,6 +633,304 @@
           "sentiment": "neu"
         }
       }
+    },
+    {
+      "utc": "2026-06-08T11:14Z",
+      "local": "2026-06-08 04:14",
+      "slot": "morning",
+      "tickers": {
+        "AVGO": {
+          "mentions": 3,
+          "sentiment": "neg"
+        },
+        "NVDA": {
+          "mentions": 5,
+          "sentiment": "neu"
+        },
+        "SKHYNIX": {
+          "mentions": 4,
+          "sentiment": "pos"
+        },
+        "SAMSUNG": {
+          "mentions": 2,
+          "sentiment": "neg"
+        },
+        "MU": {
+          "mentions": 2,
+          "sentiment": "neu"
+        },
+        "SIVE": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "TSM": {
+          "mentions": 2,
+          "sentiment": "pos"
+        }
+      }
+    },
+    {
+      "utc": "2026-06-08T19:13Z",
+      "local": "2026-06-08 12:13",
+      "slot": "afternoon",
+      "tickers": {
+        "MRVL": {
+          "mentions": 3,
+          "sentiment": "pos"
+        },
+        "INTC": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "NVDA": {
+          "mentions": 2,
+          "sentiment": "neu"
+        },
+        "MU": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "AAPL": {
+          "mentions": 4,
+          "sentiment": "neu"
+        },
+        "SKHYNIX": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "AVGO": {
+          "mentions": 1,
+          "sentiment": "neg"
+        },
+        "SIVE": {
+          "mentions": 1,
+          "sentiment": "pos"
+        }
+      }
+    },
+    {
+      "utc": "2026-06-09T03:19Z",
+      "local": "2026-06-08 20:19",
+      "slot": "afternoon",
+      "tickers": {
+        "MU": {
+          "mentions": 3,
+          "sentiment": "pos"
+        },
+        "NVDA": {
+          "mentions": 3,
+          "sentiment": "pos"
+        },
+        "AMD": {
+          "mentions": 2,
+          "sentiment": "neu"
+        },
+        "AVGO": {
+          "mentions": 2,
+          "sentiment": "neg"
+        },
+        "SKHYNIX": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "AAPL": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "GOOGL": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "SAMSUNG": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "TXN": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "ORCL": {
+          "mentions": 1,
+          "sentiment": "neu"
+        },
+        "QCOM": {
+          "mentions": 1,
+          "sentiment": "neg"
+        }
+      }
+    },
+    {
+      "utc": "2026-06-09T11:21Z",
+      "local": "2026-06-09 04:21",
+      "slot": "morning",
+      "tickers": {
+        "MU": {
+          "mentions": 5,
+          "sentiment": "pos"
+        },
+        "SNDK": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "NVDA": {
+          "mentions": 3,
+          "sentiment": "pos"
+        },
+        "MRVL": {
+          "mentions": 3,
+          "sentiment": "pos"
+        },
+        "SIVE": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "JBL": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "CRWV": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "SPCX": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "QCOM": {
+          "mentions": 2,
+          "sentiment": "neg"
+        },
+        "AVGO": {
+          "mentions": 1,
+          "sentiment": "neg"
+        },
+        "MTK": {
+          "mentions": 1,
+          "sentiment": "pos"
+        }
+      }
+    },
+    {
+      "utc": "2026-06-09T19:17Z",
+      "local": "2026-06-09 12:17",
+      "slot": "afternoon",
+      "tickers": {
+        "AAOI": {
+          "mentions": 2,
+          "sentiment": "neg"
+        },
+        "LITE": {
+          "mentions": 2,
+          "sentiment": "neg"
+        },
+        "COHR": {
+          "mentions": 2,
+          "sentiment": "neg"
+        },
+        "SIVE": {
+          "mentions": 1,
+          "sentiment": "neg"
+        },
+        "NVDA": {
+          "mentions": 4,
+          "sentiment": "neu"
+        },
+        "AMD": {
+          "mentions": 2,
+          "sentiment": "neu"
+        },
+        "MU": {
+          "mentions": 3,
+          "sentiment": "neg"
+        },
+        "SKHYNIX": {
+          "mentions": 3,
+          "sentiment": "neg"
+        },
+        "SAMSUNG": {
+          "mentions": 2,
+          "sentiment": "neg"
+        },
+        "AAPL": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "GOOGL": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "VECO": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "RIOT": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "SPCX": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "QCOM": {
+          "mentions": 1,
+          "sentiment": "neu"
+        },
+        "ORCL": {
+          "mentions": 1,
+          "sentiment": "neu"
+        },
+        "CXMT": {
+          "mentions": 1,
+          "sentiment": "pos"
+        }
+      }
+    },
+    {
+      "utc": "2026-06-10T03:14Z",
+      "local": "2026-06-09 20:14",
+      "slot": "afternoon",
+      "tickers": {
+        "NVDA": {
+          "mentions": 3,
+          "sentiment": "neu"
+        },
+        "SMCI": {
+          "mentions": 1,
+          "sentiment": "neg"
+        },
+        "LITE": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "MU": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "SKHYNIX": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "SAMSUNG": {
+          "mentions": 1,
+          "sentiment": "neg"
+        },
+        "AMD": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "AAPL": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "ORCL": {
+          "mentions": 1,
+          "sentiment": "neu"
+        },
+        "AVGO": {
+          "mentions": 1,
+          "sentiment": "neg"
+        }
+      }
     }
   ]
 }

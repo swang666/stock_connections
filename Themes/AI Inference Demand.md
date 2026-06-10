@@ -35,3 +35,7 @@ layer: demand-driver
 
 ## Added from research — 2026-06-05 (X-scan)
 - [[TSMC]] benefits from this theme — (FACT, X-scan 2026-06-05): C.C. Wei at 6/4 AGM guided 2026 revenue >30% growth and capex near upper end of $52-56B, citing agentic-AI compute/token demand _(X-Reports/2026-06-05-0404-x-scan.md)_
+
+## Added from research — 2026-06-08 (ingest)
+- [[Cerebras Systems]] benefits from this theme — (VIEW, Morgan Stanley 2026-06-08): wafer-scale low-latency inference; contracts → $6bn 2028 rev, ~1% AI-processor share; Initiate OW PT $250
+- [[Kioxia Holdings]] benefits from this theme — (VIEW, Morgan Stanley 2026-06-08): NAND/SSD for diverse AI inference; tight NAND supply, ~50% CY28 volume under LTA

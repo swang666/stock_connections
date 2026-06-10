@@ -231,3 +231,41 @@ Spreadsheet was NOT open (no lock file); xlsx written directly, no pending CSV n
 - Spreadsheet was NOT open (no lock file); xlsx written directly.
 
 **Validator:** errors=0, warnings=182 (pre-existing categories: source_doc/evidence missing on legacy rows). Graph: 103 nodes, 257 edges. PASS.
+
+## 2026-06-08 — scheduled ingest
+Inbox files processed (3): 2026-06-07-1204-x-scan-extract.md, 2026-06-07-2003-x-scan-extract.md, 2026-06-08-0404-x-scan-extract.md.
+Edges added: 3 — SKHYNIX→partners with→NVDA (3); NVDA→sells GPUs to→NAVER (2); NVDA→partners with→DOOSAN (1). All FACT-tagged.
+New companies added: 2 — NAVER (Naver, layer 10 Hyperscalers/Cloud, 035420.KS, South Korea); DOOSAN (Doosan, layer 13 Power & Cooling, 000150.KS, South Korea).
+Skipped as duplicates: SKHYNIX supplies HBM/memory→NVDA (3 verb-variants of existing 'supplies HBM to' edge); SKHYNIX benefits from T_HBM; MU benefits from T_HBM; TSM manufactures chips for NVDA; TSM manufactures chips for MRVL (existing strength-2 edge; new FACT restated multi-year foundry-capacity but not re-added).
+Validator: errors=0, warnings=182 (all pre-existing: missing source_doc/evidence/untagged on legacy rows; none introduced by this run).
+Graph regenerated: 105 nodes, 260 edges. Spreadsheet was NOT open (no lock file); xlsx written directly.
+
+## 2026-06-08 (ingest)
+- **Inbox files processed:** 19 new files.
+  - x-scan extracts: 2026-06-08-1204, 2026-06-08-2004 (FACT-grade, pre-formatted).
+  - Analyst reports w/ edges: MS Cerebras initiation, MS Kioxia group call, MS "Weekly: NVDA memory cuts", CITI SoCAMM2 reduction (OCR), Nomura structural memory shortage (OCR), Bernstein Vera Rubin GW cost, GS Micron 3Q preview, TMTB EOD Wrap + Morning Wrap(19), citi morning.
+  - No-edge / macro / educational (reviewed, no relationships extracted): JPM "Investing in Tech 101", JPM "Macro Week Ahead", GS "CTA", "美股盘面", MS "Software Snippets: Token Budgeting", "特朗普计划会见 AI 公司" (political), "Rubin深度+AI+PCB报告" (low-quality Chinese retail infographic — see flag below).
+- **New companies added (4):** HITACHI (Hitachi, 6501.T, L2), AAPL (Apple, L10), CBRS (Cerebras Systems, L4), KIOXIA (Kioxia Holdings, 285A.T, L5).
+- **New edges added (10):**
+  - HITACHI partners with INTC (FACT, x-scan).
+  - NVDA sells GPUs to AAPL; AAPL runs compute on GOOGL; AAPL partners with GOOGL (FACT, x-scan — Apple PCC on Google Cloud Nvidia GPUs; Gemini-based Foundation Models).
+  - CBRS benefits from T_INFER (VIEW, MS, PT $250 OW); CBRS competes with NVDA (VIEW, MS).
+  - KIOXIA benefits from T_INFER (VIEW, MS — NAND/SSD, tight supply, LTA).
+  - GLW supplies optical fiber to AMZN (FACT, TMTB); GLW benefits from T_NET (VIEW, TMTB).
+  - SMCI builds AI servers for XAI (VIEW, TMTB/Bluefin via X — reported ~1,500-rack/$5B+ award; flagged "(?)").
+- **De-dup:** x-scan rows "NVDA sells GPUs to GOOGL" and "TXN benefits from T_POWER" already existed → skipped.
+- **Validator:** errors=0, warnings=182 (all pre-existing: source_doc/evidence missing on legacy rows). PASS. Graph = 109 nodes / 270 edges.
+- **Flagged for user review:**
+  - SMCI→xAI award is sourced from "Bluefin via X" (social/secondary) — tagged VIEW + "(?)", verify against a primary source.
+  - Memory-shortage cluster (MS/CITI/Nomura) all corroborate NVIDIA cutting Vera Rubin SoCAMM2/LPDDR5X from 192GB→96GB modules (55TB→28TB per rack) due to DRAM shortage; suppliers reportedly filling only ~60% of SoCAMM2 demand; CMX/NAND demand rising. No new edges added (reinforces existing MU/Samsung/SK Hynix → NVDA memory + T_HBM); consider strengthening those evidence notes manually.
+  - "Rubin深度+AI+PCB报告" names Chinese PCB/CCL beneficiaries (沪电/胜宏/生益 Shengyi, copper foil 隆扬+三井/Mitsui, Q-Glass) as Rubin NVL144 winners — NOT ingested as nodes/edges due to low source quality (garbled retail infographic). Recommend a primary-sourced pass if you want these added.
+- Excel was CLOSED (no lock file); xlsx written directly.
+
+## 2026-06-09 (scheduled ingest)
+- Inbox files processed: 1 — `2026-06-09-0404-x-scan-extract.md` (FACT-only X-scan extract).
+- Edges added: 1 — SIVE → supplies beamforming ICs to → ALL.SPACE (strength 2; FACT, X-scan 2026-06-09, $8.2M Ka-band BFIC order for 2027).
+- Edges skipped (dedup): 1 — NVDA → sells GPUs to → SPCX already exists (restated SpaceX "AI1" GB300/Rubin reference design; no duplicate row added).
+- New companies added: 1 — ALL.SPACE (ALLSPACE), private UK SATCOM terminal maker, layer 8 Networking Systems. (Extract proposed layer_name "Networking" → corrected to canonical "Networking Systems".)
+- Wiki: appended downstream bullet to Companies/Sivers Semiconductor.md; created Companies/ALL.SPACE.md.
+- Validator: errors=0, warnings=182 (pre-existing: source_doc/evidence coverage; PASS).
+- EDGAR pull remains DISABLED (sec.gov unreachable). No instruction-like files encountered. Excel was not open (no lock file).

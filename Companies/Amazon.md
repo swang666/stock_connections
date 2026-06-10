@@ -37,3 +37,6 @@ country: USA
 
 ## Added from research — 2026-06-03
 - [[Credo Technology]] supplies AECs to this company — (FACT, TMTB 2026-06-02): top-3 10%+ Credo customer in FQ4
+
+## Added from research — 2026-06-08 (ingest)
+- [[Corning]] supplies optical fiber to this company — (FACT, TMTB 2026-06-08): Corning deal to supply optical fiber for Amazon US AI data centers

@@ -31,3 +31,6 @@ country: USA
 
 ## Sources
 - _Add links to filings / articles in `sources/`._
+
+## Added from research — 2026-06-08 (ingest)
+- builds AI servers for [[xAI]] — (VIEW, TMTB/Bluefin via X 2026-06-08): reported award of ~1,500 racks (~$5B+) from xAI (?)

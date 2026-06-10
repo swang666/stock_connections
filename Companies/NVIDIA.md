@@ -67,3 +67,12 @@ country: USA
 
 ## Added from research — 2026-06-05 (X-scan)
 - sells GPUs to [[SpaceX (Colossus compute)]] — (FACT, X-scan 2026-06-05): Colossus deploys ~110k NVIDIA GPUs for the Google contract (?) _(X-Reports/2026-06-05-2004-x-scan.md)_
+
+## Added from research — 2026-06-08 (X-scan)
+- partners with [[SK Hynix]] — (FACT, X-scan 2026-06-08): multiyear partnership co-developing SOCAMM2/HBM4 for Vera Rubin; CUDA-X/PhysicsNeMo/Omniverse applied to SK Hynix chip design, TCAD & fab digital twins _(X-Reports/2026-06-07-2003-x-scan.md)_
+- sells GPUs to [[Naver]] — (FACT, X-scan 2026-06-08): Naver building sovereign-AI datacenters on NVIDIA DSX platform, 55MW → GW-scale _(X-Reports/2026-06-08-0404-x-scan.md)_
+- partners with [[Doosan]] — (FACT, X-scan 2026-06-08): AI-infrastructure partnership announced during NVIDIA Korea trip _(X-Reports/2026-06-08-0404-x-scan.md)_
+
+## Added from research — 2026-06-08 (ingest)
+- sells GPUs to [[Apple]] — (FACT, X-scan 2026-06-08): Apple Private Cloud Compute runs on Nvidia GPUs via Google Cloud
+- [[Cerebras Systems]] competes with this company — (VIEW, Morgan Stanley 2026-06-08): low-latency inference challenger

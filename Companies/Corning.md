@@ -24,3 +24,7 @@ country: USA
 
 ## Sources
 - sources/inbox/玻璃基板行业交流20260526.docx
+
+## Added from research — 2026-06-08 (ingest)
+- supplies optical fiber to [[Amazon]] — (FACT, TMTB 2026-06-08): deal to supply optical fiber for Amazon US AI data centers
+- benefits from [[Optical & Networking Buildout]] — (VIEW, TMTB 2026-06-08): optical fiber demand scaling with AI datacenter buildout

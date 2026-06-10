@@ -43,3 +43,7 @@ country: USA
 
 ## Added from research — 2026-06-07 (ingest)
 - drives demand for [[AI Training Capex]] — (FACT, Jefferies 2026-06): $85bn equity raise to fund AI compute; C26 capex $180-190bn, C27 higher
+
+## Added from research — 2026-06-08 (ingest)
+- [[Apple]] runs compute on this company — (FACT, X-scan 2026-06-08): Apple expanded Private Cloud Compute to Google Cloud for Apple Intelligence
+- [[Apple]] partners with this company — (FACT, X-scan 2026-06-08): Apple uses Gemini-family model tech for next-gen Apple Foundation Models

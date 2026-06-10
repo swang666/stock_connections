@@ -16,6 +16,7 @@ country: Sweden
 **Key products:** CW/LPO laser arrays, laser light sources.
 
 ## Supplies / sells to (downstream)
+- supplies beamforming ICs to [[ALL.SPACE]] — (FACT, X-scan 2026-06-09): $8.2M production order for 2027 Ka-band multi-beam BFICs (multi-orbit SATCOM)
 - partners with [[GlobalFoundries]] — (FACT, X-scan 2026-06-02 via Reuters): laser arrays integrated into GF silicon-photonics reference designs for pluggables/CPO/LPO
 
 ## Benefits from (demand drivers)
@@ -26,3 +27,4 @@ country: Sweden
 
 ## Sources
 - X-Reports/2026-06-02-0746-x-scan.md
+- X-Reports/2026-06-09-0404-x-scan.md

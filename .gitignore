@@ -36,3 +36,18 @@ X-Reports/
 
 # Live-price cache (regenerated at runtime via the proxy; don't commit raw history)
 _tools/prices_history.json
+
+# Backtest price history (regenerate locally via fetch_history.py; not committed)
+_tools/prices_history.csv
+
+# ── Trading experiment: PRIVATE — contains account number, email, balances, positions ──
+TRADING-POLICY.md
+TRADING-EXPERIMENT-PLAN.md
+HANDOVER.md
+briefs/
+trading_log.csv
+_tools/trading_run.ps1
+_tools/send_digest.ps1
+
+# Machine-local Claude Code settings
+.claude/settings.local.json

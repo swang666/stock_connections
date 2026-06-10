@@ -41,3 +41,6 @@ country: USA
 
 ## Added from research — 2026-06-05 (X-scan)
 - partners with [[SambaNova Systems]] — (FACT, X-scan 2026-06-04): SambaNova AI platform paired with Intel Xeon processors in rack-scale infrastructure for hyperscale deployments (Computex 2026)
+
+## Added from research — 2026-06-08 (ingest)
+- partners with [[Hitachi]] — (FACT, X-scan 2026-06-08): strategic collaboration on foundry tools, custom silicon, quantum, energy optimization & edge-AI

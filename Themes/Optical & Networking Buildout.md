@@ -38,3 +38,6 @@ layer: demand-driver
 
 ## Added from research — 2026-06-07 (ingest)
 - [[Zhen Ding Technology]] benefits from this theme — (VIEW, Citi 2026-06): mSAP optical-module PCB for 800G/1.6T transceivers
+
+## Added from research — 2026-06-08 (ingest)
+- [[Corning]] benefits from this theme — (VIEW, TMTB 2026-06-08): optical fiber demand scaling with AI datacenter buildout
