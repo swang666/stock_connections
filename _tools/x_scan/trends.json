@@ -931,6 +931,53 @@
           "sentiment": "neg"
         }
       }
+    },
+    {
+      "utc": "2026-06-10T11:17Z",
+      "local": "2026-06-10 04:17",
+      "slot": "morning",
+      "tickers": {
+        "NVDA": {
+          "mentions": 5,
+          "sentiment": "pos"
+        },
+        "TSM": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "LITE": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "AAOI": {
+          "mentions": 1,
+          "sentiment": "neg"
+        },
+        "COHR": {
+          "mentions": 1,
+          "sentiment": "neg"
+        },
+        "CIEN": {
+          "mentions": 1,
+          "sentiment": "neg"
+        },
+        "MU": {
+          "mentions": 1,
+          "sentiment": "neu"
+        },
+        "SIVE": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "SKHYNIX": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "ORCL": {
+          "mentions": 1,
+          "sentiment": "neu"
+        }
+      }
     }
   ]
 }

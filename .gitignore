@@ -41,8 +41,9 @@ _tools/prices_history.json
 _tools/prices_history.csv
 
 # ── Trading experiment: PRIVATE — contains account number, email, balances, positions ──
+# (TRADING-EXPERIMENT-PLAN.md is the sanitized PUBLIC version and is intentionally tracked)
 TRADING-POLICY.md
-TRADING-EXPERIMENT-PLAN.md
+LEARNING-LOG.md
 HANDOVER.md
 briefs/
 trading_log.csv
