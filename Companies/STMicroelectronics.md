@@ -22,3 +22,7 @@ country: Switzerland
 
 ## Sources
 - See `sources/inbox/` research reports.
+
+
+## Added from research — 2026-06-10 (Narrative Atlas)
+- benefits from [[Optical & Networking Buildout]] — (VIEW, BofA 2026-06-10): upgraded to Buy; AI optical interconnect earnings inflection

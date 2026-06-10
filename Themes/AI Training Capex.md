@@ -30,3 +30,7 @@ layer: demand-driver
 
 ## Added from research — 2026-06-07 (ingest)
 - [[Alphabet (Google)]] drives demand for this theme — (FACT, Jefferies 2026-06): $85bn equity raise to fund AI compute; C26 capex $180-190bn
+
+
+## Added from research — 2026-06-10 (Narrative Atlas)
+- [[Applied Materials]], [[Lam Research]], [[KLA Corporation]] benefit from this theme — (VIEW, Barclays 2026-06-10): semicap capex cycle fundamentals already at levels previously expected for 2028

@@ -25,3 +25,7 @@ country: USA
 
 ## Sources
 - _Add links to filings / articles in `sources/`._
+
+
+## Added from research — 2026-06-10 (Narrative Atlas)
+- benefits from [[AI Training Capex]] — (VIEW, Barclays 2026-06-10): preferred semicap capex-cycle beneficiary

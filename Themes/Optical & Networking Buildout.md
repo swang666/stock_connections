@@ -45,3 +45,8 @@ layer: demand-driver
 
 ## Added from research — 2026-06-09 (ingest)
 - [[Amphenol]] benefits from this theme — (VIEW, SemiAnalysis 2026-06-09): CPO delays keep copper primary for scale-up; copper TAM seen ~3x in next few years
+
+
+## Added from research — 2026-06-10 (Narrative Atlas)
+- [[STMicroelectronics]] — (VIEW, BofA 2026-06-10): Buy upgrade on AI optical interconnect inflection
+- [[Ciena]] — (VIEW, JPM 2026-06-10): AI networking, hyperscaler demand for advanced optical

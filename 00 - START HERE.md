@@ -29,13 +29,13 @@ A living map of who supplies, sells to, and benefits from whom across the AI val
 [[AUO Corporation]], [[Amkor Technology]], [[BOE Technology]], [[Corning]], [[Innolux]], [[Zhen Ding Technology]]
 
 **L7 — Optical & Interconnect**
-[[Alphawave Semi]], [[Amphenol]], [[Applied Optoelectronics]], [[Astera Labs]], [[Ayar Labs]], [[Coherent]], [[Credo Technology]], [[Fabrinet]], [[Furukawa Electric]], [[Largan Precision]], [[Lumentum]], [[Luxshare Precision]], [[POET Technologies]], [[STMicroelectronics]], [[Semtech]], [[Sivers Semiconductor]]
+[[Alphawave Semi]], [[Amphenol]], [[Applied Optoelectronics]], [[Astera Labs]], [[Ayar Labs]], [[Ciena]], [[Coherent]], [[Credo Technology]], [[Fabrinet]], [[Furukawa Electric]], [[Largan Precision]], [[Lumentum]], [[Luxshare Precision]], [[POET Technologies]], [[STMicroelectronics]], [[Semtech]], [[Sivers Semiconductor]]
 
 **L8 — Networking Systems**
 [[ALL.SPACE]], [[Arista Networks]], [[Cisco]]
 
 **L9 — Servers & ODM/OEM**
-[[Celestica]], [[Dell Technologies]], [[Foxconn (Hon Hai)]], [[Hewlett Packard Enterprise]], [[Supermicro]], [[Wiwynn]]
+[[Celestica]], [[Dell Technologies]], [[Flex]], [[Foxconn (Hon Hai)]], [[Hewlett Packard Enterprise]], [[Supermicro]], [[Wiwynn]]
 
 **L10 — Hyperscalers / Cloud**
 [[Alphabet (Google)]], [[Amazon]], [[Apple]], [[ByteDance]], [[CoreWeave]], [[IREN]], [[Meta Platforms]], [[Microsoft]], [[Naver]], [[Nebius]], [[Oracle]], [[SpaceX (Colossus compute)]]
@@ -47,7 +47,7 @@ A living map of who supplies, sells to, and benefits from whom across the AI val
 [[Applied Digital]], [[Blackstone]], [[Cipher Mining]], [[Core Scientific]], [[Digital Realty]], [[Equinix]]
 
 **L13 — Power & Cooling Equipment**
-[[Analog Devices]], [[Bloom Energy]], [[Doosan]], [[Eaton]], [[Texas Instruments]], [[Vertiv]]
+[[Analog Devices]], [[Bloom Energy]], [[Doosan]], [[Eaton]], [[Infineon]], [[Texas Instruments]], [[Vertiv]]
 
 **L14 — Power Generation / Utilities**
 [[Constellation Energy]], [[GE Vernova]], [[Vistra]]

@@ -286,3 +286,15 @@ Changes:
 - Notable VIEWs not graphed (logged only): SemiAnalysis negative on LITE/COHR/HIMX/AAOI (CPO timing), WOLF/NVTS (800VDC pushout removes near-term WBG catalyst) — negative sentiment has no edge type; captured in theme/company notes.
 - Validator: nodes=113 edges=278 errors=0 warnings=181 (pre-existing coverage gaps: source_doc/evidence missing on older rows). Graph regenerated.
 - Excel not open; xlsx written directly. (Note: this run completed a 2026-06-09 ingest that was interrupted before regenerate/record; no double-writes — dedupe guard verified.)
+
+## 2026-06-10 — Narrative Atlas added as source (user request)
+
+New source: https://narrative-graph.onrender.com/feed (Narrative Atlas — daily per-ticker analyst-narrative digests).
+Dedupe mechanism: _tools/narrative_atlas_state.json — every feed event gets key sha1(date|ticker|stance|summary[:120])[:16]; only events whose key is absent from "seen" are processed; the feed has no working server-side date filter (?from/?to ignored), so dedupe is client-side. State initialized with all 252 currently-visible events; events ≤2026-06-09 marked seen WITHOUT ingestion (historical backfill deliberately skipped to avoid stale/duplicate narratives).
+
+From today's 31 events (2026-06-10):
+- New companies (3): CIEN (Ciena, optical L7), IFX (Infineon, power semis L13 — judgment call, no analog/power-semi layer exists), FLEX (Flex, EMS/DC power L9).
+- New edges (7, all VIEW): STM→T_NET (BofA upgrade, AI optical); AMAT/LRCX/KLAC→T_TRAIN (Barclays semicap capex); IFX→T_POWER (Jefferies, 800V pushout neutral/positive — corroborates SemiAnalysis); FLEX→T_POWER (JPM); CIEN→T_NET (JPM).
+- Skipped as duplicates/restatements: SMCI $39B orders (already FACT from x-scan), TSM May rev, ANET→T_NET, NBIS→T_INFER, BE→T_POWER.
+- Skipped as out-of-scope/uncertain: software-sentiment items (SNOW/TWLO/MDB/FROG/DDOG/NET/ZS/RDDT/NFLX/HOOD/CHWY/APP/DASH), META layoffs, AMZN freight, SKHYNIX supplier-pricing (vague), OPENAI 10GW Ohio DC w/ possible NVDA backing (negotiation-stage, not graphed), PSTG (single sentiment, node sprawl).
+- Validator: nodes=116 edges=285 errors=0 warnings=181. Graph regenerated.
