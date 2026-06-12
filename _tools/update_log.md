@@ -298,3 +298,35 @@ From today's 31 events (2026-06-10):
 - Skipped as duplicates/restatements: SMCI $39B orders (already FACT from x-scan), TSM May rev, ANET→T_NET, NBIS→T_INFER, BE→T_POWER.
 - Skipped as out-of-scope/uncertain: software-sentiment items (SNOW/TWLO/MDB/FROG/DDOG/NET/ZS/RDDT/NFLX/HOOD/CHWY/APP/DASH), META layoffs, AMZN freight, SKHYNIX supplier-pricing (vague), OPENAI 10GW Ohio DC w/ possible NVDA backing (negotiation-stage, not graphed), PSTG (single sentiment, node sprawl).
 - Validator: nodes=116 edges=285 errors=0 warnings=181. Graph regenerated.
+
+## 2026-06-10 (evening run)
+- Inbox files processed: 18 (3 x-scan extracts 06-10, MS Siemens Energy, MS 800V, MS CPO, MS chipflation, MS memory "Healthy Reset", JPM MLCC/Sinocera fireside, Citi ORCL F4Q26 results, DB ORCL preview (OCR), Jefferies ORCL (OCR), DB SIA digest (OCR), TMTB morning(20)+EOD(1), BofA flows, 2x ZeroHedge ETF pieces)
+- Narrative Atlas: 252 events visible, 0 new (all previously seen); state last_run updated.
+- Nodes added: 5 — ENR (Siemens Energy, L14), DELTA (Delta Electronics, L13), SINOCERA (Sinocera 300285.SZ, L2 materials), ASE (ASE Technology, L6), FOCI (3363.TWO, L7).
+- Edges added: 8 — ENR→T_POWER (VIEW MS); DELTA→T_POWER (VIEW MS, 800VDC racks 4Q26); SINOCERA→T_TRAIN (FACT JPM); SINOCERA supplies MLCC powder to SAMSUNG (FACT JPM, flagged (?) — actual customer likely Samsung Electro-Mechanics, not Electronics); ASE→T_CPO (VIEW MS); FOCI→T_CPO (VIEW MS); ORCL→T_INFER (FACT Citi, RPO $638B); BE supplies fuel-cell power to ORCL (FACT Jefferies).
+- Evidence strengthened: TSM→T_CPO (+ PIC capacity 10kwpm 1Q27, MS 2026-06-10).
+- Restatements skipped (already in graph): x-scan 06-10 edges (SKHYNIX/SAMSUNG/MU HBM→NVDA, NVDA→T_CPO, AVGO↔GOOGL, TSM→GOOGL/T_TRAIN); SMCI $39B orders; STM optical/CPO.
+- Skipped, no supply-chain mechanism: BofA flow trends, 2x ZeroHedge ETF/positioning pieces, MS chipflation + memory decks (macro/cycle context, no new company relationships), DB SIA digest (industry stats), DB ORCL preview (restates OCI story), TMTB wraps (sentiment).
+- Validator: errors=0, warnings=181 (legacy evidence/source gaps). Graph regenerated: 121 nodes / 293 edges.
+- Excel was NOT open (no lock file); xlsx written directly.
+
+## 2026-06-11 (scheduled run)
+
+**Inbox files processed (10):** TMTB EOD Wrap/ADBE First Take; x-scan extracts 06-11 0404 & 2004; CPU.pdf (BofA agentic-CPU TAM $170bn); Intel double upgrade.pdf (BofA); Oppenheimer-SpaceX.pdf (IPO initiation); TACO Thursday ZeroHedge (macro only — no edges); TMTB Morning Wrap (21); 旭创.pdf (BofA Zhongji Innolight); 英特尔应筹集资金 (SemiAnalysis Intel capital raise).
+
+**Narrative Atlas:** 240 events visible, 45 new. 6 graphed (WDC, STX, INTC, ARM, WOLF, NVTS). ~14 were restatements of existing edges (MU, SNDK, LITE, COHR, CRWV, BE, ORCL, STM, IFX, SMCI, SPCX, AMD — no duplicate rows added). ~25 skipped as off-topic: software/app sentiment (PANW, CRWD, DDOG, DASH, EPAM, ACN), consumer/e-commerce (NFLX, MELI, ETSY, EBAY, CVNA, DUOL, SPOT, HOOD, META ads, AMZN freight), price-move chatter without mechanism (ASML/AMAT, GOOGL, AVGO, TSEM, VRSN, NVDA generic, TSLA SpaceX-IPO sentiment).
+
+**Added:** 7 nodes (WDC Western Digital, STX Seagate, WOLF Wolfspeed, NVTS Navitas, TSLA Tesla, INNOLIGHT Zhongji Innolight, TSEM Tower Semiconductor) and 16 edges. Evidence upgraded on 2 existing edges: MU→T_HBM (FACT: 2026 HBM capacity sold out, binding contracts), LITE→T_NET (FACT: capacity fully booked through 2028).
+
+**Notable FACT edges:** SPCX acquired XAI ($250B, early 2026); Terafab chip-manufacturing JV SpaceX/Tesla/Intel (1TW/yr goal); AVGO+Apollo+Blackstone 20GW datacenter platform; CDNS 14A IP for INTC; NVDA strategic investment in INTC; Innolight deep Google relationship (>40% 1.6T share); Tower Semi $1.3bn SiPho 2027 contracts.
+
+**Flagged / skipped with reasons:**
+- GOOGL→Samsung TPU-v10 capacity + MediaTek design (The Information via TMTB): rumored & disputed in TMTB Slack — NOT graphed.
+- SpaceX agreement to acquire Cursor: pending deal, app-layer — not graphed (noted only).
+- WOLF/NVTS edges are strength-1 VIEW with (?) — 800VDC timing dispute (SemiAnalysis pushout vs JPM/Jefferies pushback).
+- TACO Thursday ZeroHedge: macro-only, no supply-chain content.
+- Oracle "four AI infra contracts" in TMTB(21): counterparties not legible in PDF extraction — no edge.
+
+**Validator:** nodes=128 edges=309 errors=0 warnings=179 (legacy source_doc/evidence gaps) — PASS. Graph regenerated (update_graph.py).
+
+**Excel:** no lock file detected; xlsx write succeeded directly.

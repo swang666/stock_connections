@@ -1,4 +1,4 @@
-# ── OS / editor cruft ─────────────────────────────────────────────
+﻿# ── OS / editor cruft ─────────────────────────────────────────────
 .DS_Store
 Thumbs.db
 *~
@@ -43,12 +43,17 @@ _tools/prices_history.csv
 # ── Trading experiment: PRIVATE — contains account number, email, balances, positions ──
 # (TRADING-EXPERIMENT-PLAN.md is the sanitized PUBLIC version and is intentionally tracked)
 TRADING-POLICY.md
+TRADING-PHASE2-PREP.md
+paper_phase2_log.csv
 LEARNING-LOG.md
 HANDOVER.md
 briefs/
 trading_log.csv
 _tools/trading_run.ps1
 _tools/send_digest.ps1
+_tools/dip_watch_config.json
+_tools/dip_watch_state.json
+_tools/dip_watch.lock
 
 # Machine-local Claude Code settings
 .claude/settings.local.json

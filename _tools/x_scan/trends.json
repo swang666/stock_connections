@@ -978,6 +978,193 @@
           "sentiment": "neu"
         }
       }
+    },
+    {
+      "utc": "2026-06-10T19:08Z",
+      "local": "2026-06-10 12:08",
+      "slot": "afternoon",
+      "tickers": {
+        "INTC": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "MU": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "AVGO": {
+          "mentions": 2,
+          "sentiment": "neg"
+        },
+        "NVDA": {
+          "mentions": 2,
+          "sentiment": "neu"
+        },
+        "TSM": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "SKHYNIX": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "SAMSUNG": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "SNDK": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "GOOGL": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "AMD": {
+          "mentions": 1,
+          "sentiment": "neu"
+        }
+      }
+    },
+    {
+      "utc": "2026-06-11T03:07Z",
+      "local": "2026-06-10 20:07",
+      "slot": "afternoon",
+      "tickers": {
+        "TSM": {
+          "mentions": 3,
+          "sentiment": "pos"
+        },
+        "MRVL": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "GOOGL": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "AVGO": {
+          "mentions": 2,
+          "sentiment": "neg"
+        },
+        "NVDA": {
+          "mentions": 1,
+          "sentiment": "neu"
+        },
+        "MU": {
+          "mentions": 1,
+          "sentiment": "neu"
+        }
+      }
+    },
+    {
+      "utc": "2026-06-11T11:08Z",
+      "local": "2026-06-11 04:08",
+      "slot": "morning",
+      "tickers": {
+        "ORCL": {
+          "mentions": 4,
+          "sentiment": "neg"
+        },
+        "MRVL": {
+          "mentions": 3,
+          "sentiment": "pos"
+        },
+        "AVGO": {
+          "mentions": 3,
+          "sentiment": "neg"
+        },
+        "NVDA": {
+          "mentions": 2,
+          "sentiment": "neu"
+        },
+        "MU": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "SKHYNIX": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "TSM": {
+          "mentions": 1,
+          "sentiment": "neu"
+        },
+        "GOOGL": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "BE": {
+          "mentions": 1,
+          "sentiment": "neu"
+        }
+      }
+    },
+    {
+      "utc": "2026-06-11T19:08Z",
+      "local": "2026-06-11 12:08",
+      "slot": "afternoon",
+      "tickers": {
+        "ORCL": {
+          "mentions": 4,
+          "sentiment": "neg"
+        },
+        "NVDA": {
+          "mentions": 3,
+          "sentiment": "neu"
+        },
+        "MU": {
+          "mentions": 2,
+          "sentiment": "neg"
+        },
+        "AVGO": {
+          "mentions": 2,
+          "sentiment": "neg"
+        },
+        "MRVL": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "TSM": {
+          "mentions": 1,
+          "sentiment": "neu"
+        }
+      }
+    },
+    {
+      "utc": "2026-06-12T03:09Z",
+      "local": "2026-06-11 20:09",
+      "slot": "afternoon",
+      "tickers": {
+        "MRVL": {
+          "mentions": 4,
+          "sentiment": "pos"
+        },
+        "NVDA": {
+          "mentions": 3,
+          "sentiment": "neu"
+        },
+        "AVGO": {
+          "mentions": 3,
+          "sentiment": "neu"
+        },
+        "MU": {
+          "mentions": 3,
+          "sentiment": "pos"
+        },
+        "ORCL": {
+          "mentions": 2,
+          "sentiment": "neg"
+        },
+        "BE": {
+          "mentions": 1,
+          "sentiment": "neu"
+        },
+        "NBIS": {
+          "mentions": 1,
+          "sentiment": "neu"
+        }
+      }
     }
   ]
 }

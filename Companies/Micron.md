@@ -38,3 +38,7 @@ country: USA
 
 ## Added from research — 2026-06-05 (X-scan)
 - supplies HBM to [[NVIDIA]] — (FACT, X-scan 2026-06-05): Jensen certified Micron for Vera Rubin HBM4 supply; press-corroborated _(X-Reports/2026-06-05-1204-x-scan.md)_
+
+## Relationships (update 2026-06-11)
+
+- benefits from [[HBM Demand]] (evidence upgraded) — (FACT, X-scan 2026-06-11) entire 2026 HBM capacity booked/sold out under binding contracts; HBM4 at COMPUTEX 2026

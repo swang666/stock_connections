@@ -34,3 +34,7 @@ country: UK
 - licenses CPU IP to [[OpenAI]] — (FACT, X-scan 2026-06-05): OpenAI in Arm AGI-CPU customer roster; press-corroborated _(X-Reports/2026-06-05-1204-x-scan.md)_
 - licenses CPU IP to [[Oracle]] — (FACT, X-scan 2026-06-05): Oracle named Arm AGI-CPU adopter (Computex); press-corroborated _(X-Reports/2026-06-05-1204-x-scan.md)_
 - licenses CPU IP to [[ByteDance]] — (FACT, X-scan 2026-06-05): ByteDance named Arm AGI-CPU adopter (Computex); press-corroborated _(X-Reports/2026-06-05-1204-x-scan.md)_
+
+## Relationships (update 2026-06-11)
+
+- benefits from [[AI Inference Demand]] — (VIEW, BofA 2026-06-11) agentic AI lifts ARM challengers within $170bn+ CY30 server CPU TAM

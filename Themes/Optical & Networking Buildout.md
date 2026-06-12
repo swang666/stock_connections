@@ -50,3 +50,9 @@ layer: demand-driver
 ## Added from research — 2026-06-10 (Narrative Atlas)
 - [[STMicroelectronics]] — (VIEW, BofA 2026-06-10): Buy upgrade on AI optical interconnect inflection
 - [[Ciena]] — (VIEW, JPM 2026-06-10): AI networking, hyperscaler demand for advanced optical
+
+## Relationships (update 2026-06-11)
+
+- [[Zhongji Innolight]] — (VIEW, BofA 2026-06-10) 1.6T demand into 2028, >40% share; NPO emerging
+- [[Tower Semiconductor]] — (FACT, BofA 2026-06-10) $1.3bn SiPho contracts for 2027, extended backlog
+- [[Lumentum]] — (FACT, BofA 2026-06-10) capacity fully booked through 2028

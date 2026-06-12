@@ -14,22 +14,22 @@ A living map of who supplies, sells to, and benefits from whom across the AI val
 [[Arm Holdings]], [[Cadence]], [[Synopsys]]
 
 **L2 — Semiconductor Equipment**
-[[ASML]], [[Advanced Micro-Fabrication (AMEC)]], [[Applied Materials]], [[Camtek]], [[Entegris]], [[FormFactor]], [[Hanmi Semiconductor]], [[Hitachi]], [[KLA Corporation]], [[Lam Research]], [[Naura Technology]], [[Teradyne]], [[XLight]]
+[[ASML]], [[Advanced Micro-Fabrication (AMEC)]], [[Applied Materials]], [[Camtek]], [[Entegris]], [[FormFactor]], [[Hanmi Semiconductor]], [[Hitachi]], [[KLA Corporation]], [[Lam Research]], [[Naura Technology]], [[Sinocera]], [[Teradyne]], [[XLight]]
 
 **L3 — Foundry / Manufacturing**
-[[GlobalFoundries]], [[Intel]], [[SMIC]], [[Samsung Electronics]], [[TSMC]], [[X-FAB]]
+[[GlobalFoundries]], [[Intel]], [[SMIC]], [[Samsung Electronics]], [[TSMC]], [[Tower Semiconductor]], [[X-FAB]]
 
 **L4 — Chip Designers (Accelerators/Networking)**
-[[AMD]], [[Broadcom]], [[Cambricon]], [[Cerebras Systems]], [[Huawei]], [[IBM]], [[Iluvatar CoreX]], [[Marvell]], [[MediaTek]], [[MetaX]], [[NVIDIA]], [[Qualcomm]], [[SambaNova Systems]]
+[[AMD]], [[Broadcom]], [[Cambricon]], [[Cerebras Systems]], [[Huawei]], [[IBM]], [[Iluvatar CoreX]], [[Marvell]], [[MediaTek]], [[MetaX]], [[NVIDIA]], [[Qualcomm]], [[SambaNova Systems]], [[Tesla]]
 
 **L5 — Memory (HBM/DRAM)**
-[[ChangXin Memory (CXMT)]], [[Kioxia Holdings]], [[Micron]], [[Nanya Technology]], [[SK Hynix]], [[Sandisk]], [[Yangtze Memory (YMTC)]]
+[[ChangXin Memory (CXMT)]], [[Kioxia Holdings]], [[Micron]], [[Nanya Technology]], [[SK Hynix]], [[Sandisk]], [[Seagate Technology]], [[Western Digital]], [[Yangtze Memory (YMTC)]]
 
 **L6 — Advanced Packaging / OSAT**
-[[AUO Corporation]], [[Amkor Technology]], [[BOE Technology]], [[Corning]], [[Innolux]], [[Zhen Ding Technology]]
+[[ASE Technology]], [[AUO Corporation]], [[Amkor Technology]], [[BOE Technology]], [[Corning]], [[Innolux]], [[Zhen Ding Technology]]
 
 **L7 — Optical & Interconnect**
-[[Alphawave Semi]], [[Amphenol]], [[Applied Optoelectronics]], [[Astera Labs]], [[Ayar Labs]], [[Ciena]], [[Coherent]], [[Credo Technology]], [[Fabrinet]], [[Furukawa Electric]], [[Largan Precision]], [[Lumentum]], [[Luxshare Precision]], [[POET Technologies]], [[STMicroelectronics]], [[Semtech]], [[Sivers Semiconductor]]
+[[Alphawave Semi]], [[Amphenol]], [[Applied Optoelectronics]], [[Astera Labs]], [[Ayar Labs]], [[Ciena]], [[Coherent]], [[Credo Technology]], [[FOCI]], [[Fabrinet]], [[Furukawa Electric]], [[Largan Precision]], [[Lumentum]], [[Luxshare Precision]], [[POET Technologies]], [[STMicroelectronics]], [[Semtech]], [[Sivers Semiconductor]], [[Zhongji Innolight]]
 
 **L8 — Networking Systems**
 [[ALL.SPACE]], [[Arista Networks]], [[Cisco]]
@@ -47,10 +47,10 @@ A living map of who supplies, sells to, and benefits from whom across the AI val
 [[Applied Digital]], [[Blackstone]], [[Cipher Mining]], [[Core Scientific]], [[Digital Realty]], [[Equinix]]
 
 **L13 — Power & Cooling Equipment**
-[[Analog Devices]], [[Bloom Energy]], [[Doosan]], [[Eaton]], [[Infineon]], [[Texas Instruments]], [[Vertiv]]
+[[Analog Devices]], [[Bloom Energy]], [[Delta Electronics]], [[Doosan]], [[Eaton]], [[Infineon]], [[Navitas Semiconductor]], [[Texas Instruments]], [[Vertiv]], [[Wolfspeed]]
 
 **L14 — Power Generation / Utilities**
-[[Constellation Energy]], [[GE Vernova]], [[Vistra]]
+[[Constellation Energy]], [[GE Vernova]], [[Siemens Energy]], [[Vistra]]
 
 ## Demand drivers (themes)
 [[AI Inference Demand]], [[AI Training Capex]], [[China Indigenous AI Buildout]], [[Co-Packaged Optics (CPO)]], [[CoWoS Advanced Packaging]], [[Datacenter Power Demand]], [[Glass Core Substrate]], [[HBM Demand]], [[Liquid Cooling Adoption]], [[Optical & Networking Buildout]]

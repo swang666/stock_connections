@@ -37,3 +37,7 @@ country: USA
 
 ## Added from research — 2026-06-09 (ingest)
 - [[Co-Packaged Optics (CPO)]] evidence update — (FACT, X-scan 2026-06-09): incremental multi-hundred-$M CPO order tied to NVDA Spectrum-X/Quantum-X (Mizuho 6/9); (VIEW, SemiAnalysis 2026-06-09): cautious on timing — scale-out CPO shipments to be revised down, scale-up CPO volume ramp ~2029
+
+## Relationships (update 2026-06-11)
+
+- benefits from [[Optical & Networking Buildout]] (evidence upgraded) — (FACT, BofA 2026-06-10) capacity fully booked through 2028

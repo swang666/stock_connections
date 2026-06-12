@@ -38,3 +38,7 @@ layer: demand-driver
 
 ## Added from research — 2026-06-09 (ingest)
 - HBM4 capacity ramp confirmed via capex: SK Hynix placed ₩44.2B TC-bonder order with [[Hanmi Semiconductor]] — (FACT, X-scan 2026-06-09)
+
+## Relationships (update 2026-06-11)
+
+- [[Micron]] — (FACT, X-scan 2026-06-11) entire 2026 HBM capacity booked/sold out under binding contracts

@@ -23,3 +23,7 @@ country: USA
 
 ## Sources
 - See `sources/inbox/` research reports.
+
+## Relationships (update 2026-06-11)
+
+- acquired by [[SpaceX (Colossus compute)]] — (FACT, Oppenheimer 2026-06-11) early 2026, $250B

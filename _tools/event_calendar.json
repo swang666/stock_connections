@@ -1,0 +1,86 @@
+{
+  "_comment": "Macro dates: verified against federalreserve.gov + BLS schedule (2026-06-10). Earnings: auto-refreshed by update_event_calendar.py (run each close run); dates can be estimates until confirmed by the company. Times ET.",
+  "macro": [
+    {
+      "date": "2026-06-17",
+      "type": "FOMC",
+      "name": "FOMC decision + press conference",
+      "time_et": "14:00"
+    },
+    {
+      "date": "2026-07-14",
+      "type": "CPI",
+      "name": "CPI June 2026",
+      "time_et": "08:30"
+    },
+    {
+      "date": "2026-07-29",
+      "type": "FOMC",
+      "name": "FOMC decision",
+      "time_et": "14:00"
+    },
+    {
+      "date": "2026-08-12",
+      "type": "CPI",
+      "name": "CPI July 2026",
+      "time_et": "08:30"
+    },
+    {
+      "date": "2026-09-11",
+      "type": "CPI",
+      "name": "CPI August 2026",
+      "time_et": "08:30"
+    },
+    {
+      "date": "2026-09-16",
+      "type": "FOMC",
+      "name": "FOMC decision + press conference",
+      "time_et": "14:00"
+    },
+    {
+      "date": "2026-10-14",
+      "type": "CPI",
+      "name": "CPI September 2026",
+      "time_et": "08:30"
+    },
+    {
+      "date": "2026-10-28",
+      "type": "FOMC",
+      "name": "FOMC decision",
+      "time_et": "14:00"
+    },
+    {
+      "date": "2026-11-10",
+      "type": "CPI",
+      "name": "CPI October 2026",
+      "time_et": "08:30"
+    },
+    {
+      "date": "2026-12-09",
+      "type": "FOMC",
+      "name": "FOMC decision + press conference",
+      "time_et": "14:00"
+    },
+    {
+      "date": "2026-12-10",
+      "type": "CPI",
+      "name": "CPI November 2026",
+      "time_et": "08:30"
+    }
+  ],
+  "symbols": [
+    "ENTG",
+    "TSM",
+    "GLW",
+    "ASML",
+    "SNPS",
+    "MU",
+    "CRDO",
+    "AMKR",
+    "LITE"
+  ],
+  "earnings": {
+    "MU": "2026-06-24"
+  },
+  "earnings_updated": "2026-06-11"
+}

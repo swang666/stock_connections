@@ -24,3 +24,7 @@ country: USA
 
 ## Sources
 - See `sources/inbox/` research reports.
+
+## Relationships (update 2026-06-11)
+
+- partners with [[Broadcom]] — (FACT, X-scan 2026-06-11) Broadcom + Apollo + Blackstone platform to accelerate 20GW+ of global AI datacenter deployments

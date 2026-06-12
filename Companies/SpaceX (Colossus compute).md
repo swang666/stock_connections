@@ -30,3 +30,9 @@ country: USA
 
 ## Sources
 - _Add links to filings / articles in `sources/`._
+
+## Relationships (update 2026-06-11)
+
+- acquired [[xAI]] — (FACT, Oppenheimer 2026-06-11) early 2026, $250B (incl. X, Grok, Colossus, Macrohard)
+- partners with [[Tesla]] and [[Intel]] — (FACT, Oppenheimer 2026-06-11) Terafab chip-manufacturing JV, long-term goal 1TW compute hardware/yr
+- benefits from [[AI Inference Demand]] — (VIEW, Oppenheimer 2026-06-11) OW initiation $190 PT; space-based DCs targeting 240GW vs ~100GW global cloud; economics unproven (?)

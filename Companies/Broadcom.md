@@ -51,3 +51,7 @@ country: USA
 
 ## Added from research — 2026-06-07 (ingest)
 - drives demand for [[HBM Demand]] — (FACT, Jefferies 2026-06): TPUv8 higher HBM content; HBM a pass-through cost
+
+## Relationships (update 2026-06-11)
+
+- partners with [[Blackstone]] — (FACT, X-scan 2026-06-11) Broadcom + Apollo + Blackstone platform to accelerate 20GW+ of global AI datacenter deployments

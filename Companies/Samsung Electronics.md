@@ -32,3 +32,6 @@ country: South Korea
 
 ## Added from research — 2026-06-05 (X-scan)
 - supplies HBM to [[NVIDIA]] — (FACT, X-scan 2026-06-05): Jensen certified Samsung for Vera Rubin HBM4 supply; press-corroborated _(X-Reports/2026-06-05-1204-x-scan.md)_
+
+## Added from research — 2026-06-10 (ingest)
+- supplied by [[Sinocera]] (MLCC powder) — (FACT, J.P. Morgan 2026-06-10): AI/auto-grade MLCC powder qualified, volume shipments from 3Q26 (Samsung group component arm, likely Samsung Electro-Mechanics) (?)

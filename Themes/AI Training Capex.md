@@ -34,3 +34,6 @@ layer: demand-driver
 
 ## Added from research — 2026-06-10 (Narrative Atlas)
 - [[Applied Materials]], [[Lam Research]], [[KLA Corporation]] benefit from this theme — (VIEW, Barclays 2026-06-10): semicap capex cycle fundamentals already at levels previously expected for 2028
+
+## Added from research — 2026-06-10 (ingest)
+- [[Sinocera]] — (FACT, J.P. Morgan fireside 2026-06-10): AI-server demand drove high-end MLCC powder upcycle in 1H26; AI server-grade powder >Rmb100k/t at 45-50% GM

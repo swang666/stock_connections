@@ -97,6 +97,11 @@ Every entry logs: date, ticker, $, fill price, benchmark snapshot (NVDA + SOXX),
 invalidation condition, rule parameters, review date. The research question: **did the
 high-bottleneck names beat the demand-driver anchors (NVDA/AMD/AVGO)?**
 
+Performance is reported two ways: the **headline is total portfolio return** (positions + cash vs
+the $1,000 inception baseline, same denominator as the fully-invested NVDA/SOXX benchmarks), and
+**positions-only return** as secondary detail — the honest measure of the picks themselves,
+without the cash cushion flattering down days.
+
 ---
 
 ## Part II — The live operating rulebook (what the agent actually obeys)
@@ -109,6 +114,11 @@ the proposal in the brief, notify the owner, and wait.** The owner's replies alw
 ### Schedule (the only times trading is allowed)
 
 - **Open run:** 6:35am PT (9:35 ET), Mon–Fri. **Close run:** 12:45pm PT (3:45 ET), Mon–Fri.
+- **Dip-watch:** a free quote poller runs every 15 minutes between the two runs and launches an
+  extra agent run only when something actionable fires — an unfilled name crossing into the buy
+  band, a stop breach, or a ≥5% pullback that unlocks a tranche-3 add. Event-driven runs act
+  only on the condition that fired; the two fixed runs keep the thinking duties (discovery,
+  reflection).
 - Market closed → report-only. Run starting >60 min late → manage risk only, no new buys.
 - No trading outside these runs unless the owner explicitly instructs in a live conversation.
 
@@ -168,6 +178,27 @@ investigation into a large drop in its bottleneck score.)
    itself — allowed scope: buy plan, universe, guard tuning within hard limits, run procedure.
    Not allowed without owner approval: the hard limits, the schedule, the cash reserve, or the
    daily-duties section. Every self-modification is dated and logged.
+
+### Overnight pocket (side experiment)
+
+A capped $100 "gamble pocket" tests the close-to-open overnight effect: at the close run, if a
+universe name is down ≥3% intraday, buy $100 of the deepest dipper (settled cash only, one
+position at a time, combined per-name cap still enforced); at the next open run, sell it —
+**always, profit or loss**. The thesis is the overnight gap; once the open prints it has resolved,
+and holding losers would turn bounded one-night risk into open-ended bag-holding while poisoning
+the statistics. Every trade is tagged separately and the strategy is judged on its own win rate
+and average net P/L after ~20 trades.
+
+### Event awareness
+
+An event calendar (FOMC decisions, CPI releases, universe earnings dates — the macro dates
+verified against the Fed and BLS schedules, earnings auto-refreshed daily) feeds two rules:
+the overnight pocket never holds across a CPI morning or a candidate's own earnings report
+(those gaps are event bets, not the overnight effect), and every brief lists events within the
+next five trading days so basket adds into events are conscious decisions, not accidents.
+Macro data is deliberately used as a **risk filter, not a signal** — context like VIX/sentiment
+may be logged and evaluated, but only promoted to a trading rule with evidence from the
+experiment's own trades.
 
 ### Each run, in order
 

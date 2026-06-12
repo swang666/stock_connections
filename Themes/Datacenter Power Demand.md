@@ -37,3 +37,11 @@ layer: demand-driver
 ## Added from research — 2026-06-10 (Narrative Atlas)
 - [[Infineon]] — (VIEW, Jefferies 2026-06-10): 800V pushout neutral/positive
 - [[Flex]] — (VIEW, JPM 2026-06-10): turnkey AI DC power infrastructure, 800V adoption
+
+## Added from research — 2026-06-10 (ingest)
+- [[Siemens Energy]] — (VIEW, Morgan Stanley 2026-06-09): big-3 turbine makers ~74% of traditional gas-turbine supply; 2030 GT/DC prime-power supply model raised to 135GW; post-2030 oversupply a valid concern
+- [[Delta Electronics]] — (VIEW, Morgan Stanley 2026-06-10): likely first to mass-produce 800VDC standalone power racks in 4Q26 for a major US hyperscaler; 800VDC schedule intact despite SemiAnalysis delay report (NVDA denied)
+
+## Relationships (update 2026-06-11)
+
+- [[Wolfspeed]] / [[Navitas Semiconductor]] — (VIEW, SemiAnalysis via TMTB 2026-06-10) SiC/GaN content inflects at 800VDC; pushout to 2028+ removes near-term catalyst (?)

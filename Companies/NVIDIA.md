@@ -76,3 +76,7 @@ country: USA
 ## Added from research — 2026-06-08 (ingest)
 - sells GPUs to [[Apple]] — (FACT, X-scan 2026-06-08): Apple Private Cloud Compute runs on Nvidia GPUs via Google Cloud
 - [[Cerebras Systems]] competes with this company — (VIEW, Morgan Stanley 2026-06-08): low-latency inference challenger
+
+## Relationships (update 2026-06-11)
+
+- invests in [[Intel]] — (FACT, SemiAnalysis 2026-06-11) strategic stake at $23.28/sh alongside US govt and SoftBank

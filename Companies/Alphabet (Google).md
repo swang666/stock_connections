@@ -47,3 +47,7 @@ country: USA
 ## Added from research — 2026-06-08 (ingest)
 - [[Apple]] runs compute on this company — (FACT, X-scan 2026-06-08): Apple expanded Private Cloud Compute to Google Cloud for Apple Intelligence
 - [[Apple]] partners with this company — (FACT, X-scan 2026-06-08): Apple uses Gemini-family model tech for next-gen Apple Foundation Models
+
+## Relationships (update 2026-06-11)
+
+- [[Zhongji Innolight]] supplies optical transceivers — (FACT, BofA 2026-06-10) deep relationship; (VIEW) potential Coherent-Lite adoption 2027-28

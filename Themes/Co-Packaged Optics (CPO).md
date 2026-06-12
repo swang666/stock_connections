@@ -45,3 +45,8 @@ layer: demand-driver
 - [[FormFactor]] benefits from this theme — (VIEW, SemiAnalysis 2026-06-09): CPO test picks-and-shovels; PIC wafer probing ahead of volume
 - [[Teradyne]] benefits from this theme — (VIEW, SemiAnalysis 2026-06-09): frontrunner in NVIDIA CPO test qualification; ficonTEC partnership
 - Timing caution — (VIEW, SemiAnalysis 2026-06-09): scale-out CPO switch forecasts to be revised down (Spectrum 6 CPO slipping >2 quarters on >3.5dB insertion loss; ~19% system yield at 32 COUPEs/ASIC); scale-up CPO volume ramp seen ~2029; near-term favors copper (AECs) and pluggable transceivers
+
+## Added from research — 2026-06-10 (ingest)
+- [[ASE Technology]] — (VIEW, Morgan Stanley 2026-06-10): key CPO enabler (OW); 2027 optical-engine shipments modeled 6-7mn units vs investor expectations 20-30mn; CPO boom from 2028
+- [[FOCI]] — (VIEW, Morgan Stanley 2026-06-10): key CPO enabler; CPO revenue ramp from late 3Q26
+- [[TSMC]] — (FACT, Morgan Stanley 2026-06-10): PIC capacity expansion to 10kwpm in 1Q27; SoIC yield 50-60% and assembly yield 20-50% are swing factors

@@ -27,3 +27,7 @@ country: USA
 
 ## Sources
 - _Add links to filings / articles in `sources/`._
+
+## Added from research — 2026-06-10 (ingest)
+- benefits from [[AI Inference Demand]] — (FACT, Citi 2026-06-10): F4Q26 RPO $638B (+363% y/y) led by large prepaid AI contracts; OCI revenue +92% y/y cc; FY27 $90B target reiterated
+- supplied by [[Bloom Energy]] (on-site fuel-cell power) — (FACT, Jefferies 2026-06-08): expanded partnership bypasses grid constraints for OCI AI buildout

@@ -32,3 +32,6 @@ country: USA
 
 ## Added from research — 2026-06-03 (ingest)
 - supplies on-site fuel-cell power to [[Nebius]] — (FACT, Goldman 2026-05-28): Bloom Energy partnership accelerates Nebius power permitting/deployment (800MW-1GW connected 2026)
+
+## Added from research — 2026-06-10 (ingest)
+- supplies on-site fuel-cell power to [[Oracle]] — (FACT, Jefferies 2026-06-08): expanded ORCL–Bloom partnership; faster on-site power bypassing grid constraints

@@ -44,3 +44,10 @@ country: USA
 
 ## Added from research — 2026-06-08 (ingest)
 - partners with [[Hitachi]] — (FACT, X-scan 2026-06-08): strategic collaboration on foundry tools, custom silicon, quantum, energy optimization & edge-AI
+
+## Relationships (update 2026-06-11)
+
+- benefits from [[AI Inference Demand]] — (VIEW, BofA 2026-06-11) double-upgrade to Buy; agentic AI expands CY30 server CPU TAM to $170bn+, INTC ~$40bn server CPU potential
+- [[Cadence]] provides 14A-node IP — (FACT, BofA 2026-06-11) sign-up builds INTC external-foundry IP ecosystem
+- [[NVIDIA]] invests in Intel — (FACT, SemiAnalysis 2026-06-11) strategic stake at $23.28/sh alongside US govt 9.9% and SoftBank
+- partners with [[SpaceX (Colossus compute)]] / [[Tesla]] — (FACT, Oppenheimer 2026-06-11) Terafab chip-manufacturing JV

@@ -43,3 +43,12 @@ layer: demand-driver
 
 ## Added from research — 2026-06-09 (ingest)
 - [[Supermicro]] benefits from this theme — (FACT, X-scan 2026-06-09): ~$39B AI-server orders from >20 customers; raising $7B to fund components
+
+## Added from research — 2026-06-10 (ingest)
+- [[Oracle]] — (FACT, Citi 2026-06-10): F4Q26 RPO $638B (+363% y/y) on large prepaid AI contracts; OCI +92% y/y cc
+
+## Relationships (update 2026-06-11)
+
+- [[Western Digital]] / [[Seagate Technology]] — (VIEW, JPM 2026-06-11) HDD pricing accelerating on AI demand, LTAs
+- [[Intel]] / [[Arm Holdings]] — (VIEW, BofA 2026-06-11) agentic AI expands CY30 server CPU TAM to $170bn+
+- [[SpaceX (Colossus compute)]] — (VIEW, Oppenheimer 2026-06-11) space-based datacenters targeting 240GW (?)

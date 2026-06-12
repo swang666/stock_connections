@@ -29,3 +29,7 @@ country: USA
 
 ## Added from research — 2026-05
 - benefits from [[Optical & Networking Buildout]] — (FACT, Nomura) sells SerDes IP _(Nomura SerDes 2026-05)_
+
+## Relationships (update 2026-06-11)
+
+- provides EDA tools / 14A-node IP to [[Intel]] — (FACT, BofA 2026-06-11) supports INTC external-foundry ecosystem

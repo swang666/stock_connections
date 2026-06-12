@@ -52,3 +52,6 @@ country: Taiwan
 
 ## Added from research — 2026-06-07 (ingest)
 - benefits from [[Co-Packaged Optics (CPO)]] — (FACT, Citi 2026-06): COUPE packaging + chip testing for CPO
+
+## Added from research — 2026-06-10 (ingest)
+- [[Co-Packaged Optics (CPO)]] — (FACT, Morgan Stanley 2026-06-10): TSMC to expand PIC capacity to 10kwpm in 1Q27; SoIC yield 50-60% remains key swing factor for optical-engine output
