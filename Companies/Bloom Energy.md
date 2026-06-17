@@ -35,3 +35,7 @@ country: USA
 
 ## Added from research — 2026-06-10 (ingest)
 - supplies on-site fuel-cell power to [[Oracle]] — (FACT, Jefferies 2026-06-08): expanded ORCL–Bloom partnership; faster on-site power bypassing grid constraints
+
+## Added from research — 2026-06-16 (X-scan)
+- supplies on-site fuel-cell power to [[Oracle]] (quantified) — (FACT, X-scan 2026-06-16): up to 2.8 GW of fuel-cell power agreed for Oracle AI data centers _(X-Reports/2026-06-16-1204-x-scan.md)_
+- supplies on-site fuel-cell power to [[Nebius]] (quantified) — (FACT, X-scan 2026-06-16): Bloom–Nebius master agreement ~$2.6B / 328 MW installed fuel-cell capacity _(X-Reports/2026-06-16-1204-x-scan.md)_

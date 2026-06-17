@@ -26,3 +26,6 @@ country: China
 
 ## Sources
 - J.P. Morgan-MLCC Powder fireside chat with Sinocera (2026-06-10, sources/inbox/)
+
+## Added from research — 2026-06-14 (ingest)
+- benefits from [[AI Server MLCC Demand]] — (VIEW, J.P. Morgan 2026-06-12): upstream MLCC dielectric powder into AI-server MLCC shortage; demand & ASP rising

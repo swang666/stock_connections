@@ -45,3 +45,12 @@ layer: demand-driver
 ## Relationships (update 2026-06-11)
 
 - [[Wolfspeed]] / [[Navitas Semiconductor]] — (VIEW, SemiAnalysis via TMTB 2026-06-10) SiC/GaN content inflects at 800VDC; pushout to 2028+ removes near-term catalyst (?)
+
+## Added from research — 2026-06-14 (ingest)
+- [[NRG Energy]] — (VIEW, Citi 2026-06-11): Texas/ERCOT datacenter load growth; new-build incentives + backup-generation underwriting under WLPUN/PCLR
+
+## Added from research — 2026-06-15 (ingest)
+- [[NVIDIA]] drives demand for this theme — (FACT, Narrative Atlas 2026-06-15): Vera Rubin adopts 800V HVDC architecture, shipments commencing Q3
+- [[Chroma ATE]] benefits from this theme — (VIEW, J.P. Morgan 2026-06): leader in AI datacenter power testing (PSU/HVDC), 100%+ CAGR
+- [[onsemi]] benefits from this theme — (VIEW, Citi 2026-06-15): differentiated SiC portfolio; datacenter power demand & firm pricing
+- [[TeraWulf]] benefits from this theme — (VIEW, BofA 2026-06-15): AI digital-infra transformation; power-rich sites attract hyperscale tenants

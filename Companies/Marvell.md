@@ -43,3 +43,10 @@ country: USA
 
 ## Added from research — 2026-06-03 (ingest)
 - co-designs custom silicon with [[Alphabet (Google)]] — (VIEW, Funda-AI 2026-06-03): to design the networking chip in the Google/Intel IPU program (?)
+
+## Added from research — 2026-06-12 (X-scan)
+- [[TSMC]] manufactures chips for this company — (FACT, X-scan 2026-06-12): Teralynx T100 102.4Tbps switch built on TSMC 3nm, launched early Jun 2026
+
+## Added from research — 2026-06-16 (X-scan)
+- co-designs custom silicon with [[Alphabet (Google)]] (FACT upgrade of prior VIEW) — (FACT, X-scan 2026-06-16): Marvell custom-ASIC/XPU program names Alphabet among hyperscaler customers _(X-Reports/2026-06-16-0404-x-scan.md)_
+- custom-silicon customers also include [[Amazon]] (AWS) and [[Microsoft]] (Maia) — (FACT, X-scan 2026-06-16): corroborates existing Marvell custom-silicon edges to AMZN/MSFT _(X-Reports/2026-06-16-0404-x-scan.md)_

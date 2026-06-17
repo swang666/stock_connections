@@ -41,3 +41,6 @@ country: USA
 ## Relationships (update 2026-06-11)
 
 - benefits from [[Optical & Networking Buildout]] (evidence upgraded) — (FACT, BofA 2026-06-10) capacity fully booked through 2028
+
+## Added from research — 2026-06-15 (ingest)
+- [[NVIDIA]] invests in this company — (FACT, Morgan Stanley 2026-06-12): equity investment + optical capacity commitment

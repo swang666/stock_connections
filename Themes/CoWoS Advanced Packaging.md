@@ -18,3 +18,10 @@ layer: demand-driver
 
 ## Sources
 - _Add links to filings / articles in `sources/` that support these links._
+
+## Added from research — 2026-06-14 (ingest)
+- [[KLA Corporation]] — (VIEW, J.P. Morgan 2026-06-12): process-control gatekeeper; advanced-packaging wafer-level inspection share gains; premium pricing
+
+## Added from research — 2026-06-15 (ingest)
+- [[Unimicron]] benefits from this theme — (VIEW, J.P. Morgan 2026-06): ABF substrate entering unprecedented supply tightness; size/layer migration
+- [[BE Semiconductor (Besi)]] benefits from this theme — (VIEW, Morgan Stanley 2026-06-15): hybrid bonding/TCB/flip-chip for advanced packaging

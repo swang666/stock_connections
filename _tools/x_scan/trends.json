@@ -1165,6 +1165,476 @@
           "sentiment": "neu"
         }
       }
+    },
+    {
+      "utc": "2026-06-12T11:08Z",
+      "local": "2026-06-12 04:08",
+      "slot": "morning",
+      "tickers": {
+        "NVDA": {
+          "mentions": 4,
+          "sentiment": "neg"
+        },
+        "MU": {
+          "mentions": 3,
+          "sentiment": "pos"
+        },
+        "AVGO": {
+          "mentions": 2,
+          "sentiment": "neu"
+        },
+        "MRVL": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "SKHYNIX": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "SAMSUNG": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "TSM": {
+          "mentions": 1,
+          "sentiment": "neu"
+        }
+      }
+    },
+    {
+      "utc": "2026-06-12T19:10Z",
+      "local": "2026-06-12 12:10",
+      "slot": "afternoon",
+      "tickers": {
+        "MRVL": {
+          "mentions": 4,
+          "sentiment": "pos"
+        },
+        "MU": {
+          "mentions": 4,
+          "sentiment": "pos"
+        },
+        "AMD": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "NVDA": {
+          "mentions": 4,
+          "sentiment": "pos"
+        },
+        "AVGO": {
+          "mentions": 3,
+          "sentiment": "neu"
+        },
+        "TSM": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "SKHYNIX": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "SAMSUNG": {
+          "mentions": 2,
+          "sentiment": "pos"
+        }
+      }
+    },
+    {
+      "utc": "2026-06-13T11:11Z",
+      "local": "2026-06-13 04:11",
+      "slot": "morning",
+      "tickers": {
+        "MU": {
+          "mentions": 3,
+          "sentiment": "pos"
+        },
+        "INTC": {
+          "mentions": 3,
+          "sentiment": "pos"
+        },
+        "AMD": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "NVDA": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "AVGO": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "MRVL": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "SKHYNIX": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "SAMSUNG": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "GOOGL": {
+          "mentions": 1,
+          "sentiment": "pos"
+        }
+      }
+    },
+    {
+      "utc": "2026-06-13T19:10Z",
+      "local": "2026-06-13 12:10",
+      "slot": "afternoon",
+      "tickers": {
+        "NVDA": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "AVGO": {
+          "mentions": 1,
+          "sentiment": "neu"
+        },
+        "MRVL": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "MU": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "INTC": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "SKHYNIX": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "SAMSUNG": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "GOOGL": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "TSM": {
+          "mentions": 1,
+          "sentiment": "neu"
+        }
+      }
+    },
+    {
+      "utc": "2026-06-14T03:09Z",
+      "local": "2026-06-13 20:09",
+      "slot": "afternoon",
+      "tickers": {
+        "SPCX": {
+          "mentions": 3,
+          "sentiment": "pos"
+        },
+        "NVDA": {
+          "mentions": 3,
+          "sentiment": "pos"
+        },
+        "SKHYNIX": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "TSM": {
+          "mentions": 2,
+          "sentiment": "neu"
+        },
+        "MU": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "SAMSUNG": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "BE": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "SNDK": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "AVGO": {
+          "mentions": 1,
+          "sentiment": "neu"
+        },
+        "AMD": {
+          "mentions": 1,
+          "sentiment": "neu"
+        }
+      }
+    },
+    {
+      "utc": "2026-06-14T11:10Z",
+      "local": "2026-06-14 04:10",
+      "slot": "morning",
+      "tickers": {}
+    },
+    {
+      "utc": "2026-06-14T19:10Z",
+      "local": "2026-06-14 12:10",
+      "slot": "afternoon",
+      "tickers": {
+        "INTC": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "MU": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "SKHYNIX": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "SAMSUNG": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "TSM": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "NVDA": {
+          "mentions": 2,
+          "sentiment": "neu"
+        },
+        "AVGO": {
+          "mentions": 1,
+          "sentiment": "neg"
+        },
+        "BE": {
+          "mentions": 1,
+          "sentiment": "neu"
+        }
+      }
+    },
+    {
+      "utc": "2026-06-15T03:10Z",
+      "local": "2026-06-14 20:10",
+      "slot": "afternoon",
+      "tickers": {
+        "NVDA": {
+          "mentions": 1,
+          "sentiment": "neu"
+        },
+        "MU": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "SKHYNIX": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "SAMSUNG": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "AVGO": {
+          "mentions": 1,
+          "sentiment": "neu"
+        },
+        "TSM": {
+          "mentions": 1,
+          "sentiment": "neu"
+        },
+        "BE": {
+          "mentions": 1,
+          "sentiment": "pos"
+        }
+      }
+    },
+    {
+      "utc": "2026-06-15T11:10Z",
+      "local": "2026-06-15 04:10",
+      "slot": "morning",
+      "tickers": {
+        "NVDA": {
+          "mentions": 3,
+          "sentiment": "pos"
+        },
+        "MU": {
+          "mentions": 3,
+          "sentiment": "pos"
+        },
+        "SKHYNIX": {
+          "mentions": 3,
+          "sentiment": "pos"
+        },
+        "SAMSUNG": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "AVGO": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "TSM": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "INTC": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "MRVL": {
+          "mentions": 1,
+          "sentiment": "neu"
+        },
+        "ARM": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "SPCX": {
+          "mentions": 1,
+          "sentiment": "pos"
+        }
+      }
+    },
+    {
+      "utc": "2026-06-15T19:08Z",
+      "local": "2026-06-15 12:08",
+      "slot": "afternoon",
+      "tickers": {
+        "MU": {
+          "mentions": 4,
+          "sentiment": "pos"
+        },
+        "NVDA": {
+          "mentions": 3,
+          "sentiment": "pos"
+        },
+        "INTC": {
+          "mentions": 3,
+          "sentiment": "pos"
+        },
+        "AMD": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "AVGO": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "SKHYNIX": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "SAMSUNG": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "GOOGL": {
+          "mentions": 2,
+          "sentiment": "pos"
+        }
+      }
+    },
+    {
+      "utc": "2026-06-16T11:11Z",
+      "local": "2026-06-16 04:11",
+      "slot": "morning",
+      "tickers": {
+        "MRVL": {
+          "mentions": 4,
+          "sentiment": "pos"
+        },
+        "NVDA": {
+          "mentions": 3,
+          "sentiment": "pos"
+        },
+        "TSM": {
+          "mentions": 3,
+          "sentiment": "pos"
+        },
+        "SKHYNIX": {
+          "mentions": 3,
+          "sentiment": "pos"
+        },
+        "MU": {
+          "mentions": 2,
+          "sentiment": "neu"
+        },
+        "AVGO": {
+          "mentions": 2,
+          "sentiment": "pos"
+        }
+      }
+    },
+    {
+      "utc": "2026-06-16T19:08Z",
+      "local": "2026-06-16 12:08",
+      "slot": "afternoon",
+      "tickers": {
+        "NVDA": {
+          "mentions": 3,
+          "sentiment": "pos"
+        },
+        "MU": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "SKHYNIX": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "SAMSUNG": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "AVGO": {
+          "mentions": 2,
+          "sentiment": "neu"
+        },
+        "BE": {
+          "mentions": 2,
+          "sentiment": "pos"
+        },
+        "AMD": {
+          "mentions": 1,
+          "sentiment": "neu"
+        },
+        "TSM": {
+          "mentions": 1,
+          "sentiment": "pos"
+        }
+      }
+    },
+    {
+      "utc": "2026-06-17T03:10Z",
+      "local": "2026-06-16 20:10",
+      "slot": "afternoon",
+      "tickers": {
+        "NVDA": {
+          "mentions": 1,
+          "sentiment": "neg"
+        },
+        "AVGO": {
+          "mentions": 1,
+          "sentiment": "neu"
+        },
+        "MU": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "SKHYNIX": {
+          "mentions": 1,
+          "sentiment": "pos"
+        },
+        "SAMSUNG": {
+          "mentions": 1,
+          "sentiment": "pos"
+        }
+      }
     }
   ]
 }

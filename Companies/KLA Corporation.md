@@ -27,3 +27,6 @@ country: USA
 
 ## Added from research — 2026-06-10 (Narrative Atlas)
 - benefits from [[AI Training Capex]] — (VIEW, Barclays 2026-06-10): preferred semicap capex-cycle beneficiary
+
+## Added from research — 2026-06-14 (ingest)
+- benefits from [[CoWoS Advanced Packaging]] — (VIEW, J.P. Morgan 2026-06-12): ~58% process-control share (~7.6x nearest rival); gatekeeper of leading-edge & advanced-packaging yield; advanced-packaging wafer-level inspection share gains; premium pricing

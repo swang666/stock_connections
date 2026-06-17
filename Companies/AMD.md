@@ -37,3 +37,6 @@ country: USA
 
 ## Sources
 - _Add links to filings / articles in `sources/`._
+
+## Added from research — 2026-06-15 (ingest)
+- [[Astera Labs]] supplies interconnect to this company — (VIEW, Northland 2026-06-15): scale-up switch (Scorpio) deployments growing (?)

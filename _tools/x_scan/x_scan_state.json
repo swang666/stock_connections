@@ -1,6 +1,6 @@
 {
-  "last_scan_utc": "2026-06-12T03:09Z",
-  "last_scan_local": "2026-06-11 20:09",
+  "last_scan_utc": "2026-06-16T19:08Z",
+  "last_scan_local": "2026-06-16 20:10",
   "last_slot": "afternoon",
   "handles": {
     "aleabitoreddit": {
@@ -64,12 +64,28 @@
       "topic": "Rubin SOCAMM DRAM reduction pressuring MU"
     },
     "_fallback": {
-      "note": "X not logged in; WebSearch fallback used",
-      "topic": "login-screen at x.com/home"
+      "last_post_url": "n/a \u2014 X logged out this run",
+      "topic": "no live X read; WebSearch fallback"
     },
     "_run": {
-      "last_post_url": "FALLBACK-no-live-X",
-      "topic": "WebSearch fallback: chip rebound, MRVL S&P add, Micron HBM sold-out"
+      "mode": "fallback-websearch",
+      "note": "X logged out; no live timeline read this slot"
+    },
+    "_fallback_2026-06-14-1204": {
+      "last_post_url": "(X not read \u2014 Chrome not logged in)",
+      "topic": "fallback run: WebSearch only; per-handle markers preserved from morning scan"
+    },
+    "_run_note": {
+      "last_post_url": "",
+      "topic": "FALLBACK: X logged out; WebSearch-only run (HBM4/Vera Rubin, Leopold Q1 13F, Broadcom rebound)"
+    },
+    "_scan": {
+      "last_post_url": "",
+      "topic": "FALLBACK: X not logged in (login screen); WebSearch recap of Jun 8-12 wk"
+    },
+    "_mode": {
+      "last_post_url": "websearch_fallback",
+      "topic": "X logged out this run; no live read"
     }
   }
 }

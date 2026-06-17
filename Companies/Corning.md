@@ -28,3 +28,6 @@ country: USA
 ## Added from research — 2026-06-08 (ingest)
 - supplies optical fiber to [[Amazon]] — (FACT, TMTB 2026-06-08): deal to supply optical fiber for Amazon US AI data centers
 - benefits from [[Optical & Networking Buildout]] — (VIEW, TMTB 2026-06-08): optical fiber demand scaling with AI datacenter buildout
+
+## Added from research — 2026-06-15 (ingest)
+- [[NVIDIA]] invests in this company — (FACT, Morgan Stanley 2026-06-12): equity investment + optical capacity commitment

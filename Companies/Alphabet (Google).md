@@ -51,3 +51,6 @@ country: USA
 ## Relationships (update 2026-06-11)
 
 - [[Zhongji Innolight]] supplies optical transceivers — (FACT, BofA 2026-06-10) deep relationship; (VIEW) potential Coherent-Lite adoption 2027-28
+
+## Added from research — 2026-06-13 (X-scan)
+- [[Intel]] manufactures chips for this company — (FACT, X-scan 2026-06-13): >3,000,000 custom TPUs ordered for 2028 build; Intel as Google's AI-chip contract manufacturer _(X-Reports/2026-06-13-0404-x-scan.md)_

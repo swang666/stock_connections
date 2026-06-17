@@ -42,3 +42,13 @@ layer: demand-driver
 ## Relationships (update 2026-06-11)
 
 - [[Micron]] — (FACT, X-scan 2026-06-11) entire 2026 HBM capacity booked/sold out under binding contracts
+
+## Added from research — 2026-06-13 (ingest)
+- [[SK Hynix]], [[Micron]], [[Samsung Electronics]] — (VIEW, UBS 2026-06-09): structural memory shortage; Memory semis revs +318% YoY to ~$961bn in '26, +70% in '27; DRAM tight/undersupplied under LTA _(UBS Global I/O Semis Cycle Update 2026-06-09)_
+
+## Added from research — 2026-06-14 (ingest)
+- [[Teradyne]] benefits from this theme — (VIEW, J.P. Morgan 2026-06-12): robust memory test (ATE) demand; multi-year memory-capex tailwind
+
+## Added from research — 2026-06-15 (ingest)
+- [[Advantest]] benefits from this theme — (FACT, Bernstein 2026-06-15): Korea memory-tester import +103% YoY; HBM/DRAM capex driven
+- [[BE Semiconductor (Besi)]] benefits from this theme — (VIEW, Morgan Stanley 2026-06-15): hybrid bonding adoption for HBM stacking

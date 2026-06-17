@@ -24,3 +24,6 @@ country: USA
 
 ## Added from research — 2026-06-09 (ingest)
 - benefits from [[Co-Packaged Optics (CPO)]] — (VIEW, SemiAnalysis 2026-06-09): frontrunner in NVIDIA CPO test qualification; ficonTEC partnership
+
+## Added from research — 2026-06-14 (ingest)
+- benefits from [[HBM Demand]] — (VIEW, J.P. Morgan 2026-06-12 via Narrative Atlas): robust memory test (ATE) demand; multi-year memory-capex tailwind; 2nd hyperscaler ATE qualification

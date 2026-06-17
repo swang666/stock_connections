@@ -37,3 +37,13 @@ layer: demand-driver
 
 ## Added from research — 2026-06-10 (ingest)
 - [[Sinocera]] — (FACT, J.P. Morgan fireside 2026-06-10): AI-server demand drove high-end MLCC powder upcycle in 1H26; AI server-grade powder >Rmb100k/t at 45-50% GM
+
+## Added from research — 2026-06-13 (ingest)
+- [[Applied Materials]] (PT $570, Most Preferred), [[Lam Research]] (PT $375), [[KLA Corporation]] (~26x '28E, less upside), [[ASML]] — (VIEW, UBS 2026-06-09): WFE supercycle, ~$198B '27 / ~$247.5B '28; litho not a constraint (>100 EUV shipments/yr '27-'28) _(UBS Semis & Semi Equipment WFE Update 2026-06-09)_
+
+## Added from research — 2026-06-14 (ingest)
+- [[Samsung Electro-Mechanics]] — (VIEW, J.P. Morgan 2026-06-12): ABF substrate for AI accelerator/networking; 2026-27 ABF capacity almost fully booked; renewed pricing quotes
+
+## Added from research — 2026-06-15 (ingest)
+- [[Advantest]] benefits from this theme — (VIEW, Bernstein 2026-06-15): AI SoC/GPU test demand; pricing power on tight supply
+- [[Chroma ATE]] benefits from this theme — (VIEW, J.P. Morgan 2026-06): ~100% share (sole) in NVIDIA GPU SLT equipment

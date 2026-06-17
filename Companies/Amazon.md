@@ -40,3 +40,6 @@ country: USA
 
 ## Added from research — 2026-06-08 (ingest)
 - [[Corning]] supplies optical fiber to this company — (FACT, TMTB 2026-06-08): Corning deal to supply optical fiber for Amazon US AI data centers
+
+## Added from research — 2026-06-14 (ingest)
+- [[Qualcomm]] supplies AI accelerators to this company — (VIEW, Wells Fargo 2026-06-12 via Narrative Atlas): AWS likely lead hyperscale customer for Qualcomm datacenter AI accelerators (?)

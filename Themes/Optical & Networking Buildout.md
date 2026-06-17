@@ -56,3 +56,6 @@ layer: demand-driver
 - [[Zhongji Innolight]] — (VIEW, BofA 2026-06-10) 1.6T demand into 2028, >40% share; NPO emerging
 - [[Tower Semiconductor]] — (FACT, BofA 2026-06-10) $1.3bn SiPho contracts for 2027, extended backlog
 - [[Lumentum]] — (FACT, BofA 2026-06-10) capacity fully booked through 2028
+
+## Added from research — 2026-06-14 (ingest)
+- [[Nokia]] — (VIEW, J.P. Morgan 2026-06-12): strong AI/cloud orders + new optical products; optical & datacenter-networking operating leverage underappreciated; PT raised

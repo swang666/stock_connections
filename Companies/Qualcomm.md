@@ -26,3 +26,6 @@ country: USA
 
 ## Sources
 - X-Reports/2026-06-02-1634-x-scan.md
+
+## Added from research — 2026-06-14 (ingest)
+- supplies AI accelerators to [[Amazon]] — (VIEW, Wells Fargo 2026-06-12 via Narrative Atlas): AWS identified as likely lead hyperscale customer for Qualcomm datacenter AI accelerators; per-GW revenue opportunity (?)

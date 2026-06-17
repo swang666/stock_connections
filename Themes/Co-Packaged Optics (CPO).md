@@ -50,3 +50,6 @@ layer: demand-driver
 - [[ASE Technology]] — (VIEW, Morgan Stanley 2026-06-10): key CPO enabler (OW); 2027 optical-engine shipments modeled 6-7mn units vs investor expectations 20-30mn; CPO boom from 2028
 - [[FOCI]] — (VIEW, Morgan Stanley 2026-06-10): key CPO enabler; CPO revenue ramp from late 3Q26
 - [[TSMC]] — (FACT, Morgan Stanley 2026-06-10): PIC capacity expansion to 10kwpm in 1Q27; SoIC yield 50-60% and assembly yield 20-50% are swing factors
+
+## Added from research — 2026-06-15 (ingest)
+- [[Chroma ATE]] benefits from this theme — (VIEW, J.P. Morgan 2026-06): CPO testing + optical-comm testing at 100%+ CAGR

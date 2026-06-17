@@ -32,3 +32,6 @@ country: USA
 
 ## Sources
 - _Add links to filings / articles in `sources/`._
+
+## Added from research — 2026-06-14 (ingest)
+- supplies switches to [[Anthropic]] — (VIEW, Evercore ISI 2026-06-12 via Narrative Atlas): underappreciated multi-billion-dollar revenue opportunity with Anthropic; diversifies customer base (?)

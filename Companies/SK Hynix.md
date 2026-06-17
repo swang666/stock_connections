@@ -39,3 +39,10 @@ country: South Korea
 
 ## Added from research — 2026-06-09 (ingest)
 - [[Hanmi Semiconductor]] supplies HBM bonding equipment to this company — (FACT, X-scan 2026-06-09): ₩44.2B (~15 units) TC Bonder 4.5 Griffin order to ramp HBM4 (TrendForce/Korea Herald 6/9)
+
+## Added from research — 2026-06-13 (X-scan)
+- partners with [[NVIDIA]] (corroboration/extension) — (FACT, X-scan 2026-06-13): multiyear pact extended — next-gen memory for AI factories + AI-driven fab design (Omniverse digital twins) (NVIDIA newsroom 2026-06-11) _(X-Reports/2026-06-13-2005-x-scan.md)_
+
+## Added from research — 2026-06-16 (X-scan)
+- [[TSMC]] manufactures the logic base die for this company — (FACT, X-scan 2026-06-16): TSMC 3nm logic base die in SK Hynix 12-layer HBM4E / HBM4 base-die partnership (Chey–C.C. Wei) _(X-Reports/2026-06-16-0404-x-scan.md)_
+- supplies HBM to [[NVIDIA]] (corroboration) — (FACT, X-scan 2026-06-16): SK Hynix DRAM/NAND/HBM capacity sold out through 2026, much committed to NVIDIA AI accelerators; ~60-70% of Vera Rubin HBM4 volume _(X-Reports/2026-06-16-1204-x-scan.md)_

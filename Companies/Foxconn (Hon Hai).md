@@ -30,3 +30,6 @@ country: Taiwan
 
 ## Added from research — 2026-06-07 (ingest)
 - benefits from [[Co-Packaged Optics (CPO)]] — (FACT, Citi 2026-06): builds NVIDIA Spectrum-6 SPX scale-out CPO rack; expanding Taiwan CPO supply chain
+
+## Added from research — 2026-06-12 (X-scan)
+- assembles AI systems for [[NVIDIA]] — (FACT, X-scan 2026-06-12): named assembler of NVIDIA Vera Rubin NVL72 rack-scale systems (extends GB200 relationship)

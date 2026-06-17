@@ -80,7 +80,26 @@
     "LITE"
   ],
   "earnings": {
-    "MU": "2026-06-24"
+    "MU": "2026-06-24",
+    "CRDO": "2026-09-09",
+    "ENTG": "2026-07-30",
+    "TSM": "2026-07-16",
+    "GLW": "2026-07-28",
+    "ASML": "2026-07-15",
+    "AMKR": "2026-07-27",
+    "LITE": "2026-08-12"
   },
-  "earnings_updated": "2026-06-11"
+  "earnings_last": {
+    "CRDO": "2026-06-01",
+    "ENTG": "2025-05-06",
+    "TSM": "2025-04-16",
+    "GLW": "2025-04-28",
+    "ASML": "2025-04-15",
+    "SNPS": "2026-05-27",
+    "MU": "2025-06-24",
+    "AMKR": "2025-04-27",
+    "LITE": "2025-05-05"
+  },
+  "earnings_updated": "2026-06-15",
+  "earnings_manual_note": "CRDO dates verified via web 2026-06-12 (reported Q4FY26 on 06-01; next Q1FY27 on 09-09) after yfinance rate-limited the close-run refresh. Manual entries survive a failed auto-refresh (per-symbol fetch failure keeps prior values) and are corrected once yfinance recovers."
 }

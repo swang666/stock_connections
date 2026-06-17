@@ -34,3 +34,6 @@ country: USA
 
 ## Added from research — 2026-05
 - benefits from [[Co-Packaged Optics (CPO)]] — (VIEW, Nomura) optics shift to CPO _(Nomura SerDes 2026-05)_
+
+## Added from research — 2026-06-15 (ingest)
+- [[NVIDIA]] invests in this company — (FACT, Morgan Stanley 2026-06-12): equity investment + optical capacity commitment

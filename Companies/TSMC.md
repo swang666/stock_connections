@@ -55,3 +55,9 @@ country: Taiwan
 
 ## Added from research — 2026-06-10 (ingest)
 - [[Co-Packaged Optics (CPO)]] — (FACT, Morgan Stanley 2026-06-10): TSMC to expand PIC capacity to 10kwpm in 1Q27; SoIC yield 50-60% remains key swing factor for optical-engine output
+
+## Added from research — 2026-06-13 (X-scan)
+- partners with [[NVIDIA]] — (FACT, X-scan 2026-06-13): TSMC adopting NVIDIA accelerated computing / CUDA-X + AI across semiconductor design and fab manufacturing (NVIDIA newsroom 2026-06-11) _(X-Reports/2026-06-13-2005-x-scan.md)_
+
+## Added from research — 2026-06-16 (X-scan)
+- manufactures chips for [[SK Hynix]] — (FACT, X-scan 2026-06-16): TSMC 3nm logic base die used in SK Hynix 12-layer HBM4E; HBM4 base-die partnership (Chey–C.C. Wei, 6/3) _(X-Reports/2026-06-16-0404-x-scan.md)_

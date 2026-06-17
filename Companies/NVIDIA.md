@@ -80,3 +80,24 @@ country: USA
 ## Relationships (update 2026-06-11)
 
 - invests in [[Intel]] — (FACT, SemiAnalysis 2026-06-11) strategic stake at $23.28/sh alongside US govt and SoftBank
+
+## Added from research — 2026-06-12 (X-scan)
+- [[Quanta Computer]] assembles AI systems for this company — (FACT, X-scan 2026-06-12): named assembler of Vera Rubin NVL72 rack-scale systems
+- [[Wistron]] assembles AI systems for this company — (FACT, X-scan 2026-06-12): named assembler of Vera Rubin NVL72 rack-scale systems
+- [[Foxconn (Hon Hai)]] also assembles Vera Rubin NVL72 rack-scale systems — (FACT, X-scan 2026-06-12)
+
+## Added from research — 2026-06-13 (X-scan)
+- [[TSMC]] partners with this company — (FACT, X-scan 2026-06-13): TSMC adopting NVIDIA accelerated computing / CUDA-X + AI across chip design and fab manufacturing (NVIDIA newsroom 2026-06-11) _(X-Reports/2026-06-13-2005-x-scan.md)_
+- [[SK Hynix]] partnership extended (corroboration) — (FACT, X-scan 2026-06-13): next-gen memory for AI factories + AI-driven fab design via Omniverse digital twins (NVIDIA newsroom 2026-06-11) _(X-Reports/2026-06-13-2005-x-scan.md)_
+
+## Added from research — 2026-06-15 (ingest)
+- invests in [[Lumentum]] — (FACT, Morgan Stanley 2026-06-12): equity investment + optical capacity commitment (limits supplier swap)
+- invests in [[Coherent]] — (FACT, Morgan Stanley 2026-06-12): equity investment + optical capacity commitment
+- invests in [[Corning]] — (FACT, Morgan Stanley 2026-06-12): equity investment + optical capacity commitment
+- drives demand for [[AI PCB & CCL Demand]] — (VIEW/EST, JPM/Jefferies 2026-06): Nvidia AI CCL demand ~1.5m sheets/mo by 2027
+- drives demand for [[AI Server MLCC Demand]] — (VIEW, GFHK/JPM 2026-06-15): VR200 NVL72 ~550k MLCCs vs ~300k GB200
+- drives demand for [[Datacenter Power Demand]] — (FACT, Narrative Atlas 2026-06-15): Vera Rubin adopts 800V HVDC, shipments commencing Q3
+- [[Shengyi Technology]] supplies CCL to this company — (VIEW, Jefferies 2026-06-13): high-end CCL share gain (?)
+
+## Added from research — 2026-06-17 (ingest)
+- supplied by [[Ibiden]] — supplies package substrate to NVIDIA — (VIEW, Morgan Stanley 2026-06-16): Ibiden OP growth driven by high share in NVIDIA-related ABF/package-substrate demand
