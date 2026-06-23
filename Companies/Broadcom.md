@@ -55,3 +55,8 @@ country: USA
 ## Relationships (update 2026-06-11)
 
 - partners with [[Blackstone]] — (FACT, X-scan 2026-06-11) Broadcom + Apollo + Blackstone platform to accelerate 20GW+ of global AI datacenter deployments
+
+
+## Added from research — 2026-06-19 (ingest)
+- co-designs custom silicon with [[Apple]] — (FACT, JPM 2026-06-16): Broadcom XPU pipeline includes an Apple AI CPU program
+- co-designs custom silicon with [[SambaNova Systems]] — (FACT, JPM 2026-06-16): Broadcom ASIC pipeline includes SambaNova RDU program

@@ -30,3 +30,8 @@ country: USA
 
 ## Added from research — 2026-06-09 (ingest)
 - runs compute on [[NVIDIA]] — (FACT, X-scan 2026-06-09): Apple Private Cloud Compute runs Apple Intelligence on NVIDIA GPUs via Google Cloud (announced 6/9)
+
+
+## Added from research — 2026-06-19 (ingest)
+- [[Intel]] manufactures chips for this company — (VIEW, Narrative Atlas 2026-06-18): rumored Intel–Apple chip design collaboration (?)
+- [[Broadcom]] co-designs custom silicon with this company — (FACT, JPM 2026-06-16): Apple AI CPU program in Broadcom's XPU pipeline

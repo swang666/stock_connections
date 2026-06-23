@@ -42,3 +42,7 @@ country: USA
 
 ## Added from research — 2026-06-03
 - [[Credo Technology]] supplies AECs to this company — (FACT, TMTB 2026-06-02): 10%+ Credo customer in FQ4
+
+
+## Added from research — 2026-06-19 (ingest)
+- [[CoreWeave]] provides datacenter capacity to this company — (FACT, CoreWeave/Key Context 2026-06-17): named as a CoreWeave customer

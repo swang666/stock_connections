@@ -29,3 +29,10 @@ country: USA
 
 ## Added from research — 2026-06-10 (Narrative Atlas)
 - benefits from [[AI Training Capex]] — (VIEW, Barclays 2026-06-10): preferred semicap capex-cycle beneficiary
+
+
+## Added from research — 2026-06-19 (ingest)
+- benefits from [[HBM Demand]] — (VIEW, Citi 2026-06-17): AI-driven memory / NAND WFE up-cycle; Citi raised long-term WFE outlook
+
+## Added from research — 2026-06-22 (ingest)
+- benefits from [[CoWoS Advanced Packaging]] — (VIEW, Mizuho 2026-06-22): advanced packaging creating incremental demand across the semicap ecosystem, particularly Lam

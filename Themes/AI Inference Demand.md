@@ -52,3 +52,10 @@ layer: demand-driver
 - [[Western Digital]] / [[Seagate Technology]] — (VIEW, JPM 2026-06-11) HDD pricing accelerating on AI demand, LTAs
 - [[Intel]] / [[Arm Holdings]] — (VIEW, BofA 2026-06-11) agentic AI expands CY30 server CPU TAM to $170bn+
 - [[SpaceX (Colossus compute)]] — (VIEW, Oppenheimer 2026-06-11) space-based datacenters targeting 240GW (?)
+
+## Added from research — 2026-06-21 (ingest)
+- [[DeepSeek]] — (FACT, Expert call 2026-06): inference-driven model monetization; sets market-clearing price for good-enough intelligence
+- [[Zhipu AI]] — (VIEW, JPM 2026-06-18): model-layer monetization; API pricing visibility (GLM-5.2 +13% blended)
+
+## Added from research — 2026-06-22 (ingest)
+- [[Micron]] benefits from this theme — (VIEW, Needham 2026-06-22): AI-driven demand + limited capacity extend memory upcycle; DRAM pricing increases

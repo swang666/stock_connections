@@ -31,3 +31,7 @@ country: USA
 
 ## Added from research — 2026-06-03 (ingest)
 - runs compute on [[Amazon]] — (FACT, TMTB 2026-05): committed to renting large amounts of current/future AWS Trainium capacity
+
+
+## Added from research — 2026-06-19 (ingest)
+- [[CoreWeave]] provides datacenter capacity to this company — (FACT, CoreWeave/Key Context 2026-06-17): named as a CoreWeave customer

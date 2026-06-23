@@ -42,3 +42,14 @@ country: USA
 ## Relationships (update 2026-06-11)
 
 - benefits from [[HBM Demand]] (evidence upgraded) — (FACT, X-scan 2026-06-11) entire 2026 HBM capacity booked/sold out under binding contracts; HBM4 at COMPUTEX 2026
+
+
+## Added from research — 2026-06-19 (ingest)
+- [[TSMC]] manufactures chips for this company — (FACT, X-scan 2026-06-18): HBM4E base-die to be produced at TSMC (mass production 2027)
+
+## Added from research — 2026-06-20 (X-scan)
+- supplies HBM to [[NVIDIA]] (corroboration) — (FACT, X-scan 2026-06-20): NVDA requested 16-Hi HBM4 for H2'26 (Q4 delivery); Micron met the Rubin HBM4 spec and delivered final customer samples; expanding HBM4 wafer capacity into end-2026 _(X-Reports/2026-06-20-2004-x-scan.md)_
+- [[HBM Demand]] — (FACT, X-scan 2026-06-20): top-3 HBM maker; HBM4 demand driving record results into FQ3 (Jun 24 earnings) _(X-Reports/2026-06-20-0404-x-scan.md)_
+
+## Added from research — 2026-06-22 (ingest)
+- benefits from [[AI Inference Demand]] — (VIEW, Needham 2026-06-22): raised PT/ests; AI-driven demand + limited capacity extend the memory upcycle, continued DRAM pricing increases

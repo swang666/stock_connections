@@ -61,3 +61,10 @@ country: Taiwan
 
 ## Added from research — 2026-06-16 (X-scan)
 - manufactures chips for [[SK Hynix]] — (FACT, X-scan 2026-06-16): TSMC 3nm logic base die used in SK Hynix 12-layer HBM4E; HBM4 base-die partnership (Chey–C.C. Wei, 6/3) _(X-Reports/2026-06-16-0404-x-scan.md)_
+
+
+## Added from research — 2026-06-19 (ingest)
+- manufactures chips for [[Micron]] — (FACT, X-scan 2026-06-18): Micron to outsource HBM4E base-die production to TSMC (mass production 2027)
+
+## Added from research — 2026-06-21 (ingest)
+- benefits from [[Glass Core Substrate]] — (VIEW, Expert call 2026-06-17): released glass-substrate dev plan, pilot line Jun 2026, ~2027-28 mass production to replace silicon interposer in CoWoS

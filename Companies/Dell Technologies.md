@@ -27,3 +27,6 @@ country: USA
 
 ## Sources
 - _Add links to filings / articles in `sources/`._
+
+## Added from research — 2026-06-22 (ingest)
+- (FACT, X-scan 2026-06-22): named a builder of [[NVIDIA]] Vera Rubin (NVL4) systems at ISC 2026

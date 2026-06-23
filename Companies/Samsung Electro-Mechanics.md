@@ -25,3 +25,6 @@ country: South Korea
 ## Sources
 - sources/inbox/J.P. Morgan-Samsung Electro~Mechanics（009150.KS）Leveraging up~cycle with full~sc.pdf
 - sources/inbox/JPM_Asian_MLCC_Industry__2026-06-12_5333437.pdf
+
+## Added from research — 2026-06-21 (ingest)
+- benefits from [[Glass Core Substrate]] — (VIEW, Expert call 2026-06-20): Samsung Electro-Mechanics developing glass substrate, progressing well

@@ -102,7 +102,7 @@ New-Item -ItemType File -Path $lockPath -Force | Out-Null
 try {
     $stamp = Get-Date -Format "yyyy-MM-dd HH:mm"
     $hm = Get-Date -Format "HHmm"
-    New-Item -ItemType Directory -Force -Path (Join-Path $repo "briefs\transcripts") | Out-Null
+    New-Item -ItemType Directory -Force -Path (Join-Path $repo "briefs/transcripts") | Out-Null
     $reasonBlock = ($triggers | ForEach-Object { "- $_" }) -join "`n"
     $prompt = @"
 You are a DIP-WATCH TRIGGER run (started $stamp local, America/Los_Angeles) for the AI
@@ -128,7 +128,7 @@ Finish with a one-paragraph plain-language summary.
         --model "claude-opus-4-8" `
         --allowed-tools "Read,Write,Edit,Glob,Grep,Bash,WebSearch,WebFetch,mcp__robinhood-trading,mcp__claude_ai_Gmail" `
         --max-turns 80 |
-        Out-File -FilePath (Join-Path $repo "briefs\transcripts\$today-dipwatch-$hm.txt") -Encoding utf8
+        Out-File -FilePath (Join-Path $repo "briefs/transcripts/$today-dipwatch-$hm.txt") -Encoding utf8
 }
 finally {
     Remove-Item $lockPath -Force -Confirm:$false

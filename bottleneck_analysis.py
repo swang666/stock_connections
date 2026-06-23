@@ -45,6 +45,12 @@ def bucket(rel):
     if "glass" in r or "substrate" in r: return "glass_substrate"  # glass-core substrate makers are mutual alternatives
     if "hbm" in r or "memory" in r or "dram" in r: return "memory"
     if "gpu" in r or "custom silicon" in r or "asic" in r: return "accelerator"
+    # Optical FIBER (the physical cable plant) is NOT a substitute for optical modules/DSP/
+    # transceivers — different layers of the optical stack. Bucket fiber separately so a fiber
+    # supplier (Corning) isn't counted as competing with module/DSP makers (Marvell, AOE) into a
+    # shared customer. (Fix 2026-06-17: this conflation crushed Corning's uniqueness 1.0→0.33 and
+    # halved its bottleneck score on the day the AWS fiber deal — a bullish FACT — was added.)
+    if "fiber" in r: return "optical_fiber"
     if "optical" in r or "module" in r: return "optical"
     if "switch" in r or "networking" in r: return "networking"
     if "cooling" in r: return "power_cooling"

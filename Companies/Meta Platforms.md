@@ -27,3 +27,7 @@ country: USA
 
 ## Sources
 - _Add links to filings / articles in `sources/`._
+
+
+## Added from research — 2026-06-19 (ingest)
+- [[CoreWeave]] provides datacenter capacity to this company — (FACT, CoreWeave/Key Context 2026-06-17): named as a CoreWeave customer

@@ -54,3 +54,7 @@ country: USA
 
 ## Added from research — 2026-06-13 (X-scan)
 - [[Intel]] manufactures chips for this company — (FACT, X-scan 2026-06-13): >3,000,000 custom TPUs ordered for 2028 build; Intel as Google's AI-chip contract manufacturer _(X-Reports/2026-06-13-0404-x-scan.md)_
+
+
+## Added from research — 2026-06-19 (ingest)
+- [[SpaceX (Colossus compute)]] runs compute on this company — (FACT, Narrative Atlas 2026-06-16): Google leasing cloud capacity to SpaceX

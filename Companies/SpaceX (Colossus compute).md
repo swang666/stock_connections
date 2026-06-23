@@ -36,3 +36,7 @@ country: USA
 - acquired [[xAI]] — (FACT, Oppenheimer 2026-06-11) early 2026, $250B (incl. X, Grok, Colossus, Macrohard)
 - partners with [[Tesla]] and [[Intel]] — (FACT, Oppenheimer 2026-06-11) Terafab chip-manufacturing JV, long-term goal 1TW compute hardware/yr
 - benefits from [[AI Inference Demand]] — (VIEW, Oppenheimer 2026-06-11) OW initiation $190 PT; space-based DCs targeting 240GW vs ~100GW global cloud; economics unproven (?)
+
+
+## Added from research — 2026-06-19 (ingest)
+- runs compute on [[Alphabet (Google)]] — (FACT, Narrative Atlas 2026-06-16): Google leasing cloud computing capacity to SpaceX

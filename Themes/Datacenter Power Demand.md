@@ -54,3 +54,7 @@ layer: demand-driver
 - [[Chroma ATE]] benefits from this theme — (VIEW, J.P. Morgan 2026-06): leader in AI datacenter power testing (PSU/HVDC), 100%+ CAGR
 - [[onsemi]] benefits from this theme — (VIEW, Citi 2026-06-15): differentiated SiC portfolio; datacenter power demand & firm pricing
 - [[TeraWulf]] benefits from this theme — (VIEW, BofA 2026-06-15): AI digital-infra transformation; power-rich sites attract hyperscale tenants
+
+
+## Added from research — 2026-06-19 (ingest)
+- [[Talen Energy]] benefits from this theme — (VIEW, Narrative Atlas 2026-06-18): unique leverage to tightening PJM power market; AWS nuclear PPA de-risks cash flows

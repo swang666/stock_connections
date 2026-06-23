@@ -59,3 +59,10 @@ layer: demand-driver
 
 ## Added from research — 2026-06-14 (ingest)
 - [[Nokia]] — (VIEW, J.P. Morgan 2026-06-12): strong AI/cloud orders + new optical products; optical & datacenter-networking operating leverage underappreciated; PT raised
+
+
+## Added from research — 2026-06-19 (ingest)
+- [[Hewlett Packard Enterprise]] benefits from this theme — (VIEW, Barclays 2026-06-17): strong AI-networking demand; Juniper integration ahead of schedule
+
+## Added from research — 2026-06-21 (ingest)
+- [[JX Advanced Metals]] — (FACT, Nomura 2026-06-16): ~40% global InP substrate share for optical transceivers; tight/undersupplied; China export controls lifted prices 2-3x; expanding capacity 7-10x

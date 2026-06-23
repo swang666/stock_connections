@@ -58,3 +58,8 @@ country: USA
 ## Added from research — 2026-06-17 (ingest)
 - supplied by [[Ibiden]] — supplies package substrate to Intel — (VIEW, Morgan Stanley 2026-06-16): ABF package-substrate sales for Intel server CPUs (Diamond Rapids/Xeon)
 - Flagged (not graphed): Intel 18A-P entered risk production (VLSI Symposium); Diamond Rapids Xeon to be made on 18A-P; Apple as early 18A-P customer remains speculation only — not added as an edge (news, 2026-06-17)
+
+
+## Added from research — 2026-06-19 (ingest)
+- benefits from [[Server CPU & Agentic AI Demand]] — (VIEW, Bernstein 2026-06-17): server CPU renaissance; estimates/PT raised to $100
+- manufactures chips for [[Apple]] — (VIEW, Narrative Atlas 2026-06-18): Trump says Intel working to design Apple chips; rumored/unconfirmed (?)

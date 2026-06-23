@@ -47,3 +47,10 @@ layer: demand-driver
 ## Added from research — 2026-06-15 (ingest)
 - [[Advantest]] benefits from this theme — (VIEW, Bernstein 2026-06-15): AI SoC/GPU test demand; pricing power on tight supply
 - [[Chroma ATE]] benefits from this theme — (VIEW, J.P. Morgan 2026-06): ~100% share (sole) in NVIDIA GPU SLT equipment
+
+
+## Added from research — 2026-06-19 (ingest)
+- [[Jabil]] benefits from this theme — (VIEW, Narrative Atlas 2026-06-18): F3Q beat + new hyperscaler customer win; multi-year AI infrastructure ramp; PT $470
+
+## Added from research — 2026-06-21 (ingest)
+- [[Alchip Technologies]] — (VIEW, JPM 2026-06): ASIC resurgence; custom XPU unit shipments forecast to exceed GPU units by 2027

@@ -30,3 +30,7 @@ country: USA
 
 ## Added from research — 2026-06-14 (ingest)
 - benefits from [[CoWoS Advanced Packaging]] — (VIEW, J.P. Morgan 2026-06-12): ~58% process-control share (~7.6x nearest rival); gatekeeper of leading-edge & advanced-packaging yield; advanced-packaging wafer-level inspection share gains; premium pricing
+
+
+## Added from research — 2026-06-19 (ingest)
+- benefits from [[HBM Demand]] — (VIEW, Citi 2026-06-17): AI-driven memory / NAND WFE up-cycle; Citi raised long-term WFE outlook

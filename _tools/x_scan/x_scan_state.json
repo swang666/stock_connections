@@ -1,6 +1,6 @@
 {
-  "last_scan_utc": "2026-06-16T19:08Z",
-  "last_scan_local": "2026-06-16 20:10",
+  "last_scan_utc": "2026-06-23T03:09Z",
+  "last_scan_local": "2026-06-22 20:09",
   "last_slot": "afternoon",
   "handles": {
     "aleabitoreddit": {
@@ -52,8 +52,8 @@
       "topic": "nothing new"
     },
     "fabknowledge": {
-      "last_post_url": "https://x.com/fabknowledge/status/2064393545931170130",
-      "topic": "low-content"
+      "last_post_url": "",
+      "topic": "not read (no live X)"
     },
     "jukan05": {
       "last_post_url": "https://x.com/jukan05/status/2062715537944445212",
@@ -64,12 +64,13 @@
       "topic": "Rubin SOCAMM DRAM reduction pressuring MU"
     },
     "_fallback": {
-      "last_post_url": "n/a \u2014 X logged out this run",
-      "topic": "no live X read; WebSearch fallback"
+      "last_post_url": "n/a \u2014 X logged out this run; WebSearch fallback",
+      "topic": "Vera Rubin/ISC AI-server trade; AMD-Rackspace; QCOM-Modular rumor; memory into MU 6/24"
     },
     "_run": {
       "mode": "fallback-websearch",
-      "note": "X logged out; no live timeline read this slot"
+      "note": "X logged out this slot; web-derived only",
+      "topic": "MRVL S&P500 inclusion -3.9%, MU earnings Jun24, SK Hynix HBM4E samples"
     },
     "_fallback_2026-06-14-1204": {
       "last_post_url": "(X not read \u2014 Chrome not logged in)",
@@ -86,6 +87,10 @@
     "_mode": {
       "last_post_url": "websearch_fallback",
       "topic": "X logged out this run; no live read"
+    },
+    "_meta": {
+      "last_post_url": "",
+      "topic": "X NOT logged in this run; WebSearch fallback. Memory/HBM lead (MU, SKHYNIX); Micron Q3 Jun 24; markets closed Jun 19 Juneteenth."
     }
   }
 }

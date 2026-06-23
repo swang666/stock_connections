@@ -19,3 +19,8 @@ layer: demand-driver
 
 ## Sources
 - sources/inbox/玻璃基板行业交流20260526.docx
+
+## Added from research — 2026-06-21 (ingest)
+- [[Samsung Electronics]] — (VIEW, Expert call 2026-06-17): most aggressive; samples to NVIDIA/Broadcom; Apple to source for AI servers
+- [[Samsung Electro-Mechanics]] — (VIEW, Expert call 2026-06-20): developing glass substrate, progressing well
+- [[TSMC]] — (VIEW, Expert call 2026-06-17): glass-substrate dev plan, pilot line Jun 2026, ~2027-28 mass production to replace silicon interposer

@@ -53,3 +53,7 @@ layer: demand-driver
 
 ## Added from research — 2026-06-15 (ingest)
 - [[Chroma ATE]] benefits from this theme — (VIEW, J.P. Morgan 2026-06): CPO testing + optical-comm testing at 100%+ CAGR
+
+## Added from research — 2026-06-21 (ingest)
+- [[JX Advanced Metals]] — (VIEW, Nomura 2026-06-16): InP substrate is upstream material for optical/CPO devices; datacenter optical demand strong
+- [[Advantest]] — (VIEW, JPM 2026-06): new CPO test demand incremental to GPU/ASIC

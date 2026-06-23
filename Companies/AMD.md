@@ -40,3 +40,11 @@ country: USA
 
 ## Added from research — 2026-06-15 (ingest)
 - [[Astera Labs]] supplies interconnect to this company — (VIEW, Northland 2026-06-15): scale-up switch (Scorpio) deployments growing (?)
+
+
+## Added from research — 2026-06-19 (ingest)
+- benefits from [[Server CPU & Agentic AI Demand]] — (VIEW, Bernstein 2026-06-17): agentic AI server-CPU demand; share gains; PT $600
+- sells GPUs to [[Rackspace Technology]] — (FACT, X-scan 2026-06-18): definitive deal to deploy 30MW of AMD AI compute at Rackspace (2026-2028)
+
+## Added from research — 2026-06-22 (ingest)
+- benefits from [[CoWoS Advanced Packaging]] — (FACT, X-scan 2026-06-22): Lisa Su (Computex) announced >$10B Taiwan investment in advanced-packaging capacity for next-gen AI infra

@@ -50,3 +50,6 @@ country: USA
 ## Added from research — 2026-06-16 (X-scan)
 - co-designs custom silicon with [[Alphabet (Google)]] (FACT upgrade of prior VIEW) — (FACT, X-scan 2026-06-16): Marvell custom-ASIC/XPU program names Alphabet among hyperscaler customers _(X-Reports/2026-06-16-0404-x-scan.md)_
 - custom-silicon customers also include [[Amazon]] (AWS) and [[Microsoft]] (Maia) — (FACT, X-scan 2026-06-16): corroborates existing Marvell custom-silicon edges to AMZN/MSFT _(X-Reports/2026-06-16-0404-x-scan.md)_
+
+## Added from research — 2026-06-21 (ingest)
+- co-designs custom silicon with [[Amazon]] — (FACT, JPM 2026-06): Marvell co-designs AWS Trainium 3 XPU (alongside Alchip)

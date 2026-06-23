@@ -25,3 +25,7 @@ country: Japan
 ## Sources
 - sources/inbox/Bernstein-Global Semiconductors Global Semi： South Korea Equipment Import Tracker （May 26）： Import +51% YoY-260615.pdf
 - sources/inbox/Bernstein-JP EU Semi Equipment： Early signs of price hikes emerging-260615.pdf
+
+## Added from research — 2026-06-21 (ingest)
+- benefits from [[Server CPU & Agentic AI Demand]] — (VIEW, JPM 2026-06): raising estimates on new server-CPU test demand beyond GPU/ASIC
+- benefits from [[Co-Packaged Optics (CPO)]] — (VIEW, JPM 2026-06): new CPO test demand incremental to GPU/ASIC

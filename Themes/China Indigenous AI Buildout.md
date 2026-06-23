@@ -28,3 +28,11 @@ layer: demand-driver
 
 ## Added from research — 2026-06-09 (ingest)
 - [[Huawei]] benefits from this theme — (FACT, X-scan 2026-06-09): Bloomberg — China prepping ~$295B (¥2T) nationwide AI-datacenter buildout, ≥80% domestic tech incl. Huawei chips
+
+
+## Added from research — 2026-06-19 (ingest)
+- [[Hygon]] benefits from this theme — (VIEW, Bernstein 2026-06-17): China to outpace global x86 server-CPU growth from 2028 as advanced-node constraints ease
+
+## Added from research — 2026-06-21 (ingest)
+- [[DeepSeek]] — (VIEW, Expert call 2026-06): targets >=50% domestic share post full-localization; inference adapted on Huawei Ascend 950PR, training still on NVIDIA
+- [[Zhipu AI]] — (VIEW, JPM 2026-06-18): frontier model capability in China; GLM-5.2 upgrade

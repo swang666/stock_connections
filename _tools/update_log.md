@@ -407,3 +407,91 @@ From today's 31 events (2026-06-10):
 - **Wiki:** created Companies/Murata Manufacturing.md, Taiyo Yuden.md, Ibiden.md; appended dated sections to Themes/AI Server MLCC Demand.md, Companies/NVIDIA.md, Companies/Intel.md.
 - **Validator:** errors=0, warnings=178 (all pre-existing: source_doc/evidence coverage, 5 flagged). Graph regenerated: 147 nodes, 348 edges. EDGAR pull DISABLED (sec.gov unreachable) — edgar manifest untouched.
 - **Flagged for review:** all 4 new edges are analyst VIEWs (MS forecasts), not confirmed facts. Intel↔Apple 18A-P foundry relationship deliberately NOT graphed (speculation). Excel was not open (no lock file).
+
+## 2026-06-17 (scheduled ingest — re-run, no-op)
+- **Inbox:** 0 new files (all 202 inbox files already in ingested.json).
+- **Narrative Atlas feed:** fetched OK (page "as of 2026-06-17"); 229 events visible (06-08→06-15, newest=06-15). 0 genuinely-new events. One differing key parsed (PANW 2026-06-08 Bull) is a **truncation artifact** — the web_fetch capture cut the page mid-event ("Palo Al…"), producing a different hash than the full PANW 06-08 event already in seen (`24cb026a3c274be5`). Not a new event; not graphed (PANW = cybersecurity software, no AI supply-chain hardware mechanism → skip per extraction rules regardless). Phantom key deliberately NOT added to seen to avoid state pollution; seen unchanged at 420.
+- **Context:** today's primary 2026-06-17 run already completed earlier (full section above: +3 nodes MURATA/TAIYOYUDEN/IBIDEN, +4 edges, graph 147 nodes/348 edges). This invocation is a duplicate same-day trigger.
+- **Applied:** 0 nodes, 0 edges, 0 wiki edits. xlsx/wiki/graph untouched. ingested.json + narrative_atlas_state.json unchanged.
+- **Validator (read-only health check):** nodes=147 edges=348 errors=0 warnings=178 (all pre-existing). PASS. EDGAR pull DISABLED (sec.gov unreachable) — edgar manifest untouched.
+
+## 2026-06-19 (ingest)
+**Inbox:** 20 new files processed. Edge-yielding: 5 x-scan extracts (2026-06-18 ×3, 2026-06-19 ×2), Bernstein "CPU Renaissance $223bn TAM" (06-17), JPM Broadcom "Ignore the Noise / TPU on track" (06-16), CoreWeave–Key Context exec interview (06-17). Skimmed, no NEW edges (macro/sentiment or duplicative of existing themes/edges): both TMTB wraps (EOD + morning), BofA Global Memory Weekly (corroborates HBM/memory shortage — edges already present), Semianalysis "2026 US DC Capacity Is Not Canceled" (macro/power), Bernstein QCOM/Tenstorrent (rumored M&A — not graphed; ARM→QCOM already exists), "Let's Talk About Kevin" FOMC preview (macro). Image-only PDFs not OCR'd this run (left for review): Bernstein SOCAMM2, UBS Soitec downgrade, CITI Han's Laser, UBS China IDC, UBS SemiBytes, 半导体设备.
+**Narrative Atlas feed:** 236 events parsed; 120 new (2026-06-16/17/18). Graphed 5 (TLN, JBL, HPE, AMAT/LRCX/KLAC→T_HBM via Citi, INTC–AAPL rumor, SPCX→GOOGL); the rest skipped as price-action/app-software sentiment, ratings reprices without a supply-chain mechanism, or duplicates of existing edges. NOTE: the feed's actual markup omits the documented "daily" frequency line and "· slot" suffix; parser adapted accordingly (key formula unchanged).
+**Added:** 5 nodes — companies TLN (Talen Energy, L14), JBL (Jabil, L9), RXT (Rackspace Technology, L10), HYGON (Hygon, L4); + new theme T_CPU "Server CPU & Agentic AI Demand" (L0). 21 edges (0 dups in final set).
+  - Power: TLN→T_POWER. Capex: JBL→T_TRAIN. Networking: HPE→T_NET. Memory equip: AMAT/LRCX/KLAC→T_HBM (Citi WFE, NAND cycle — note: HBM theme used as memory-demand proxy). CPU: ARM(3)/AMD/INTC/HYGON→T_CPU; HYGON→T_CHINA. Foundry: TSM→MU (Micron HBM4E base-die at TSMC, FACT). Cloud: AMD→RXT (FACT), CRWV→OPENAI/ANTHROPIC/MSFT/META (FACT), SPCX→GOOGL runs-compute-on (FACT). ASIC: AVGO→AAPL, AVGO→SAMBANOVA (FACT, JPM).
+**Flags / review:** INTC→AAPL "manufactures chips for" is a RUMOR (Trump remark via feed) — strength 1, tagged VIEW with (?). AVGO co-designs with Apple/SambaNova are JPM analyst assertions tagged FACT. CRWV customer list is from a primary-source exec interview (Google omitted as a CRWV customer out of caution). Tenstorrent acquisition (QCOM) deliberately NOT graphed (rumored, unclosed).
+**Validator:** nodes=152 edges=369 errors=0 warnings=178 (PASS). Warnings are pre-existing legacy-row categories (source_doc/evidence missing on old rows); all new rows fully tagged. Excel was CLOSED (no lock file) — xlsx written directly, no pending CSV.
+
+## 2026-06-20 (scheduled ingest)
+- **Inbox files processed (3):** 2026-06-20-0404-x-scan-extract.md, 2026-06-20-1204-x-scan-extract.md, 2026-06-20-2004-x-scan-extract.md (all FACT-grade x-scan extracts; 11 edge rows, 6 unique source→rel→target tuples).
+- **Narrative Atlas feed:** fetched OK; 237 visible events (dates 06-11 → 06-18). 0 new (all keys already in seen=540). last_run→2026-06-20, last_event_date=2026-06-18.
+- **New edges added:** 0 — all 6 candidate HBM edges already exist in the Edges sheet.
+- **Edges strengthened (evidence/as_of, no new rows):** 6 —
+  MU/SKHYNIX/SAMSUNG ⟶ supplies HBM to ⟶ NVDA, and MU/SKHYNIX/SAMSUNG ⟶ benefits from ⟶ T_HBM.
+  New FACTs folded in: NVDA requested 16-Hi HBM4 (H2'26, Q4 delivery) from all three makers; SK Hynix shipped 12-layer HBM4E samples ~Jun 18 ahead of schedule (sole HBM4E requester = NVDA, for Rubin Ultra 384GB/GPU); Micron met Rubin HBM4 spec + final customer samples; Samsung HBM4E samples May 29 + ~50% capacity scaling. as_of bumped to 2026-06-20; filled 2 previously-empty source_doc cells (MU & SAMSUNG benefits-from-T_HBM).
+- **New companies added:** 0 (MU, SKHYNIX, SAMSUNG, NVDA, T_HBM all pre-existing).
+- **Wiki updated:** dated 2026-06-20 sections appended (additive) to Themes/HBM Demand.md, Companies/{SK Hynix, Micron, Samsung Electronics, NVIDIA}.md.
+- **Regenerate:** update_graph.py → 152 nodes, 369 edges (edge count unchanged = no dup rows). 
+- **Validator:** errors=0, warnings=175 (93 source_doc missing, 61 evidence missing, 16 untagged, 5 flagged — pre-existing baseline). PASS.
+- **Notes:** VIEW/unverified items in source reports (analyst PTs, Leopold positioning, Trump revenue estimates, anomalous MU price level) were excluded by the upstream x-scan extracts. Excel not open (no lock file); xlsx written directly. Backup saved to _tools/backup_pre_0620.xlsx.
+
+## 2026-06-21 (scheduled ingest)
+**Inbox files processed: 30**
+- x-scan extracts: 2026-06-21-0548 (all 4 rows dupes), 2026-06-21-1204 (1 new edge + 1 new node SKT)
+- Analyst/expert: JPM Nittobo (3110.T), Nomura JX Advanced Metals (5016.T), JPM ASIC Market Overview, JPM Advantest (6857.T), 智谱/Zhipu (JPM), DeepSeek 纪要, CPU 专家电话会, 玻璃基板 x2 (TGV + 0617), Micron previews (Citi/DB), KIOXIA (JPM), Bernstein Korea Memory Tracker, JPM SPE/WFE, JPM AI Capex 2.0, 功率半导体, PCB 纪要 x2, 通信周日沙龙, MS Greater China Power Semis, Bernstein Intel, Bernstein gas-turbine stack, Goldman/DB flows & positioning, ZeroHedge hedge-fund flows, 美光业绩前瞻, Fujikura(藤仓), 大模型商业模式, etc.
+
+**Narrative Atlas feed:** 236 events visible (2026-06-11 → 06-18); 0 NEW (all keys already in seen). last_run=2026-06-21, last_event_date=2026-06-18.
+
+**New nodes added: 6** — SKT (SK Telecom, L10), NITTOBO (Nitto Boseki 3110.T, L6 glass-cloth/CCL), JX (JX Advanced Metals 5016.T, L7 InP substrate), ALCHIP (Alchip 3661.TW, L4 ASIC design service), DEEPSEEK (L11 China AI lab), ZHIPU (Zhipu AI 2513.HK, L11 China AI lab).
+
+**New edges added: 20** (0 dupes skipped):
+- NVDA→SKT (sells GPUs, FACT); NVDA→T_CPU (VIEW, Vera CPU)
+- SAMSUNG/SEMCO/TSM → T_GLASS (VIEW, glass-substrate ramp; samples to NVDA/AVGO, Apple sourcing; TSMC CoWoS interposer replacement)
+- NITTOBO→T_PCB (FACT, T-glass/NER-glass cloth, tight supply)
+- JX→T_NET (FACT, ~40% InP substrate share, undersupplied) / JX→T_CPO (VIEW)
+- MRVL→AMZN (co-designs custom silicon, FACT, Trainium 3); ALCHIP→AMZN (co-designs, FACT, Trainium 3); ALCHIP→T_TRAIN (VIEW)
+- ADVANTEST→T_CPU / →T_CPO (VIEW, new CPU/CPO test demand)
+- DEEPSEEK→T_CHINA (VIEW) / →T_INFER (FACT) / runs compute on HUAWEI (FACT, Ascend 950PR) / runs compute on NVDA (FACT, training) / competes with OPENAI (VIEW)
+- ZHIPU→T_CHINA (VIEW) / →T_INFER (VIEW)
+
+**Validator:** errors=0, warnings=175 — PASS (nodes=158, edges=389). Graph + START HERE + Degree sheet regenerated. Excel was not open; xlsx written directly (no pending CSV).
+
+**Skipped / flagged for review:**
+- Macro/flows/positioning files (Goldman/DB/BofA flows, ZeroHedge, JPM AI Capex financing) — no supply-chain edges.
+- Heavy node-sprawl avoidance: numerous Chinese A-share glass (力诺/美迪凯/帝尔激光/沃格/天承/旗滨/凯盛/汇成真空…), PCB (建滔/胜宏/沪电/鹏鼎/中钨高新/鼎泰…), power-semi (新洁能/英诺赛科…), and optical-chip (源杰/长光华芯…) names NOT added — speculative/one-off recommendations.
+- ByteDance domestic-GPU procurement (Enflame/Kunlun + Huawei/Cambricon/Hygon) NOT graphed as company edges — noisy ASR salon, partly negotiation-stage; covered thematically via existing *→T_CHINA edges.
+- Watermark-scrambled PDFs (Bernstein gas-turbine stack, Bernstein Intel, DB Global Memory, MS Greater China Power Semis, Fujikura, Advantest body) not OCR'd; Advantest edges derived from explicit report title; gas-turbine/Fujikura yielded no new nodes (GEV/ENR already benefit from T_POWER).
+- VIEW vs FACT discipline applied throughout (analyst forecasts/PTs tagged VIEW; stated supply facts tagged FACT).
+
+## 2026-06-22 (scheduled ingest)
+
+**Inbox files processed (2):** 2026-06-22-1204-x-scan-extract.md, 2026-06-22-2004-x-scan-extract.md (FACT-grade X-scan extracts).
+
+**Narrative Atlas feed:** 245 events visible; 28 new vs state (1×2026-06-11 META, 27×2026-06-22). Feed render format had drifted from the documented regex (no "daily" line; trailing date has no "· slot") — parsed via a block-based parser instead. Graphed 3 new theme edges; 25 skipped. All 245 visible keys folded into seen (540→568); last_event_date=2026-06-22.
+
+**Edges added (4 new rows):**
+- AMD → benefits from → T_COWOS (FACT, X-scan 2026-06-22): Lisa Su/Computex >$10B Taiwan advanced-packaging investment.
+- MU → benefits from → T_INFER (VIEW, Needham 2026-06-22): AI demand + limited capacity extend memory upcycle; DRAM pricing.
+- LRCX → benefits from → T_COWOS (VIEW, Mizuho 2026-06-22): advanced-packaging incremental semicap demand.
+- AMAT → benefits from → T_COWOS (VIEW, Mizuho 2026-06-22): advanced-packaging incremental semicap demand.
+
+**Edges strengthened (no new rows):**
+- NVDA sells GPUs to DELL — was evidence "None" → (FACT, X-scan 2026-06-22): Dell named Vera Rubin (NVL4) builder at ISC 2026; strength 2→3.
+- SKHYNIX supplies HBM to NVDA — appended HBM4E 12-layer samples (Jun 18), NVDA sole requester.
+- SKHYNIX benefits from T_HBM — appended FACT HBM4E sampling (48GB/stack, ~16Gbps/pin).
+- NVDA sells GPUs to SMCI — appended SMCI as Vera Rubin NVL4 global system builder (ISC 2026).
+
+**New companies added:** none (all referenced nodes already existed).
+
+**Validator:** errors=0, warnings=173 — PASS (nodes=158, edges=393). Graph + START HERE + Degree sheet regenerated. Excel not open; xlsx written directly (no pending CSV).
+
+**Feed events skipped (25) — reasons:**
+- No AI supply-chain mechanism / consumer / software-sentiment: ZG, RBLX, NFLX, MSFT, GOOGL, BILL, AXON, AAPL, TSLA, TEL, META(06-11).
+- Bearish/valuation reprice with no positive supply-chain edge: STX (HDD pricing downgrade), ASML (catch-up/valuation note, no clean theme to attach).
+- Quantum (out of AI-semis scope): IONQ.
+- Speculative SpaceX-neocloud thesis, already-central & redundant: NVDA (Blackwell demand), SMCI (server cycle) — both already benefit from T_TRAIN/T_INFER; SPCX (KeyBanc Sector Weight, no theme node).
+- Garbled/ambiguous attribution: AMD burn-in/transceiver checks item (AMD already covered today via T_COWOS).
+- Restatements of existing edges (not re-added): SNDK→T_INFER, MU→T_HBM, INTC→T_GLASS, LITE→T_NET, CRDO→T_NET, COHR→T_CPO, AAOI→T_CPO, SMCI→T_TRAIN.
+
+**Notes:** VIEW vs FACT discipline applied (analyst PTs/forecasts → VIEW; stated supply/capacity facts → FACT). No instruction-like inbox files encountered.

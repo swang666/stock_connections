@@ -34,3 +34,7 @@ country: USA
 
 ## Added from research — 2026-06-14 (ingest)
 - [[Arista Networks]] supplies switches to this company — (VIEW, Evercore ISI 2026-06-12 via Narrative Atlas): underappreciated multi-billion-dollar networking opportunity (?)
+
+
+## Added from research — 2026-06-19 (ingest)
+- [[CoreWeave]] provides datacenter capacity to this company — (FACT, CoreWeave/Key Context 2026-06-17): named as a CoreWeave customer

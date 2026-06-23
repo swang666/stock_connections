@@ -35,3 +35,10 @@ country: South Korea
 
 ## Added from research — 2026-06-10 (ingest)
 - supplied by [[Sinocera]] (MLCC powder) — (FACT, J.P. Morgan 2026-06-10): AI/auto-grade MLCC powder qualified, volume shipments from 3Q26 (Samsung group component arm, likely Samsung Electro-Mechanics) (?)
+
+## Added from research — 2026-06-20 (X-scan)
+- supplies HBM to [[NVIDIA]] (corroboration) — (FACT, X-scan 2026-06-20): NVDA requested 16-Hi HBM4 for H2'26; Samsung re-engaged on HBM4 _(X-Reports/2026-06-20-0404-x-scan.md)_
+- [[HBM Demand]] — (FACT, X-scan 2026-06-20): HBM4E samples sent May 29 (advancing HBM4E qualification); scaling HBM capacity ~50% in 2026 _(X-Reports/2026-06-20-1204-x-scan.md)_
+
+## Added from research — 2026-06-21 (ingest)
+- benefits from [[Glass Core Substrate]] — (VIEW, Expert call 2026-06-17): most aggressive in glass-core substrate; sent samples to NVIDIA/Broadcom; Apple to source for AI servers

@@ -23,3 +23,7 @@ country: USA
 
 ## Sources
 - _Add links to filings / articles in `sources/`._
+
+
+## Added from research — 2026-06-19 (ingest)
+- benefits from [[Optical & Networking Buildout]] — (VIEW, Barclays 2026-06-17): AI-networking demand; ahead-of-schedule Juniper integration

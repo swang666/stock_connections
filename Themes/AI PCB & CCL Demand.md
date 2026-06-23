@@ -25,3 +25,6 @@ layer: demand-driver
 - sources/inbox/Jefferies-shengyi.pdf
 - sources/inbox/JPM_Asia_Passive_Compone_.pdf
 - sources/inbox/NPO增量需求与CCL涨价纪要_20260614.docx
+
+## Added from research — 2026-06-21 (ingest)
+- [[Nittobo (Nitto Boseki)]] — (FACT, JPM 2026-06-15): high-quality T-glass/NER-glass cloth for M8/M9 CCL; demand exceeds supply, tight; competitors Taiwan Glass, Unitika, Nanya Plastics

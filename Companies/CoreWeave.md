@@ -32,3 +32,7 @@ country: USA
 
 ## Sources
 - See `X-Reports/2026-05-30-2139-x-scan.md`. Add filings/articles in `sources/`.
+
+
+## Added from research — 2026-06-19 (ingest)
+- provides datacenter capacity to [[OpenAI]], [[Anthropic]], [[Microsoft]], [[Meta Platforms]] — (FACT, CoreWeave/Key Context 2026-06-17): named as customers of the only independent AI cloud serving all frontier users

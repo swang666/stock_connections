@@ -101,3 +101,11 @@ country: USA
 
 ## Added from research — 2026-06-17 (ingest)
 - supplied by [[Ibiden]] — supplies package substrate to NVIDIA — (VIEW, Morgan Stanley 2026-06-16): Ibiden OP growth driven by high share in NVIDIA-related ABF/package-substrate demand
+
+## Added from research — 2026-06-20 (X-scan)
+- requested 16-Hi HBM4 (H2'26, Q4 delivery) from [[SK Hynix]], [[Samsung Electronics]] and [[Micron]] — (FACT, X-scan 2026-06-20) _(X-Reports/2026-06-20-0404-x-scan.md)_
+- sole requester of HBM4E, for Rubin Ultra (384GB/GPU = 8x 48GB stacks); [[SK Hynix]] shipped 12-layer HBM4E samples Jun 18 — (FACT, X-scan 2026-06-20) _(X-Reports/2026-06-20-2004-x-scan.md)_
+
+## Added from research — 2026-06-21 (ingest)
+- sells GPUs to [[SK Telecom]] — (FACT, X-scan 2026-06-21): SK Telecom gigawatt-scale AI Cloud in Korea on NVIDIA DSX platform (Jun 18 2026)
+- benefits from [[Server CPU & Agentic AI Demand]] — (VIEW, Expert call 2026-06-18): NVIDIA Vera (88-core Arm data-center CPU); Rubin rack decouples CPU/GPU scaling over NVLink

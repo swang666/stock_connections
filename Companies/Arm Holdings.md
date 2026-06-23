@@ -38,3 +38,7 @@ country: UK
 ## Relationships (update 2026-06-11)
 
 - benefits from [[AI Inference Demand]] — (VIEW, BofA 2026-06-11) agentic AI lifts ARM challengers within $170bn+ CY30 server CPU TAM
+
+
+## Added from research — 2026-06-19 (ingest)
+- benefits from [[Server CPU & Agentic AI Demand]] — (VIEW, Bernstein 2026-06-17): structural beneficiary; power efficiency; PT $500

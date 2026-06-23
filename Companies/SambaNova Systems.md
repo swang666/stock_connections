@@ -27,3 +27,7 @@ country: USA
 
 ## Added from research — 2026-06-04 (X-scan)
 - partners with [[Intel]] — (FACT, X-scan 2026-06-04): SambaNova AI platform paired with Intel Xeon processors in rack-scale infrastructure for hyperscale deployments, disclosed alongside the Foxconn–Intel Computex 2026 announcement.
+
+
+## Added from research — 2026-06-19 (ingest)
+- [[Broadcom]] co-designs custom silicon with this company — (FACT, JPM 2026-06-16): SambaNova RDU program in Broadcom ASIC pipeline
