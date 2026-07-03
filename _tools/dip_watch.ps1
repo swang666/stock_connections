@@ -126,7 +126,7 @@ Finish with a one-paragraph plain-language summary.
 "@
     & claude -p $prompt `
         --model "claude-opus-4-8" `
-        --allowed-tools "Read,Write,Edit,Glob,Grep,Bash,WebSearch,WebFetch,mcp__robinhood-trading,mcp__claude_ai_Gmail" `
+        --allowed-tools "Read,Write,Edit,Glob,Grep,Bash,WebSearch,WebFetch,mcp__claude_ai_robinhood,mcp__claude_ai_Gmail" `
         --max-turns 80 |
         Out-File -FilePath (Join-Path $repo "briefs/transcripts/$today-dipwatch-$hm.txt") -Encoding utf8
 }
